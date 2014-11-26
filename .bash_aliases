@@ -1,0 +1,11 @@
+alias s="sudo"
+alias ll='ls -lhF --group-directories-first'
+alias l.='ls -lhaF --group-directories-first'
+alias l='ls -CF --group-directories-first'
+alias la='ls -aCF --group-directories-first'
+alias 7zip='7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on'
+alias 7zipenc='7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on -mhe=on -p'
+alias SDU='sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade'
+alias SUG='sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade'
+alias manage='python manage.py'
+alias locafan_vim='DJANGO_SETTINGS_FILE=locafan.settings vim'
