@@ -115,6 +115,9 @@ fi
 
 # for use with python django web framework
 djvim() {
+    vim "+cd $1" "+TlistAddFilesRecursive . [^_]*py\|*html\|*css\|*js" +TlistOpen 2> ~/log/vim.err
+}
+djgvim() {
     gvim "+cd $1" "+TlistAddFilesRecursive . [^_]*py\|*html\|*css\|*js" +TlistOpen 2> ~/log/vim.err
 }
 
@@ -124,4 +127,3 @@ TZ='America/Sao_Paulo'; export TZ
 EDITOR='vi'; export EDITOR
 GPGKEY='607A5E65'; export GPGKEY
 #http_proxy=http://localhost:8123; export http_proxy
-
