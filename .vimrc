@@ -155,6 +155,7 @@ let g:syntastic_html_tidy_exec = ['/usr/local/bin/tidy']
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
 let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_docstring = 0
 
 let g:UltiSnipsExpandTrigger       = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
@@ -166,6 +167,7 @@ let Tlist_Ctags_Cmd='/usr/bin/ctags-exuberant'
 set tags=./tags;/
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+"map <F6>  :TlistAddFilesRecursive ~/Meus_Projetos/locafan [^_]*py\|*html\|*css\|*js<CR>
 
 " Display function name in status bar
 let g:ctags_statusline=1
