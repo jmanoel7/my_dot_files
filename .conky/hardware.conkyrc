@@ -1,0 +1,119 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+# Settings
+##############################################
+background yes
+use_xft yes
+xftfont Trebuchet MS:size=8
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+#own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 240
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+#default_color 656667
+#default_shade_color 000000
+#default_outline_color 828282
+alignment top_right
+gap_x 12
+gap_y 56
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+##############################################
+#  Output
+##############################################
+TEXT
+C P U
+${hr 2}
+
+Core1  (${cpu cpu1}%)${alignr}Core2  (${cpu cpu2}%)
+${freq_g 1} Ghz${alignr}${freq_g 2} Ghz
+${execi 10 sensors | egrep '^Core 0' | sed 's/^Core 0:[[:blank:]]\++\([^[:blank:]]\+\).*$/\1/'}${alignr}${execi 10 sensors | egrep '^Core 1' | sed 's/^Core 1:[[:blank:]]\++\([^[:blank:]]\+\).*$/\1/'}
+${cpugraph cpu1 16,110 789E2D A7CC5C}${alignr}${cpugraph cpu2 16,110 789E2D A7CC5C}
+#${cpugraph cpu1 16,110}${alignr}${cpugraph cpu2 16,110}
+Processes:${alignr}${processes}  ($running_processes running)  ($running_threads threads)
+
+M E M O R Y
+${hr 2}
+
+${goto 48}FREE${goto 95}USAGE${goto 140}TOTAL
+RAM${goto 48}${memeasyfree}${goto 95}${mem}${goto 140}${memmax}${alignr}${membar 8,60}
+SWAP${goto 48}${swapfree}${goto 95}${swap}${goto 140}${swapmax}${alignr}${swapbar 8,60}
+
+T O P
+${hr 2}
+
+NAME ${alignr} PID     CPU    MEM
+${top name 1} ${alignr} ${top pid 1}  ${top cpu 1}  ${top mem 1}
+${top name 2} ${alignr} ${top pid 2}  ${top cpu 2}  ${top mem 2}
+${top name 3} ${alignr} ${top pid 3}  ${top cpu 3}  ${top mem 3}
+${top name 4} ${alignr} ${top pid 4}  ${top cpu 4}  ${top mem 4}
+${top name 5} ${alignr} ${top pid 5}  ${top cpu 5}  ${top mem 5}
+${top name 6} ${alignr} ${top pid 6}  ${top cpu 6}  ${top mem 6}
+${top name 7} ${alignr} ${top pid 7}  ${top cpu 7}  ${top mem 7}
+${top name 8} ${alignr} ${top pid 8}  ${top cpu 8}  ${top mem 8}
+${top name 9} ${alignr} ${top pid 9}  ${top cpu 9}  ${top mem 9}
+${top name 10} ${alignr} ${top pid 10}  ${top cpu 10}  ${top mem 10}
+
+H D    ${execi 10 nc localhost 7634 | cut -d \| -f 4}°C
+${hr 2}
+
+${goto 48}FREE${goto 95}USAGE${goto 140}TOTAL
+HOME${goto 48}${fs_free /home}${goto 95}${fs_used /home}${goto 140}${fs_size /home}${alignr}${fs_bar 8,60 /home}
+OPT${goto 48}${fs_free /opt}${goto 95}${fs_used /opt}${goto 140}${fs_size /opt}${alignr}${fs_bar 8,60 /opt}
+ROOT${goto 48}${fs_free /root}${goto 95}${fs_used /root}${goto 140}${fs_size /root}${alignr}${fs_bar 8,60 /root}
+
+N E T W O R K
+${hr 2}
+${if_existing /proc/net/route wlan0}
+Interface: ${alignr}wlan0
+Hardware: ${alignr}${execi 300 LANG=C ifconfig wlan0 | grep HWaddr | sed "s/^.*HWaddr \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
+Local Ip: ${alignr}${addr wlan0}
+Public Ip: ${alignr}${execi 300 /home/joaomanoel/.conky/shell-scripts/public-ip.sh}
+Upload: ${alignr} ${upspeed wlan0} KiB/s  (${totalup wlan0})
+${upspeedgraph wlan0 16,240 789E2D A7CC5C}
+#${upspeedgraph wlan0 16,240}
+Download: ${alignr} ${downspeed wlan0} KiB/s  (${totaldown wlan0})
+${downspeedgraph wlan0 16,240 789E2D A7CC5C}
+#${downspeedgraph wlan0 16,240}
+Wifi ESSID: ${alignr}${wireless_essid wlan0}
+Wifi BSSID: ${alignr}${wireless_ap wlan0}
+Wifi Mode: ${alignr}${wireless_mode wlan0}
+Wifi Bitrate: ${alignr}${wireless_bitrate wlan0}
+Wifi Signal: ${alignr}${wireless_link_qual_perc wlan0}%  ${wireless_link_bar 8,60 wlan0}
+${else}${if_existing /proc/net/route eth0}
+Interface: ${alignr}eth0
+Hardware: ${alignr}${execi 10 LANG=C ifconfig eth0 | grep HWaddr | sed "s/^.*HWaddr \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
+Local Ip: ${alignr}${addr eth0}
+#Public Ip: ${alignr}${execi 10 /home/joaomanoel/.conky/shell-scripts/public-ip.sh}
+Upload: ${alignr} ${upspeed eth0} KiB/s  (${totalup eth0})
+${upspeedgraph eth0 16,240 789E2D A7CC5C}
+#${upspeedgraph eth0 16,240}
+Download: ${alignr} ${downspeed eth0} KiB/s  (${totaldown eth0})
+${downspeedgraph eth0 16,240 789E2D A7CC5C}${else}
+#${downspeedgraph eth0 16,240}${else}
+${font PizzaDude Bullets:size=14}${font}${alignc}Network Unavailable
+${endif}${endif}

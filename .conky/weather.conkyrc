@@ -1,0 +1,159 @@
+#########################################
+############# Conky settings ############
+#########################################
+
+background yes
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+#imlib_cache_size 0
+
+
+#########################################
+######### Window specifications #########
+#########################################
+
+# Allow conky to handle transparency -- all or nothing
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Allow compiz to handle transparency manually (you will need to add Conky to compiz)
+#own_window yes
+#own_window_type normal
+#own_window_transparent yes
+#own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+# Allow conky to handle transparency (with percentages) with a compositor
+# From http://blog.mmassonnet.info/2011/08/xfce-48-with-conky.html)
+#own_window yes
+#window_own_type desktop
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager	# make it behave like it belongs to the desktop
+#own_window_argb_visual yes	# true transparency, a compositor has to be active
+#own_window_argb_value 70	# make the background semi-transparent
+
+
+## This Resolution is set according to the sreen resolution of 1360x768
+## Adjust Accoring to yours
+
+minimum_size 500 190
+maximum_width 500
+
+alignment bottom_middle
+gap_x 0
+gap_y 0
+
+
+#########################################
+########### Graphics settings ###########
+#########################################
+border_inner_margin 0
+border_outer_margin 0
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+## Text settings
+use_spacer yes
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.5
+
+uppercase no
+
+#temperature_unit fahrenheit
+temperature_unit celsius
+
+# Color settings
+default_color eaeaea
+
+color1 b7b7b7	#(light grey)
+color2 6f6f6f	#(medium grey)
+color2 2c2c2c	#(dark grey)
+color3 4a89a7	#(teal / blue)
+color4 e83737	#(red)
+color5 ebff46	#(yellow)
+color6 46a646	#(green)
+color7 f4732d	#(orange)
+color8 ffa300	#(bright orange)
+
+
+## Lua: load clock rings.
+#lua_load ~/.conky/scripts/haunted.lua
+#lua_draw_hook_pre clock_rings
+
+
+# put into crontab
+#0-59/5 * * * * wget -q -O ~/.cache/weather.xml 'http://weather.yahooapis.com/forecastrss?w=455831&u=c'
+
+
+TEXT
+${voffset 23}
+${font Open Sans Light:size=15}${color8}${execi 300 grep "yweather:location" ~/.cache/weather.xml | grep -o "city=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}-${execi 300 grep "yweather:location" ~/.cache/weather.xml | grep -o "region=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}, ${execi 300 grep "yweather:location" ~/.cache/weather.xml | grep -o "country=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
+${offset 0}${font Open Sans Light:size=35}${color FFFFFF}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°${font}${voffset -90}
+${execi 300 cp -f ~/.conky/weather-now/$(grep "yweather:condition" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*").png ~/.cache/weather.png}${image ~/.cache/weather.png -p 105,61 -s 60x60}
+${voffset 98}
+#${offset 100}${font Ubuntu:pixelsize=14}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "text=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
+${offset 105}${font Ubuntu:pixelsize=24}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | ~/.conky/shell-scripts/weather-condition-traductor.py}${font}
+${offset 105}${font Ubuntu:pixelsize=12}Nascer do Sol${goto 205}${execi 300 grep "yweather:astronomy" ~/.cache/weather.xml | grep -o "sunrise=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | cut -d " " -f 1}${font}
+${offset 105}${font Ubuntu:pixelsize=12}Pôr do Sol${goto 197}${execi 300 grep "yweather:astronomy" ~/.cache/weather.xml | grep -o "sunset=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | cut -d " " -f 1 | sed "s/^\([^:]\{1,2\}\).*$/\1+12/" | bc}:${execi 300 grep "yweather:astronomy" ~/.cache/weather.xml | grep -o "sunset=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | cut -d " " -f 1 | cut -d ":" -f 2}${font}
+${voffset -147}
+${image ~/.conky/weather-now/wind.png -p 0,121 -s 15x15}
+${image ~/.conky/weather-now/humidity.png -p 0,140 -s 15x15}
+${image ~/.conky/weather-now/visibility.png -p 0,159 -s 15x15}
+${image ~/.conky/weather-now/pressure.png -p 0,178 -s 15x15}
+${voffset 0}
+${offset 20}${font Ubuntu:pixelsize=12}${color}${execi 300 grep "yweather:wind" ~/.cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"} ${execi 300 grep "yweather:units" ~/.cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}
+${voffset -10}
+${offset 20}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:atmosphere" ~/.cache/weather.xml | grep -o "humidity=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}%
+${voffset -8}
+${offset 20}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:atmosphere" ~/.cache/weather.xml | grep -o "visibility=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"} ${execi 300 grep "yweather:units" ~/.cache/weather.xml | grep -o "distance=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
+${voffset -10}
+${offset 20}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:atmosphere" ~/.cache/weather.xml | grep -o "pressure=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"} ${execi 300 grep "yweather:units" ~/.cache/weather.xml | grep -o "pressure=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
+${voffset -150}
+${offset 209}${font Ubuntu:pixelsize=12}${color}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1' | ~/.conky/shell-scripts/day-traductor.py}
+${voffset -28}
+${offset 267}${font Ubuntu:pixelsize=12}${color}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2' | ~/.conky/shell-scripts/day-traductor.py}
+${voffset -28}
+${offset 327}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3' | ~/.conky/shell-scripts/day-traductor.py}
+${voffset -28}
+${offset 386}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4' | ~/.conky/shell-scripts/day-traductor.py}
+${voffset -28}
+${offset 448}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5' | ~/.conky/shell-scripts/day-traductor.py}
+${execi 300 cp -f ~/.conky/weather-now/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1').png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 205,69 -s 30x30}${execi 300 cp -f ~/.conky/weather-now/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2').png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 265,69 -s 30x30}${execi 300 cp -f ~/.conky/weather-now/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 325,69 -s 30x30}${execi 300 cp -f ~/.conky/weather-now/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4').png ~/.cache/weather-4.png}${image ~/.cache/weather-4.png -p 385,69 -s 30x30}${execi 300 cp -f ~/.conky/weather-now/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5').png ~/.cache/weather-5.png}${image ~/.cache/weather-5.png -p 445,69 -s 30x30}${voffset 100}
+${voffset -95}
+${offset 213}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°
+${voffset -28}
+${offset 273}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°
+${voffset -28}
+${offset 333}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3'}°
+${voffset -28}
+${offset 393}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4'}°
+${voffset -28}
+${offset 453}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5'}°
+${voffset -10}
+${offset 213}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°
+${voffset -28}
+${offset 273}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°
+${voffset -28}
+${offset 333}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3'}°
+${voffset -28}
+${offset 393}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4'}°
+${voffset -28}
+${offset 453}${font Ubuntu:pixelsize=12}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5'}°
+
+
+
+
+
