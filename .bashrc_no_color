@@ -1,0 +1,64 @@
+# ~/.bashrc
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# include /etc/bashrc
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# use lesspipe
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# prompt definitions
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+PROMPT_COMMAND="LAST_COMMAND=\$?"
+PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}[\u@\h:\W] \$(if [[ "\$LAST_COMMAND" != "0" ]]; then echo \"!\"; fi)\\$ "
+#PS1="\[\e]0;${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+
+# bash aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# bash completion
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# virtualenvwrapper
+. /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+
+# functions
+djvim() {
+    vim "+cd $1" "+TlistAddFilesRecursive . [^_]*py\|*html\|*css\|*js" "+TlistOpen" "+DjangoProjectActivate $2" 2> ~/log/vim.err
+}
+djgvim() {
+    gvim "+cd $1" "+TlistAddFilesRecursive . [^_]*py\|*html\|*css\|*js" "+TlistOpen" "+DjangoProjectActivate $2" 2> ~/log/gvim.err
+}
+
+# environment variables
+HISTCONTROL=ignoreboth; export HISTCONTROL
+HISTSIZE=1000; export HISTSIZE
+HISTFILESIZE=2000; export HISTFILESIZE
+LANG='pt_BR.UTF-8'; export LANG
+TZ='America/Sao_Paulo'; export TZ
+EDITOR='vi'; export EDITOR
+GPGKEY='607A5E65'; export GPGKEY
+WORKON_HOME="$HOME/.local/venvs"; export WORKON_HOME
+#http_proxy=http://localhost:8123; export http_proxy
+
+# shopt commands
+shopt -s histappend
+shopt -s checkwinsize
+shopt -s globstar

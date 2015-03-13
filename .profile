@@ -6,44 +6,29 @@
 
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
-#umask 022
+umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+# include .bashrc if it exists
+if [ -f "$HOME/.bashrc" ]; then
+. "$HOME/.bashrc"
 fi
 
-# include sbin in PATH
-if [ -d "/sbin" ] ; then
-    export PATH="/sbin:$PATH"
-fi
-if [ -d "/usr/sbin" ] ; then
-    export PATH="/usr/sbin:$PATH"
-fi
+# environment variables
+TERM=xterm-256color; export TERM
+HISTCONTROL=ignoreboth; export HISTCONTROL
+HISTSIZE=1000; export HISTSIZE
+HISTFILESIZE=2000; export HISTFILESIZE
+LANG='pt_BR.UTF-8'; export LANG
+TZ='America/Sao_Paulo'; export TZ
+EDITOR='vim'; export EDITOR
+GPGKEY='607A5E65'; export GPGKEY
+WORKON_HOME="$HOME/.local/venvs"; export WORKON_HOME
+XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps/"; export XULRUNNER_APPS_HOME
+XULRUNNER_SDK_HOME="$HOME/.local/xulrunner-sdk/"; export XULRUNNER_SDK_HOME
+#http_proxy=http://localhost:8123; export http_proxy
+JAVA_HOME="/usr/local/jdk1.8.0_40"; export JAVA_HOME
+NODEJS_HOME="/usr/local/node-v0.12.0-linux-x64"; export NODEJS_HOME
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/.rvm/bin:$NODEJS_HOME/bin:$JAVA_HOME/bin:$PATH"; export PATH
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    export PATH="$HOME/bin:$PATH"
-fi
-if [ -d "$HOME/.local/bin" ] ; then
-    export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# adds for java, ant, maven and tomcat
-export JAVA_HOME="$HOME/.local/java/latest"
-export ANT_HOME="$HOME/.local/ant/latest"
-export M2_HOME="$HOME/.local/maven/latest"
-export M2="${M2_HOME}/bin"
-#export MAVEN_OPTS="-Xms256m -Xmx512m"
-export CATALINA_HOME="$HOME/.local/tomcat/latest"
-export CATALINA_BASE="${CATALINA_HOME}"
-export CATALINA_PID="${CATALINA_BASE}/tomcat.pid"
-export PATH="${JAVA_HOME}/jre/bin:${JAVA_HOME}/bin:${ANT_HOME}/bin:${M2}:${PATH}"
-export MOZILLA_HOME="$HOME/.mozilla"
-export MOZ_PLUGIN_PATH="$MOZILLA_HOME/plugins"
-export XULRUNNER_SDK_HOME="$HOME/.local/xulrunner-sdk"
-export XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps"
-export WORKON_HOME="$HOME/.local/venvs"
+# RVM (RUBY)
+source "$HOME/.rvm/scripts/rvm"

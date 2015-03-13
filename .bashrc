@@ -1,6 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# ~/.bashrc
 
 # If not running interactively, don't do anything
 case $- in
@@ -8,74 +6,25 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+# include /etc/bashrc
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
+# use lesspipe
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
+# prompt definitions
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
 PROMPT_COMMAND="LAST_COMMAND=\$?"
-if [ "$color_prompt" = yes ]; then
-    if [ "`id -u`" != "0" ]; then
-        PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\[\e[1;36m\][\[\e[1;34m\]\u\[\e[1;36m\]@\[\e[1;33m\]\h\[\e[1;36m\]:\[\e[1;32m\]\W\[\e[1;36m\]]\[\e[m\] \$(if [[ "\$LAST_COMMAND" = "0" ]]; then echo \"\[\033[01;36m\]\"; else echo \"\[\033[01;36;41m\]\"; fi)\\$\[\e[m\] "
-    else
-        PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\[\e[1;36m\][\[\e[1;31m\]\u\[\e[1;36m\]@\[\e[1;33m\]\h\[\e[1;36m\]:\[\e[1;32m\]\W\[\e[1;36m\]]\[\e[m\] \$(if [[ "\$LAST_COMMAND" = "0" ]]; then echo \"\[\033[01;36m\]\"; else echo \"\[\033[01;36;41m\]\"; fi)\\$\[\e[m\] "
-    fi
+if [ "`id -u`" != "0" ]; then
+	PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\[\e[1;36m\][\[\e[1;34m\]\u\[\e[1;36m\]@\[\e[1;33m\]\h\[\e[1;36m\]:\[\e[1;32m\]\W\[\e[1;36m\]]\[\e[m\] \$(if [[ "\$LAST_COMMAND" = "0" ]]; then echo \"\[\033[01;36m\]\"; else echo \"\[\033[01;36;41m\]\"; fi)\\$\[\e[m\] "
 else
-    PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}[\u@\h:\W] \$(if [[ "\$LAST_COMMAND" != "0" ]]; then echo \"!\"; fi)\\$ "
+	PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\[\e[1;36m\][\[\e[1;31m\]\u\[\e[1;36m\]@\[\e[1;33m\]\h\[\e[1;36m\]:\[\e[1;32m\]\W\[\e[1;36m\]]\[\e[m\] \$(if [[ "\$LAST_COMMAND" = "0" ]]; then echo \"\[\033[01;36m\]\"; else echo \"\[\033[01;36;41m\]\"; fi)\\$\[\e[m\] "
 fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#PS1="\[\e]0;${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -83,28 +32,22 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# bash aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Colors definitions.
+# bash colors
 if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+# bash completion
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -113,17 +56,35 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# for use with python django web framework
+# virtualenvwrapper
+. /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+
+# functions
 djvim() {
-    vim "+cd $1" "+TlistAddFilesRecursive . [^_]*py\|*html\|*css\|*js" "+TlistOpen" "+DjangoProjectActivate $2" 2> ~/log/vim.err
+    vim "+cd $1" "+DjangoProjectActivate $2" 2> ~/log/vim.err
 }
 djgvim() {
-    gvim "+cd $1" "+TlistAddFilesRecursive . [^_]*py\|*html\|*css\|*js" "+TlistOpen" "+DjangoProjectActivate $2" 2> ~/log/gvim.err
+    gvim "+cd $1" "+DjangoProjectActivate $2" 2> ~/log/gvim.err
 }
 
-# my environment variables
+# environment variables
+TERM=xterm-256color; export TERM
+HISTCONTROL=ignoreboth; export HISTCONTROL
+HISTSIZE=1000; export HISTSIZE
+HISTFILESIZE=2000; export HISTFILESIZE
 LANG='pt_BR.UTF-8'; export LANG
 TZ='America/Sao_Paulo'; export TZ
-EDITOR='vi'; export EDITOR
+EDITOR='vim'; export EDITOR
 GPGKEY='607A5E65'; export GPGKEY
+WORKON_HOME="$HOME/.local/venvs"; export WORKON_HOME
+XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps/"; export XULRUNNER_APPS_HOME
+XULRUNNER_SDK_HOME="$HOME/.local/xulrunner-sdk/"; export XULRUNNER_SDK_HOME
 #http_proxy=http://localhost:8123; export http_proxy
+JAVA_HOME="/usr/local/jdk1.8.0_40"; export JAVA_HOME
+NODEJS_HOME="/usr/local/node-v0.12.0-linux-x64"; export NODEJS_HOME
+#PATH="$HOME/bin:$HOME/.local/bin:$HOME/.rvm/bin:$NODEJS_HOME/bin:$JAVA_HOME/bin:$PATH"; export PATH
+
+# shopt commands
+shopt -s histappend
+shopt -s checkwinsize
+shopt -s globstar
