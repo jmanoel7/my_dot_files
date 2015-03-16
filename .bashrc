@@ -65,6 +65,7 @@ djvim() {
         cd "$HOME/Meus_Projetos/$1"
         rm -f ./tags
         ctags-exuberant --languages=HTML,JavaScript,Python **
+        workon $1
         vim "+cd $HOME/Meus_Projetos/$1" "+DjangoProjectActivate $1" 2> $HOME/log/vim.err
     fi
 }
@@ -73,6 +74,7 @@ djgvim() {
         cd "$HOME/Meus_Projetos/$1"
         rm -f ./tags
         ctags-exuberant --languages=HTML,JavaScript,Python **
+        workon $1
         gvim "+cd $HOME/Meus_Projetos/$1" "+DjangoProjectActivate $1" 2> $HOME/log/gvim.err
     fi
 }
