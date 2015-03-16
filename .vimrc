@@ -62,7 +62,7 @@ set history=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
 " Set to auto read when a file is changed from the outside
-set autowriteall
+set autowrite
 
 " With a map leader it's possible to do extra key combinations
 " leader is press comma (,) key
@@ -105,7 +105,6 @@ set nohidden
 set nomodeline
 set mouse=a
 set confirm
-set notimeout ttimeout ttimeoutlen=200
 
 " Set backspace config
 set backspace=eol,start,indent
@@ -198,7 +197,7 @@ set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
-set pastetoggle=<F3>          " Press F3 for toggle paste mode
+set pastetoggle=<F2>          " Press F2 for toggle paste mode
 set cursorline
 set colorcolumn=80 " Mark 80th column with a red line
 
@@ -341,7 +340,6 @@ autocmd FileType python set fo-=t
 autocmd FileType python set ai
 autocmd FileType python set expandtab
 autocmd FileType python set smarttab
-autocmd FileType python set complete+=k/home/joaomanoel/.vim/bundle/python-syntax/syntax/python.vim
 
 " Folding
 " auto save folding : http://princ3.wordpress.com/2007/01/26/automaticaly-save-foldings-in-vim/
@@ -372,16 +370,6 @@ aug QFClose
   au!
   au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
 aug END
-
-" http://stackoverflow.com/questions/1687252/with-vim-use-both-snipmate-and-pydiction-together-share-the-tab-key "
-" Change share keys between pydiction and snipmate
-if has("gui_running")
-    " Vimdiff colorscheme
-    highlight DiffAdd cterm=none ctermfg=242424  ctermbg=Green gui=none guifg=bg guibg=Green
-    highlight DiffDelete cterm=none ctermfg=242424 ctermbg=Red gui=none guifg=bg guibg=Red
-    highlight DiffChange cterm=none ctermfg=242424 ctermbg=Yellow gui=none guifg=bg guibg=Yellow
-    highlight DiffText cterm=none ctermfg=242424 ctermbg=Magenta gui=none guifg=bg guibg=Magenta
-endif
 
 " Auto close preview menu autocomplete after choose
 " http://stackoverflow.com/questions/3105307/how-do-you-automatically-remove-the-preview-window-after-autocompletion-in-vim
@@ -632,9 +620,6 @@ let g:django_projects = '~/Meus_Projetos' "Sets all projects under project
 let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
 let g:django_activate_nerdtree = 1 "Try to open nerdtree at the project root.
 
-"let g:pydiction_location = '/home/joaomanoel/.vim/bundle/pydiction/complete-dict'
-"let g:SuperTabDefaultCompletionType = "context"
-
 " Pyflakes
 let g:pyflakes_use_quickfix = 0
 let g:syntastic_python_checkers = ['/usr/local/bin/pyflakes']
@@ -698,7 +683,7 @@ nnoremap <leader>9 :e urls.py<cr>
 let g:last_relative_dir = ''
 
 fun! RelatedFile(file)
-    #This is to check that the directory looks djangoish
+    "This is to check that the directory looks djangoish
     if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
         exec "edit %:h/" . a:file
         let g:last_relative_dir = expand("%:h") . '/'

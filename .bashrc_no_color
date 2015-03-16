@@ -55,12 +55,22 @@ fi
 # virtualenvwrapper
 . /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-# functions
+# functions for edit python django projects
 djvim() {
-    vim "+cd $1" "+DjangoProjectActivate $2" 2> ~/log/vim.err
+    if [ -d "~/Meus_Projetos/$1" ]; then
+        cd ~/Meus_Projetos/$1
+        rm -f ./tags
+        ctags-exuberant --languages=HTML,JavaScript,Python **
+        vim "+DjangoProjectActivate $1" 2> ~/log/vim.err
+    fi
 }
 djgvim() {
-    gvim "+cd $1" "+DjangoProjectActivate $2" 2> ~/log/gvim.err
+    if [ -d "~/Meus_Projetos/$1" ]; then
+        cd ~/Meus_Projetos/$1
+        rm -f ./tags
+        ctags-exuberant --languages=HTML,JavaScript,Python **
+        gvim "+DjangoProjectActivate $1" 2> ~/log/vim.err
+    fi
 }
 
 # environment variables
@@ -70,7 +80,7 @@ HISTSIZE=1000; export HISTSIZE
 HISTFILESIZE=2000; export HISTFILESIZE
 LANG='pt_BR.UTF-8'; export LANG
 TZ='America/Sao_Paulo'; export TZ
-EDITOR='nano'; export EDITOR
+EDITOR='vim'; export EDITOR
 GPGKEY='607A5E65'; export GPGKEY
 WORKON_HOME="$HOME/.local/venvs"; export WORKON_HOME
 XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps/"; export XULRUNNER_APPS_HOME
