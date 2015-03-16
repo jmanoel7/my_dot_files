@@ -503,8 +503,8 @@ nnoremap <F5> :TagbarToggle<CR>
 " ===========================================================================
 
 " Enable this for make NERDTree load every opening files
-autocmd VimEnter * NERDTree " Make Always Load NERDTree every opening files
-autocmd VimEnter * wincmd p " Automatically go to buffer every time open files
+"autocmd VimEnter * NERDTree " Make Always Load NERDTree every opening files
+"autocmd VimEnter * wincmd p " Automatically go to buffer every time open files
 
 " FIXING NERDTree, automatically close if there no file edited
 "https://github.com/scrooloose/nerdtree/issues/21
@@ -532,7 +532,7 @@ endfunction
 " Minibuffer
 
 " Show the miniBufExplorer from the start
- let g:miniBufExplorerMoreThanOne = 0 
+" let g:miniBufExplorerMoreThanOne = 0 
 
 "Not using because I don't use the vertival window
 "Use a vertical windows
