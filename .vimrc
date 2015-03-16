@@ -197,9 +197,8 @@ set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
-set pastetoggle=<F2>          " Press F2 for toggle paste mode
+set pastetoggle=<F3>          " Press F3 for toggle paste mode
 set cursorline
-set colorcolumn=80 " Mark 80th column with a red line
 
 " Taken From http://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
 autocmd FileType python highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
@@ -340,6 +339,7 @@ autocmd FileType python set fo-=t
 autocmd FileType python set ai
 autocmd FileType python set expandtab
 autocmd FileType python set smarttab
+autocmd FileType python set colorcolumn=80
 
 " Folding
 " auto save folding : http://princ3.wordpress.com/2007/01/26/automaticaly-save-foldings-in-vim/
@@ -401,7 +401,7 @@ vnoremap <Leader><C-e> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --de
 vnoremap <Leader><C-d> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --default-recipient-self --armor --decrypt 2>/dev/null<CR>
 
 " GnuPG Prepare Enviremont
-nnoremap <Leader><F2> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
+nnoremap <F2> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
 
 augroup CPT
     au!
