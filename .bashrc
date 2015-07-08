@@ -1,4 +1,9 @@
-# ~/.bashrc
+# ~/.bashrc: executed by the command interpreter for non-login shells.
+
+# include ~/.bash_env if it exists
+if [ -f ~/.bash_env ]; then
+    . ~/.bash_env
+fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -6,10 +11,15 @@ case $- in
       *) return;;
 esac
 
-# include /etc/bashrc
+# include /etc/bashrc if it exists
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
+# shopt commands
+shopt -s histappend
+shopt -s checkwinsize
+shopt -s globstar
 
 # use lesspipe
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -37,27 +47,26 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# bash aliases
+# include ~/.bash_aliases if it exists
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# bash colors
+# include ~/.bash_colors if it exists
 if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
 fi
 
 # bash completion
-if ! shopt -oq posix; then
+#if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/profile.d/bash_completion.sh ]; then
+    . /etc/profile.d/bash_completion.sh
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
-
-# virtualenvwrapper
-. /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+#fi
 
 # functions for edit python django projects
 djvim() {
@@ -79,24 +88,3 @@ djgvim() {
     fi
 }
 
-# environment variables
-TERM=xterm-256color; export TERM
-HISTCONTROL=ignoreboth; export HISTCONTROL
-HISTSIZE=1000; export HISTSIZE
-HISTFILESIZE=2000; export HISTFILESIZE
-LANG='pt_BR.UTF-8'; export LANG
-TZ='America/Sao_Paulo'; export TZ
-EDITOR='vim'; export EDITOR
-GPGKEY='607A5E65'; export GPGKEY
-WORKON_HOME="$HOME/.local/venvs"; export WORKON_HOME
-XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps/"; export XULRUNNER_APPS_HOME
-XULRUNNER_SDK_HOME="$HOME/.local/xulrunner-sdk/"; export XULRUNNER_SDK_HOME
-#http_proxy=http://localhost:8123; export http_proxy
-JAVA_HOME="/usr/local/jdk1.8.0_40"; export JAVA_HOME
-NODEJS_HOME="/usr/local/node-v0.12.0-linux-x64"; export NODEJS_HOME
-#PATH="$HOME/bin:$HOME/.local/bin:$HOME/.rvm/bin:$NODEJS_HOME/bin:$JAVA_HOME/bin:$PATH"; export PATH
-
-# shopt commands
-shopt -s histappend
-shopt -s checkwinsize
-shopt -s globstar
