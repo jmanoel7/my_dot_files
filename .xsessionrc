@@ -1,0 +1,4 @@
+# include ~/.bash_env if it exists
+if [ -f ~/.bash_env ]; then
+    . ~/.bash_env
+fi

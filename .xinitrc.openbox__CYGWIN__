@@ -1,0 +1,5 @@
+#!/bin/sh
+xrdb -load ~/.Xresources
+tint2 &
+urxvt &
+exec openbox-session
