@@ -2,7 +2,7 @@
 gtk-theme-name=oxygen-gtk
 #gtk-icon-theme-name=oxygen
 gtk-icon-theme-name=oxymentary
-gtk-font-name=Aller 9
+gtk-font-name=Aller 10
 gtk-cursor-theme-name=oxy-bluecurve
 gtk-cursor-theme-size=24
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ

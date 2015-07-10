@@ -1,12 +1,12 @@
 include "/usr/share/themes/Adwaita/gtk-2.0/gtkrc"
 
 style "user-font" {
-	font_name = "Aller 9"
+	font_name = "Aller 10"
 }
 
 widget_class "*" style "user-font"
 
-gtk-font-name="Aller 9"
+gtk-font-name="Aller 10"
 
 #gtk-icon-theme-name = "Adwaita"
 gtk-icon-theme-name = "gnome-brave"
