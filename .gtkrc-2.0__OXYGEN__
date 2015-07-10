@@ -1,12 +1,12 @@
 include "/usr/share/themes/oxygen-gtk/gtk-2.0/gtkrc"
 
 style "user-font" {
-	font_name = "DejaVu Sans Mono 9"
+	font_name = "Aller 9"
 }
 
 widget_class "*" style "user-font"
 
-gtk-font-name="DejaVu Sans Mono 9"
+gtk-font-name="Aller 9"
 
 #gtk-icon-theme-name = "oxygen"
 gtk-icon-theme-name = "oxymentary"

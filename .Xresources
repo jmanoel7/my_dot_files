@@ -92,7 +92,7 @@ URxvt.font: xft:DejavuSansMono:style=Book:size=10
 URxvt.iconFile: /home/joaomanoel/.icons/oxymentary/128x128/apps/utilities-terminal.png
 URxvt*loginShell: true
 !URxvt.letterSpace: -5
-URxvt.perl-ext-common: default,url-select,fullscreen,tabbedex,clipboard,vtwheel,kuake<F12>
+URxvt.perl-ext-common: default,url-select,fullscreen,tabbedex,clipboard,vtwheel
 URxvt.keysym.F11: perl:fullscreen:switch
 !URxvt.url-launcher: /usr/bin/x-www-browser
 !URxvt.matcher.button: 1
