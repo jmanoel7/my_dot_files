@@ -48,3 +48,5 @@ alias 256colors='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -
 alias ST="scrot -b 'scrot_%d-%m-%Y_%H:%M:%S_\$wx\$h.png' -e 'mv \$f ~/Dropbox/Captura_de_Tela/'"
 alias STS="scrot -b -s 'scrot_%d-%m-%Y_%H:%M:%S_\$wx\$h.png' -e 'mv \$f ~/Dropbox/Captura_de_Tela/'"
 alias STU="scrot -b -u 'scrot_%d-%m-%Y_%H:%M:%S_\$wx\$h.png' -e 'mv \$f ~/Dropbox/Captura_de_Tela/'"
+alias P2I='sudo pip2 install --force-reinstall --upgrade --no-cache-dir --no-use-wheel --compile'
+alias P3I='sudo pip3 install --force-reinstall --upgrade --no-use-wheel --compile'
