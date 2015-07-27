@@ -1,5 +1,0 @@
-#!/bin/sh
-xrdb -load ~/.Xresources
-tint2 -c ~/.config/tint2/openbox.tint2rc__CYGWIN__ &
-urxvt &
-exec openbox-session

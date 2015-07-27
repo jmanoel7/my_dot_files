@@ -23,5 +23,5 @@ Icon=clipit-trayicon
 Exec=clipit
 Terminal=false
 Type=Application
-OnlyShowIn=GNOME;XFCE;LXDE;Unity;
-X-GNOME-Autostart-enabled=false
+OnlyShowIn=GNOME;XFCE;LXDE;Unity;OPENBOX;MATE;Razor;
+X-GNOME-Autostart-enabled=true

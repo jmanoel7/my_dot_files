@@ -1,0 +1,59 @@
+! jcsl 
+! 2012
+! Punto medio
+
+border.width: 1
+padding.width: 3
+padding.height: 0
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+window.label.text.justify: Center
+
+*.title.bg: Gradient MirrorHorizontal Flat
+*.title.bg.color: #E0DDDB
+*.title.bg.colorTo: #F0EDEB
+
+!shadow=n
+
+menu.border.width: 1
+menu.overlap.x: 5
+menu.separator.padding.height: 1
+!menu.items.inactive.bg: Parentrelative
+!menu.title.bg: Parentrelative
+menu.items.bg: Gradient Vertical Flat
+menu.items.bg.color: #E1DFDD
+menu.items.bg.colorTo: #C2BBB8
+menu.*.text.color: #221F1E
+menu.border.color: #C2BBB8
+menu.separator.color: #aea7a3
+menu.items.active.bg: Gradient SplitVertical Flat
+menu.items.active.bg.color: #63c0f6
+menu.items.active.bg.color.splitTo: #74ccfd
+menu.items.active.bg.colorTo: #63c0f6
+menu.items.active.bg.colorTo.splitTo: #47aee9
+menu.items.active.text.color: #FFFFFF
+menu.items.active.disabled.text.color: #898887
+menu.items.disabled.text.color: #898887
+
+window.*.title.separator.color: #E6E2E0
+window.*.label.bg: Parentrelative
+window.*.label.text.font:shadow=y:shadowtint=-99:shadowoffset=1
+
+window.active.label.text.color: #221f1e
+window.active.border.color: #54A7F0
+window.active.button.*.bg: Parentrelative
+window.active.button.*.bg.color: #D6D2D0
+window.active.button.*.image.color: #5C5752
+window.active.button.hover.image.color: #3AAADD
+window.active.button.toggled.hover.image.color: #3AAADD
+
+!window.inactive.title.separator.color: #E6E2E0
+!window.inactive.label.bg: Parentrelative
+!window.inactive.label.text.font:shadow=y:shadowtint=-99:shadowoffset=1
+
+window.inactive.label.text.color: #878381
+window.inactive.border.color: #777777
+window.inactive.button.*.bg: Parentrelative
+window.inactive.button.*.bg.color: #D6D2D0
+window.inactive.button.*.image.color: #B3B3B3

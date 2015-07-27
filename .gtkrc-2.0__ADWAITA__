@@ -8,8 +8,7 @@ widget_class "*" style "user-font"
 
 gtk-font-name="Aller 10"
 
-#gtk-icon-theme-name = "Adwaita"
-gtk-icon-theme-name = "gnome-brave"
+gtk-icon-theme-name = "Adwaita"
 
 gtk-cursor-theme-name = "Adwaita"
 

@@ -63,7 +63,6 @@ uxterm*toolBar:            false
 
 
 ! URxvt ----------------------------------------------------------------------
-
 URxvt.perl-lib: /home/joaomanoel/.urxvt/perl
 URxvt.cursorUnderline: true
 URxvt.cursorBlink: true
@@ -89,7 +88,7 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 !URxvt*faceName: DejavuSansMono:style=Book:size=10
 URxvt.font: xft:DejavuSansMono:style=Book:size=10
-URxvt.iconFile: /home/joaomanoel/.icons/oxymentary/128x128/apps/utilities-terminal.png
+URxvt.iconFile: /usr/share/icons/oxymentary/128x128/apps/utilities-terminal.png
 URxvt*loginShell: true
 !URxvt.letterSpace: -5
 URxvt.perl-ext-common: default,url-select,fullscreen,tabbedex,clipboard,vtwheel

@@ -170,7 +170,7 @@ set number  " show line numbers
 set tw=79   " width of document (used by gd)
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
-set colorcolumn=120
+set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
 " easier formatting of paragraphs
@@ -460,7 +460,8 @@ let g:UltiSnipsUsePythonVersion = 2
 
 
 " MiniBufferExplorer
-" NerdComment
+" vim-session
+" suround
 " django
 " virtualenv
 " taskbar
