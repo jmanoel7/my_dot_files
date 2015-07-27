@@ -9,6 +9,7 @@ case "$1" in
         volumeicon &
         clipit &
         nm-applet &
+        orage &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
         /bin/sh -c 'sleep 5; dropbox start -i' &
@@ -23,6 +24,7 @@ case "$1" in
         volumeicon &
         clipit &
         nm-applet &
+        orage &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
         /bin/sh -c 'sleep 5; dropbox start -i' &
@@ -37,6 +39,7 @@ case "$1" in
         volumeicon &
         clipit &
         nm-applet &
+        orage &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
         /bin/sh -c 'sleep 5; dropbox start -i' &
