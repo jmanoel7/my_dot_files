@@ -8,6 +8,7 @@
     [exec] (Komodo Edit 9) {/home/joaomanoel/.local/bin/komodo-edit-9} <>
     [exec] (Firefox Stable) {/home/joaomanoel/.local/bin/firefox-stable} <>
     [exec] (Firefox Dev) {/home/joaomanoel/.local/bin/firefox-dev} <>
+    [exec] (Transmission GTK) {/usr/bin/transmission-gtk} <>
 [end]
 [include] (/etc/X11/fluxbox/fluxbox-menu)
 [end]
