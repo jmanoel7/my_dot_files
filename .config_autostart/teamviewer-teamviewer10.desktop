@@ -8,4 +8,4 @@ Exec=/opt/teamviewer/tv_bin/script/teamviewer
 Icon=/opt/teamviewer/tv_bin/desktop/teamviewer.png
 Hidden=false
 Categories=Network;
-NotShowIn=OPENBOX;MATE;Razor;
+NotShowIn=OPENBOX;MATE;Razor;XFCE;

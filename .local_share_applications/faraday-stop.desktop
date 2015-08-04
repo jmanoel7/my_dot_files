@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Stop Faraday IPE
+GenericName=Collaborative Penetration Test IDE
+Comment=
+Icon=/home/joaomanoel/.icons/faraday.png
+Exec=faraday-stop.sh
+Terminal=true
+Categories=Security;IPE;Python;System;Utility;

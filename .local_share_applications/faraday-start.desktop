@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Start Faraday IPE
+GenericName=Collaborative Penetration Test IDE
+Comment=
+Icon=/home/joaomanoel/.icons/faraday.png
+Exec=faraday-start.sh
+Terminal=true
+Categories=Security;IPE;Python;System;Utility;

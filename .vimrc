@@ -33,7 +33,7 @@ endtry
 
 " Vim Gui
 if has("gui_running")
-  "set guioptions-=T
+  set guioptions-=T
   set lines=40
   set co=120
 endif

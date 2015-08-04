@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Name=ChatZilla
+Name[pt_BR]=ChatZilla
+Comment=Chat with other people using Internet Relay Chat
+Comment[pt_BR]=Converse com outras pessoas usando Internet Relay Chat
+GenericName=IRC Client
+GenericName[pt_BR]=Cliente de IRC
+Keywords=chat;xchat;x-chat;irc
+Exec=chatzilla.sh %u
+Terminal=false
+Type=Application
+Icon=/home/joaomanoel/.icons/chatzilla.xpm
+Categories=GTK;Network;IRCClient;
+MimeType=x-scheme-handler/irc;x-scheme-handler/ircs;
+StartupNotify=true
+X-GNOME-UsesNotifications=true

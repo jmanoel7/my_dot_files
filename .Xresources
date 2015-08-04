@@ -128,3 +128,6 @@ URxvt.keysym.Control-Shift-Left: perl:tabbedex:move_tab_left
 URxvt.keysym.Control-Shift-Right: perl:tabbedex:move_tab_right
 URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
 URxvt.tabbed.no-tabbedex-keys: true
+
+! mouse theme
+Xcursor*theme: DMZ-Black

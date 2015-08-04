@@ -1,0 +1,15 @@
+show_frame=true
+fg_set=true
+bg_set=true
+timezone=
+width_set=true
+height_set=true
+data0=%H:%M
+font0=Aller Display 10
+tooltip=%a, %d %b %Y
+hib_timing=true
+fg=65535R 0G 0B
+width=45
+height=22
+bg=9252R 9252G 9252B
+

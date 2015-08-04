@@ -1,0 +1,5 @@
+WebBrowser=custom-WebBrowser
+MailReader=custom-MailReader
+TerminalEmulator=debian-x-terminal-emulator
+FileManager=Thunar
+

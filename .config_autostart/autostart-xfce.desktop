@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Exec=/home/joaomanoel/bin/autostart-xfce.sh
+Hidden=false
+Terminal=false
+Name=Auto Start Script
+Comment=Execute ~/bin/autostart-xfce.sh
+OnlyShowIn=XFCE;

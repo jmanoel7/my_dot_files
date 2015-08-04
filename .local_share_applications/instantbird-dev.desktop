@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Instantbird Internet Messenger
+Name[pt_BR]=Mensageiro da Internet Instantbird
+GenericName=Internet Messenger
+GenericName[pt_BR]=Mensageiro da Internet
+Comment=Chat over IM.  Supports AIM, Google Talk, Jabber/XMPP, MSN, Yahoo and more
+Comment[pt_BR]=Bate-papos instantâneos.  Suporta AIM, Google Talk, Jabber/XMPP, MSN, Yahoo e outros
+Exec=instantbird-dev
+Icon=instantbird-dev
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;

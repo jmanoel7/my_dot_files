@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox - Emanuela
+Name[pt_BR]=Firefox - Emanuela
+Comment=Browse the World Wide Web
+Comment[pt_BR]=Navegue na Internet
+GenericName=Web Browser
+GenericName[pt_BR]=Navegador Web
+Keywords=Internet;WWW;Browser;Web;Explorer
+Keywords[pt_BR]=Internet;WWW;Browser;Web;Explorador;Navegador
+Exec=firefox-stable -P emanuela %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/joaomanoel/.icons/firefox-stable.png
+Categories=GNOME;GTK;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
+StartupNotify=true

@@ -1,0 +1,56 @@
+favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,gvim.desktop,komodo-edit-9.desktop,instantbird-dev.desktop,thunderbird-stable.desktop,firefox-stable.desktop,firefox-dev.desktop,google-chrome.desktop,transmission-gtk.desktop
+recent=xfce-settings-manager.desktop,thunderbird-stable.desktop,xscreensaver-properties.desktop,Rcmdr.desktop,wxmaxima.desktop,xmaxima.desktop,scilab.desktop,gmchess.desktop,gthumb.desktop
+button-title=Menu
+button-icon=/home/joaomanoel/.icons/debian-swirl.svg
+button-single-row=false
+show-button-title=true
+show-button-icon=true
+launcher-show-name=true
+launcher-show-description=true
+item-icon-size=2
+hover-switch-category=true
+category-icon-size=1
+load-hierarchy=true
+favorites-in-recent=false
+display-recent-default=false
+position-search-alternate=true
+position-commands-alternate=false
+position-categories-alternate=true
+menu-width=653
+menu-height=402
+command-settings=xfce4-settings-manager
+show-command-settings=true
+command-lockscreen=xflock4
+show-command-lockscreen=true
+command-switchuser=gdmflexiserver
+show-command-switchuser=true
+command-logout=xfce4-session-logout
+show-command-logout=true
+command-menueditor=menulibre
+show-command-menueditor=true
+search-actions=4
+
+[action0]
+name=Página principal
+pattern=#
+command=exo-open --launch TerminalEmulator man %s
+regex=false
+
+[action1]
+name=Wikipedia
+pattern=!w
+command=exo-open --launch WebBrowser http://en.wikipedia.org/wiki/%u
+regex=false
+
+[action2]
+name=Executar em terminal
+pattern=!
+command=exo-open --launch TerminalEmulator %s
+regex=false
+
+[action3]
+name=Abrir URI
+pattern=^(file|http|https):\\/\\/(.*)$
+command=exo-open \\0
+regex=true
+

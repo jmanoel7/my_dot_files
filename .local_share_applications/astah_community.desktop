@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=astah* community
+Comment=Lightweight, easy-to-use, and free UML2.x modeler
+Comment[ja]=UMLの学習に最適な個人向けツールです
+Exec=astah-com
+Icon=/home/joaomanoel/.icons/astah_community.png
+NoDisplay=false
+Terminal=false
+Type=Application
+Categories=Application;Utility;Development;
+MimeType=application/x-astah

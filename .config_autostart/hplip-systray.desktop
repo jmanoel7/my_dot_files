@@ -12,4 +12,4 @@ Terminal=false
 StartupNotify=false
 Categories=Application;Utility;
 X-KDE-StartupNotify=false
-NotShowIn=Razor;
+NotShowIn=Razor;XFCE;

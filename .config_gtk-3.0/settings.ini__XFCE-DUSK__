@@ -1,6 +1,6 @@
 [Settings]
-gtk-theme-name=Mona 3.0
-gtk-icon-theme-name=gnome-brave
+gtk-theme-name=Xfce-dusk
+gtk-icon-theme-name=elementaryXubuntu-dark
 gtk-font-name=Aller 10
 gtk-cursor-theme-name=DMZ-Black
 gtk-cursor-theme-size=24
@@ -14,4 +14,4 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle=hintslight
 gtk-xft-rgba=rgb
-#gtk-application-prefer-dark-theme=1
+gtk-application-prefer-dark-theme=1
