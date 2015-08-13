@@ -1,60 +1,49 @@
 #!/bin/bash
-[ -f ~/.xsessionrc ] && . ~/.xsessionrc
-[ -f ~/.Xresources ] && xrdb -load ~/.Xresources
+if [ -f ~/.xsessionrc ]; then
+    . ~/.xsessionrc
+fi
+if [ -f ~/.Xresources ]; then
+    xrdb -load ~/.Xresources
+fi
+if [ -z "$1" ]; then
+    SESSION_NAME="mate-session"
+else
+    SESSION_NAME="$1"
+fi
 setxkbmap br
-case "$1" in
-    "/usr/bin/i3")
+case "$SESSION_NAME" in
+    "i3")
         compton -b -f -m 0.95 &
         nitrogen --restore &
         volumeicon &
         clipit &
         nm-applet &
-        orage &
-        sleep 0.5
-        orage -t &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
         /bin/sh -c 'sleep 5; dropbox start -i' &
         /bin/sh -c 'sleep 5; killall -9 gnome-keyring-daemon' &
-        thunar --daemon &
+        caja --no-default-window --no-desktop &
         i3-sensible-terminal &
         exec /usr/bin/i3
         ;;
-    "/usr/bin/i3-with-shmlog")
+    "i3-with-shmlog")
         compton -b -f -m 0.95 &
         nitrogen --restore &
         volumeicon &
         clipit &
         nm-applet &
-        orage &
-        sleep 0.5
-        orage -t &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
         /bin/sh -c 'sleep 5; dropbox start -i' &
         /bin/sh -c 'sleep 5; killall -9 gnome-keyring-daemon 2>&1 /dev/null' &
-        thunar --daemon &
+        caja --no-default-window --no-desktop &
         i3-sensible-terminal &
         exec /usr/bin/i3-with-shmlog
         ;;
-    "/usr/bin/startfluxbox")
-        compton -b -f -m 0.95 &
-        fbsetbg -l &
-        volumeicon &
-        clipit &
-        nm-applet &
-        orage &
-        sleep 0.5
-        orage -t &
-        #/opt/teamviewer/tv_bin/script/teamviewer &
-        #hp-systray -x &
-        /bin/sh -c 'sleep 5; dropbox start -i' &
-        /bin/sh -c 'sleep 5; killall -9 gnome-keyring-daemon 2>&1 /dev/null' &
-        thunar --daemon &
-        guake &
-        exec /usr/bin/startfluxbox
+    "mate-session")
+        exec "/usr/bin/mate-session"
         ;;
     *)
-        exec "$1"
+        exec "$SESSION_NAME"
         ;;
 esac
