@@ -102,12 +102,12 @@ nnoremap <leader><C-v> "+gP
 vnoremap <leader><C-y> "+y
 vnoremap <leader><C-x> "+x
 
-" Case Words
+" triggers to format text
 vnoremap <Leader><C-l> :s/\(.\)/\L\1\E/g<CR>1GVG:s/\(\<.\)/\U\1\E/g<CR>1GVG:s/\(\<.\{1,3}\>\)/\L\1\E/g<CR>1GVG:s/ \(i\|ii\|iii\|iv\|v\|vi\|vii\|viii\|ix\|x\)$/\U\1\E/<CR>
-
-" pretty-printing JSON
-nnoremap <leader><F9> :execute '%!python -m json.tool' \| w<CR>
-nnoremap <leader><F10> :execute '%!json' \| w<CR>
+nnoremap <leader><F7> :up<CR>:execute '%!isort ' . expand('%')<CR>
+nnoremap <leader><F8> :up<CR>:execute '%!yapf ' . expand('%') \| w<CR>
+nnoremap <leader><F9> :up<CR>:execute '%!python -m json.tool' \| w<CR>
+nnoremap <leader><F10> :up<CR>:execute '%!json' \| w<CR>
 
 " Bind nohl
 " Removes highlight of your last search
