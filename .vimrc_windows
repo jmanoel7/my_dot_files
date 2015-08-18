@@ -20,6 +20,9 @@
 "set whichwrap+=<,>,h,l
 "set nolazyredraw "Don't redraw while executing macros 
 
+" initial config for easytags
+let g:easytags_include_members=1
+
 " Encoding and Font
 set gfn=Dejavu\ Sans\ Mono
 set encoding=utf8
@@ -64,8 +67,8 @@ let g:mapleader=","
 " Write Command
 nmap <leader>w :w!<cr>
 
-" Edit vimrc config file
-map <leader>e :e! ~\_vimrc<cr>
+" Edit vim config file
+map <leader>e :e! ~/_vimrc<cr>
 
 " GnuPG Encrypt
 vnoremap <Leader><C-e> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --default-recipient-self --armor --encrypt 2>/dev/null<CR>
@@ -91,17 +94,20 @@ augroup CPT
     au BufWritePost *.cpt set nobin
 augroup END
 
+" set up zope page templates as the zpt filetype
+autocmd BufNewFile,BufRead *.pt,*.cpt,*.zpt set filetype=zpt syntax=xml
+
 " paste, copy and cut
 nnoremap <leader><C-v> "+gP
 vnoremap <leader><C-y> "+y
 vnoremap <leader><C-x> "+x
 
-" Case Words
+" triggers to format text
 vnoremap <Leader><C-l> :s/\(.\)/\L\1\E/g<CR>1GVG:s/\(\<.\)/\U\1\E/g<CR>1GVG:s/\(\<.\{1,3}\>\)/\L\1\E/g<CR>1GVG:s/ \(i\|ii\|iii\|iv\|v\|vi\|vii\|viii\|ix\|x\)$/\U\1\E/<CR>
-
-" pretty-printing JSON
-nnoremap <leader><F9> :execute '%!python -m json.tool' \| w<CR>
-nnoremap <leader><F10> :execute '%!json' \| w<CR>
+nnoremap <leader><F7> :up<CR>:execute '%!isort ' . expand('%')<CR>
+nnoremap <leader><F8> :up<CR>:execute '%!yapf ' . expand('%') \| w<CR>
+nnoremap <leader><F9> :up<CR>:execute '%!python -m json.tool' \| w<CR>
+nnoremap <leader><F10> :up<CR>:execute '%!json' \| w<CR>
 
 " Bind nohl
 " Removes highlight of your last search
@@ -164,7 +170,7 @@ set number  " show line numbers
 set tw=79   " width of document (used by gd)
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
-set colorcolumn=120
+set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
 " easier formatting of paragraphs
@@ -206,6 +212,10 @@ execute pathogen#infect()
 execute pathogen#helptags()
 "call pathogen#infect()
 
+" ============================================================================
+" Plugins Setup
+" ============================================================================
+
 " Color scheme
 " cd ~/.vim/bundle
 " git clone https://github.com/jmanoel7/vim-colors.git
@@ -214,13 +224,9 @@ set t_Co=256
 colorscheme wombat256mod
 "colorscheme wombat_mbe
 
-" ============================================================================
-" Plugins Setup
-" ============================================================================
-
 " Settings for vim-powerline
 " cd ~/.vim/bundle
-" git clone git://github.com/Lokaltog/vim-powerline.git
+" git clone https://github.com/Lokaltog/vim-powerline.git
 set laststatus=2
 
 " Settings for ctrlp
@@ -251,11 +257,18 @@ set wildignore+=*/coverage/*
 
 " Settings for jedi-vim
 " cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+" git clone https://github.com/davidhalter/jedi-vim.git
+"let g:jedi#goto_command = "<leader>d"
+"let g:jedi#goto_assignments_command = "<leader>g"
+"let g:jedi#goto_definitions_command = ""
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<leader>n"
+"let g:jedi#completions_command = "<C-Space>"
+"let g:jedi#rename_command = "<leader>r"
+"let g:jedi#popup_on_dot = 1
+"let g:jedi#popup_select_first = 1
+let g:jedi#completions_enabled = 0
+map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -299,3 +312,166 @@ let g:GPGExecutable="gpg2"
 " cd ~/.vim/bundle
 " git clone https://github.com/dhruvasagar/vim-table-mode.git
 
+" VIM Latex-Suite
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-latex/vim-latex.git
+set shellslash
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
+" Emmet (ex-Zen Coding) - vim plugins for HTML and CSS hi-speed coding
+" cd ~/.vim/bundle
+" git clone http://github.com/mattn/emmet-vim/
+"let g:user_emmet_mode='n'    "only enable normal mode functions.
+"let g:user_emmet_mode='inv'  "enable all functions, which is equal to
+let g:user_emmet_mode='a'    "enable all function in all mode.
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,django EmmetInstall
+let g:user_emmet_leader_key='<C-Z>'
+
+" L9 : Vim-script library
+" cd ~/.vim/bundle
+" hg clone https://bitbucket.org/ns9tks/vim-l9
+
+" FuzzyFinder
+" cd ~/.vim/bundle
+" hg clone https://bitbucket.org/ns9tks/vim-fuzzyfinder
+map <leader>f :FufFileWithCurrentBufferDir<CR>
+map <leader>m :FufFileWithFullCwd<CR>
+map <leader>b :FufBuffer<CR>
+
+" MRU
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-scripts/mru.vim.git
+map <leader><space> :MRU<CR>
+let g:MRU_Max_Entries = 1000
+let g:MRU_Window_Height = 15
+let g:MRU_Max_Menu_Entries = 20
+let g:MRU_Max_Submenu_Entries = 15
+
+" TagBar
+" cd ~/.vim/bundle
+" git clone https://github.com/majutsushi/tagbar
+let g:tagbar_usearrows=1
+let g:tagbar_width=30
+let g:tagbar_singleclick=1
+" Use <F9> to open Tagbar in Right side
+nmap <F9> :TagbarToggle<CR>
+
+" Vim-EasyTags
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-easytags.git
+let g:easytags_cmd = '/gnuwin32/bin/ctags.exe'
+let g:easytags_file = '~/vimfiles/tags'
+let g:easytags_by_filetype = '~/vimfiles/tags_dir'
+let g:easytags_events = ['BufWritePost']
+let g:easytags_python_enabled = 1
+"let g:easytags_python_script = ???
+set tags=./_tags;,~/vimfiles/tags
+let g:easytags_dynamic_files = 1
+
+" Vim-Misc
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-misc.git
+
+" Syntastic
+" cd ~/.vim/bundle
+" git clone https://github.com/scrooloose/syntastic.git
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+nmap <F8> :SyntasticCheck<CR>
+nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
+"let g:syntastic_aggregate_errors = 1
+"let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perlcritic', 'podchecker', 'perl']
+let g:syntastic_python_checkers = ['flake8', 'pep8', 'pyflakes', 'python']
+"let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_zpt_checkers = ['zptlint']
+let g:syntastic_html_checkers = ['w3', 'tidy']
+let g:syntastic_html_tidy_exec = 'tidy5'
+"let g:syntastic_html_w3_api (string; default: 'http://validator.w3.org/check')
+"let g:syntastic_html_w3_exec (string; default: 'curl')
+" list of errors to ignore
+"let g:syntastic_html_tidy_ignore_errors (list; default: [])
+"let g:syntastic_html_tidy_ignore_errors = [ '<input> proprietary attribute "role"' ]
+" list of additional blocklevel tags, to be added to --new-blocklevel-tags 
+"let g:syntastic_html_tidy_blocklevel_tags (list; default: [])
+" list of additional inline tags, to be added to --new-inline-tags 
+"let g:syntastic_html_tidy_inline_tags (list; default: [])
+" list of additional empty tags, to be added to --new-empty-tags 
+"let g:syntastic_html_tidy_empty_tags (list; default: [])
+let g:syntastic_xhtml_checkers = ['tidy', 'jshint']
+let g:syntastic_xml_checkers = ['xmllint']
+let g:syntastic_javascript_checkers = ['jslint', 'jshint']
+let g:syntastic_javascript_jslint_args = "--white --nomen --regexp --browser --devel --windows --sloppy --vars"
+let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_css_checkers = ['csslint', 'prettycss']
+let g:syntastic_php_checkers = ['phplint', 'php']
+let g:syntastic_java_checkers = ['javac']
+let g:syntastic_nasm_checkers = ['nasm']
+let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_zsh_checkers = ['zsh']
+let g:syntastic_tex_checkers = ['lacheck', 'chktex']
+let g:syntastic_text_checkers = ['language_check']
+let g:syntastic_text_language_check_args = '--language=pt-BR'
+
+" YouCompleteMe
+" cd ~/.vim/bundle
+" git clone https://github.com/Valloric/YouCompleteMe.git
+" git submodule update --init --recursive
+" ./install.sh --clang-completer --system-libclang --system-boost
+
+
+" Ultisnips
+" cd ~/.vim/bundle
+" git clone https://github.com/SirVer/ultisnips.git
+
+" The default value for g:UltiSnipsJumpBackwardTrigger interferes with the
+" built-in complete function: |i_CTRL-X_CTRL-K|. A workaround is to add the
+" following to your vimrc file or switching to a plugin like Supertab or
+" YouCompleteMe.
+inoremap <c-x><c-k> <c-x><c-k>
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
+
+" To use python version 2.x
+let g:UltiSnipsUsePythonVersion = 2
+
+" To use python version 3.x
+"let g:UltiSnipsUsePythonVersion = 3
+
+
+" vim-snippets
+" cd ~/.vim/bundle
+" git clone https://github.com/honza/vim-snippets.git
+
+
+" MiniBufferExplorer
+" vim-session
+" suround
+" django
+" virtualenv
+" taskbar
+
+
+" ============================================================================ "
+" Removed Plugins
+" ============================================================================ "
+
+" Conque
+" NerdTree
+" pyflakes
+" pep8
