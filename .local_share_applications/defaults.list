@@ -1,9 +1,9 @@
 [Default Applications]
-inode/directory=Thunar.desktop
+inode/directory=caja.desktop
 x-scheme-handler/http=firefox-stable.desktop
-x-scheme-handler/trash=Thunar.desktop
+x-scheme-handler/trash=caja.desktop
 x-scheme-handler/https=firefox-stable.desktop
-x-scheme-handler/file=Thunar.desktop
-x-scheme-handler/terminal=rxvt-unicode.desktop
+x-scheme-handler/file=caja.desktop
+x-scheme-handler/terminal=terminator.desktop
 x-scheme-handler/mailto=thunderbird-stable.desktop
 text/plain=gvim.desktop;komodo-edit-9.desktop

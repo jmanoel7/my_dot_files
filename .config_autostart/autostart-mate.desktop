@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Exec=/home/jmanoel7/bin/autostart-mate.sh
+Hidden=false
+Terminal=false
+Name=Auto Start Script
+Comment=Execute ~/bin/autostart-mate.sh
+OnlyShowIn=MATE;
+X-MATE-Autostart-enabled=true

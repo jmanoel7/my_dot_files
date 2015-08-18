@@ -1,15 +1,14 @@
 [Desktop Entry]
 Version=0.6
 Type=Application
+Name=HP System Tray Service
+GenericName=Printer Status Applet
+Comment=HP System Tray Service
 Exec=hp-systray -x
 Icon=/usr/share/hplip/data/images/128x128/hp_logo.png
-Name=HP System Tray Service
-Comment=HP System Tray Service
-GenericName=Printer Status Applet
-NotShowIn=OPENBOX;MATE;Razor;
-Hidden=false
 Terminal=false
-StartupNotify=false
 Categories=Application;Utility;
 X-KDE-StartupNotify=false
-NotShowIn=Razor;XFCE;
+StartupNotify=false
+OnlyShowIn=MATE;
+X-MATE-Autostart-enabled=false

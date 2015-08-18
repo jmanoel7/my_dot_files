@@ -5,4 +5,4 @@ Type=Application
 NoDisplay=true
 Exec=xdotool key Super_L+m
 Name=Root Menu
-Icon=/home/joaomanoel/.icons/debian-swirl.png
+Icon=/home/jmanoel7/.icons/debian-swirl.png

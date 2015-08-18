@@ -3,6 +3,6 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 NoDisplay=true
-Exec=/home/joaomanoel/.local/thunderbird-stable/thunderbird %u
+Exec=/home/jmanoel7/.local/thunderbird-stable/thunderbird %u
 Name=Thunderbird
 Comment=Definição personalizada para Thunderbird

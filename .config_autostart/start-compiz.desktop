@@ -2,10 +2,10 @@
 Version=1.0
 Encoding=UTF-8
 Type=Application
-Exec=/home/joaomanoel/bin/start-compiz.sh
+Exec=/home/jmanoel7/bin/start-compiz.sh
 Hidden=false
 Terminal=false
 Name=Start Compiz
 Comment=
 OnlyShowIn=MATE;
-X-MATE-Autostart-enabled=true
+X-MATE-Autostart-enabled=false

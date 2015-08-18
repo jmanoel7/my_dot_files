@@ -3,6 +3,6 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 NoDisplay=true
-Exec=/home/joaomanoel/.local/firefox-dev/firefox %u
+Exec=/home/jmanoel7/.local/firefox-dev/firefox %u
 Name=Firefox Developer Edition
 Comment=Definição personalizada para Firefox Developer Edition
