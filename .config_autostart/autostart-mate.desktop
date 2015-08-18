@@ -2,11 +2,7 @@
 Version=1.0
 Encoding=UTF-8
 Type=Application
-<<<<<<< HEAD
 Exec=/home/jmanoel7/bin/autostart-mate.sh
-=======
-Exec=/home/joaomanoel/bin/autostart-mate.sh
->>>>>>> f7b18a35f5dc2e60e5daf701f80eef5702c52aa8
 Hidden=false
 Terminal=false
 Name=Auto Start Script

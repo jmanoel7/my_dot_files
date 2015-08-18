@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Wine Internet Explorer
-MimeType=image/png;
-Exec=env WINEPREFIX="/home/jmanoel7/.wine" wine-development start /ProgIDOpen pngfile %f
-NoDisplay=true
-StartupNotify=true
-Icon=FB4C_iexplore.0
