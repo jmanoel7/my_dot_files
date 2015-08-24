@@ -402,7 +402,7 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 " cd ~/.vim/bundle
 " git clone https://github.com/Valloric/YouCompleteMe.git
 " git submodule update --init --recursive
-" ./install.sh --clang-completer --system-libclang --system-boost
+" ./install.sh --clang-completer --system-libclang --system-boost --omnisharp-completer
 
 
 " Ultisnips
