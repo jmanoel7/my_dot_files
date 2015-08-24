@@ -1,5 +1,4 @@
 #!/usr/bin/env xdg-open
-
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
@@ -10,6 +9,6 @@ Comment=An emulator of various Sega systems of the 8, 16 and 32-bit era
 Icon=/home/jmanoel7/.icons/kega-fusion.png
 Exec=kega-fusion
 Categories=Game
-Path=/home/jmanoel7
+Path=/home/jmanoel7/Jogos
 Terminal=false
 StartupNotify=false

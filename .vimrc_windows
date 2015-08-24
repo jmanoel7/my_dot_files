@@ -18,7 +18,7 @@
 "set nohidden
 "set nomodeline
 "set whichwrap+=<,>,h,l
-"set nolazyredraw "Don't redraw while executing macros 
+"set nolazyredraw "Don't redraw while executing macros
 
 " initial config for easytags
 let g:easytags_include_members=1
@@ -240,35 +240,6 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-" Settings for python-mode
-" Note: I'm no longer using this. Leave this commented out
-" and uncomment the part about jedi-vim instead
-" cd ~/.vim/bundle
-" git clone https://github.com/klen/python-mode
-"" map <Leader>g :call RopeGotoDefinition()<CR>
-"" let ropevim_enable_shortcuts = 1
-"" let g:pymode_rope_goto_def_newwin = "vnew"
-"" let g:pymode_rope_extended_complete = 1
-"" let g:pymode_breakpoint = 0
-"" let g:pymode_syntax = 1
-"" let g:pymode_syntax_builtin_objs = 0
-"" let g:pymode_syntax_builtin_funcs = 0
-"" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
-" Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone https://github.com/davidhalter/jedi-vim.git
-"let g:jedi#goto_command = "<leader>d"
-"let g:jedi#goto_assignments_command = "<leader>g"
-"let g:jedi#goto_definitions_command = ""
-"let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>n"
-"let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#rename_command = "<leader>r"
-"let g:jedi#popup_on_dot = 1
-"let g:jedi#popup_select_first = 1
-let g:jedi#completions_enabled = 0
-map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -401,11 +372,11 @@ let g:syntastic_html_tidy_exec = 'tidy5'
 " list of errors to ignore
 "let g:syntastic_html_tidy_ignore_errors (list; default: [])
 "let g:syntastic_html_tidy_ignore_errors = [ '<input> proprietary attribute "role"' ]
-" list of additional blocklevel tags, to be added to --new-blocklevel-tags 
+" list of additional blocklevel tags, to be added to --new-blocklevel-tags
 "let g:syntastic_html_tidy_blocklevel_tags (list; default: [])
-" list of additional inline tags, to be added to --new-inline-tags 
+" list of additional inline tags, to be added to --new-inline-tags
 "let g:syntastic_html_tidy_inline_tags (list; default: [])
-" list of additional empty tags, to be added to --new-empty-tags 
+" list of additional empty tags, to be added to --new-empty-tags
 "let g:syntastic_html_tidy_empty_tags (list; default: [])
 let g:syntastic_xhtml_checkers = ['tidy', 'jshint']
 let g:syntastic_xml_checkers = ['xmllint']
@@ -437,12 +408,13 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 " built-in complete function: |i_CTRL-X_CTRL-K|. A workaround is to add the
 " following to your vimrc file or switching to a plugin like Supertab or
 " YouCompleteMe.
-inoremap <c-x><c-k> <c-x><c-k>
+"inoremap <c-x><c-k> <c-x><c-k>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
@@ -457,8 +429,11 @@ let g:UltiSnipsUsePythonVersion = 2
 " vim-snippets
 " cd ~/.vim/bundle
 " git clone https://github.com/honza/vim-snippets.git
+map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
+" NerdTree
+" Conque
 " MiniBufferExplorer
 " vim-session
 " suround
@@ -471,7 +446,37 @@ let g:UltiSnipsUsePythonVersion = 2
 " Removed Plugins
 " ============================================================================ "
 
-" Conque
-" NerdTree
+
+" Settings for python-mode
+" Note: I'm no longer using this. Leave this commented out
+" and uncomment the part about jedi-vim instead
+" cd ~/.vim/bundle
+" git clone https://github.com/klen/python-mode
+"" map <Leader>g :call RopeGotoDefinition()<CR>
+"" let ropevim_enable_shortcuts = 1
+"" let g:pymode_rope_goto_def_newwin = "vnew"
+"" let g:pymode_rope_extended_complete = 1
+"" let g:pymode_breakpoint = 0
+"" let g:pymode_syntax = 1
+"" let g:pymode_syntax_builtin_objs = 0
+"" let g:pymode_syntax_builtin_funcs = 0
+"" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+
+" Settings for jedi-vim
+" cd ~/.vim/bundle
+" git clone https://github.com/davidhalter/jedi-vim.git
+"let g:jedi#goto_command = "<leader>d"
+"let g:jedi#goto_assignments_command = "<leader>g"
+"let g:jedi#goto_definitions_command = ""
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<leader>n"
+"let g:jedi#completions_command = "<C-Space>"
+"let g:jedi#rename_command = "<leader>r"
+"let g:jedi#popup_on_dot = 1
+"let g:jedi#popup_select_first = 1
+"let g:jedi#completions_enabled = 0
+
+
 " pyflakes
 " pep8

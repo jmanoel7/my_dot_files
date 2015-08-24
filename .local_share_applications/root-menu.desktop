@@ -1,8 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-NoDisplay=true
-Exec=xdotool key Super_L+m
-Name=Root Menu
-Icon=/home/jmanoel7/.icons/debian-swirl.png

@@ -64,3 +64,10 @@ uxterm*toolBar:            false
 
 ! mouse theme
 Xcursor*theme: DMZ-Black
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault

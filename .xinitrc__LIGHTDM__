@@ -1,17 +1,19 @@
 #!/bin/bash
+
 if [ -f ~/.xsessionrc ]; then
     . ~/.xsessionrc
 fi
+
 if [ -f ~/.Xresources ]; then
     xrdb -load ~/.Xresources
 fi
-if [ -z "$1" ]; then
-    SESSION_NAME="mate-session"
-else
-    SESSION_NAME="$1"
+
+DEFAULT_SESSION="gnome-session"
+if [ -n "$1" ]; then
+    DEFAULT_SESSION="$1"
 fi
-setxkbmap br
-case "$SESSION_NAME" in
+
+case "$DEFAULT_SESSION" in
     "i3")
         compton -b -f -m 0.95 &
         nitrogen --restore &
@@ -24,7 +26,7 @@ case "$SESSION_NAME" in
         /bin/sh -c 'sleep 5; killall -9 gnome-keyring-daemon' &
         caja --no-default-window --no-desktop &
         i3-sensible-terminal &
-        exec /usr/bin/i3
+        exec ck-launch-session dbus-launch /usr/bin/i3
         ;;
     "i3-with-shmlog")
         compton -b -f -m 0.95 &
@@ -38,12 +40,12 @@ case "$SESSION_NAME" in
         /bin/sh -c 'sleep 5; killall -9 gnome-keyring-daemon 2>&1 /dev/null' &
         caja --no-default-window --no-desktop &
         i3-sensible-terminal &
-        exec /usr/bin/i3-with-shmlog
+        exec ck-launch-session dbus-launch /usr/bin/i3-with-shmlog
         ;;
-    "mate-session")
-        exec "/usr/bin/mate-session"
+    "gnome-session")
+        exec ck-launch-session dbus-launch gnome-session
         ;;
     *)
-        exec "$SESSION_NAME"
+        exec ck-launch-session dbus-launch $DEFAULT_SESSION
         ;;
 esac

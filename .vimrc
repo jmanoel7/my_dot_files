@@ -105,9 +105,11 @@ vnoremap <leader><C-x> "+x
 " Case Words
 vnoremap <Leader><C-l> :s/\(.\)/\L\1\E/g<CR>1GVG:s/\(\<.\)/\U\1\E/g<CR>1GVG:s/\(\<.\{1,3}\>\)/\L\1\E/g<CR>1GVG:s/ \(i\|ii\|iii\|iv\|v\|vi\|vii\|viii\|ix\|x\)$/\U\1\E/<CR>
 
-" pretty-printing JSON
-nnoremap <leader><F9> :execute '%!python -m json.tool' \| w<CR>
-nnoremap <leader><F10> :execute '%!json' \| w<CR>
+" pretty-printing JSON, PYTHON IMPORT AND PYTHON PEP8 
+nnoremap <leader><F5> :up<CR>:execute '%!json' \| w<CR>
+nnoremap <leader><F6> :up<CR>:execute '%!python -m json.tool' \| w<CR>
+nnoremap <leader><F7> :up<CR>:execute '%!isort ' . expand('%')<CR>
+nnoremap <leader><F8> :up<CR>:execute '%!yapf ' . expand('%') \| w<CR>
 
 " Bind nohl
 " Removes highlight of your last search
@@ -212,9 +214,11 @@ execute pathogen#infect()
 execute pathogen#helptags()
 "call pathogen#infect()
 
+
 " ============================================================================
 " Plugins Setup
 " ============================================================================
+
 
 " Color scheme
 " cd ~/.vim/bundle
@@ -240,35 +244,6 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-" Settings for python-mode
-" Note: I'm no longer using this. Leave this commented out
-" and uncomment the part about jedi-vim instead
-" cd ~/.vim/bundle
-" git clone https://github.com/klen/python-mode
-"" map <Leader>g :call RopeGotoDefinition()<CR>
-"" let ropevim_enable_shortcuts = 1
-"" let g:pymode_rope_goto_def_newwin = "vnew"
-"" let g:pymode_rope_extended_complete = 1
-"" let g:pymode_breakpoint = 0
-"" let g:pymode_syntax = 1
-"" let g:pymode_syntax_builtin_objs = 0
-"" let g:pymode_syntax_builtin_funcs = 0
-"" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
-" Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone https://github.com/davidhalter/jedi-vim.git
-"let g:jedi#goto_command = "<leader>d"
-"let g:jedi#goto_assignments_command = "<leader>g"
-"let g:jedi#goto_definitions_command = ""
-"let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>n"
-"let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#rename_command = "<leader>r"
-"let g:jedi#popup_on_dot = 1
-"let g:jedi#popup_select_first = 1
-let g:jedi#completions_enabled = 0
-map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -394,7 +369,7 @@ let g:syntastic_perl_checkers = ['perlcritic', 'podchecker', 'perl']
 let g:syntastic_python_checkers = ['flake8', 'pep8', 'pyflakes', 'python']
 "let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_zpt_checkers = ['zptlint']
-let g:syntastic_html_checkers = ['w3', 'tidy']
+let g:syntastic_html_checkers = ['tidy', 'w3']
 let g:syntastic_html_tidy_exec = 'tidy5'
 "let g:syntastic_html_w3_api (string; default: 'http://validator.w3.org/check')
 "let g:syntastic_html_w3_exec (string; default: 'curl')
@@ -422,6 +397,7 @@ let g:syntastic_tex_checkers = ['lacheck', 'chktex']
 let g:syntastic_text_checkers = ['language_check']
 let g:syntastic_text_language_check_args = '--language=pt-BR'
 
+
 " YouCompleteMe
 " cd ~/.vim/bundle
 " git clone https://github.com/Valloric/YouCompleteMe.git
@@ -437,12 +413,13 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 " built-in complete function: |i_CTRL-X_CTRL-K|. A workaround is to add the
 " following to your vimrc file or switching to a plugin like Supertab or
 " YouCompleteMe.
-inoremap <c-x><c-k> <c-x><c-k>
+"inoremap <c-x><c-k> <c-x><c-k>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
@@ -457,8 +434,11 @@ let g:UltiSnipsUsePythonVersion = 2
 " vim-snippets
 " cd ~/.vim/bundle
 " git clone https://github.com/honza/vim-snippets.git
+map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
+" NerdTree
+" Conque
 " MiniBufferExplorer
 " vim-session
 " suround
@@ -471,7 +451,37 @@ let g:UltiSnipsUsePythonVersion = 2
 " Removed Plugins
 " ============================================================================ "
 
-" Conque
-" NerdTree
+
+" Settings for python-mode
+" Note: I'm no longer using this. Leave this commented out
+" and uncomment the part about jedi-vim instead
+" cd ~/.vim/bundle
+" git clone https://github.com/klen/python-mode
+"" map <Leader>g :call RopeGotoDefinition()<CR>
+"" let ropevim_enable_shortcuts = 1
+"" let g:pymode_rope_goto_def_newwin = "vnew"
+"" let g:pymode_rope_extended_complete = 1
+"" let g:pymode_breakpoint = 0
+"" let g:pymode_syntax = 1
+"" let g:pymode_syntax_builtin_objs = 0
+"" let g:pymode_syntax_builtin_funcs = 0
+"" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+
+" Settings for jedi-vim
+" cd ~/.vim/bundle
+" git clone https://github.com/davidhalter/jedi-vim.git
+"let g:jedi#goto_command = "<leader>d"
+"let g:jedi#goto_assignments_command = "<leader>g"
+"let g:jedi#goto_definitions_command = ""
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<leader>n"
+"let g:jedi#completions_command = "<C-Space>"
+"let g:jedi#rename_command = "<leader>r"
+"let g:jedi#popup_on_dot = 1
+"let g:jedi#popup_select_first = 1
+"let g:jedi#completions_enabled = 0
+
+
 " pyflakes
 " pep8

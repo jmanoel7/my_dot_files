@@ -4,6 +4,6 @@ Name=Stop Faraday IPE
 GenericName=Collaborative Penetration Test IDE
 Comment=
 Icon=/home/jmanoel7/.icons/faraday.png
-Exec=faraday-stop.sh
+Exec=/home/jmanoel7/bin/faraday-stop.sh
 Terminal=true
 Categories=Security;IPE;Python;System;Utility;
