@@ -336,7 +336,7 @@ nmap <F9> :TagbarToggle<CR>
 " Vim-EasyTags
 " cd ~/.vim/bundle
 " git clone https://github.com/xolox/vim-easytags.git
-let g:easytags_cmd = '/usr/bin/ctags-exuberant'
+let g:easytags_cmd = '/usr/bin/ctags'
 let g:easytags_file = '~/.vim/tags'
 let g:easytags_by_filetype = '~/.vim/tags_dir'
 let g:easytags_events = ['BufWritePost']

@@ -8,5 +8,4 @@ Exec=/opt/teamviewer/tv_bin/script/teamviewer
 Icon=/opt/teamviewer/tv_bin/desktop/teamviewer.png
 Hidden=false
 Categories=Network;
-OnlyShowIn=MATE;
-X-MATE-Autostart-enabled=false
+X-GNOME-Autostart-enabled=false

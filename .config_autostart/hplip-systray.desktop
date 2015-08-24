@@ -10,5 +10,4 @@ Terminal=false
 Categories=Application;Utility;
 X-KDE-StartupNotify=false
 StartupNotify=false
-OnlyShowIn=MATE;
-X-MATE-Autostart-enabled=false
+X-GNOME-Autostart-enabled=false
