@@ -3,3 +3,6 @@
 .bash_history
 sessions/
 bundle/
+.viminfo
+.vim_mru_files
+.pythonhist
