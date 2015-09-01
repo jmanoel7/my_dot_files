@@ -212,22 +212,25 @@ execute pathogen#infect()
 execute pathogen#helptags()
 "call pathogen#infect()
 
+
 " ============================================================================
 " Plugins Setup
 " ============================================================================
+
 
 " Color scheme
 " cd ~/.vim/bundle
 " git clone https://github.com/jmanoel7/vim-colors.git
 set background=dark
 set t_Co=256
-colorscheme wombat256mod
-"colorscheme wombat_mbe
+colorscheme wombat256mod_mbe
+
 
 " Settings for vim-powerline
 " cd ~/.vim/bundle
 " git clone https://github.com/Lokaltog/vim-powerline.git
 set laststatus=2
+
 
 " Settings for ctrlp
 " cd ~/.vim/bundle
@@ -258,14 +261,17 @@ endfunction
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
+
 " Python folding and more
 " cd ~/.vim/bundle
 " git clone https://github.com/jmanoel7/vim-utils.git
 set nofoldenable
 
+
 " Vim Games
 " cd ~/.vim/bundle
 " git clone https://github.com/jmanoel7/vim-games.git
+
 
 " GnuPG
 " cd ~/.vim/bundle
@@ -275,13 +281,16 @@ let g:GPGPreferSign=1
 let g:GPGUseAgent=1
 let g:GPGExecutable="gpg2"
 
+
 " scriptease.vim: A Vim plugin for Vim plugins
 " cd ~/.vim/bundle
 " git clone https://github.com/tpope/vim-scriptease.git
 
+
 " VIM Table Mode
 " cd ~/.vim/bundle
 " git clone https://github.com/dhruvasagar/vim-table-mode.git
+
 
 " VIM Latex-Suite
 " cd ~/.vim/bundle
@@ -289,6 +298,7 @@ let g:GPGExecutable="gpg2"
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
+
 
 " Emmet (ex-Zen Coding) - vim plugins for HTML and CSS hi-speed coding
 " cd ~/.vim/bundle
@@ -300,9 +310,11 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,django EmmetInstall
 let g:user_emmet_leader_key='<C-Z>'
 
+
 " L9 : Vim-script library
 " cd ~/.vim/bundle
 " hg clone https://bitbucket.org/ns9tks/vim-l9
+
 
 " FuzzyFinder
 " cd ~/.vim/bundle
@@ -310,6 +322,7 @@ let g:user_emmet_leader_key='<C-Z>'
 map <leader>f :FufFileWithCurrentBufferDir<CR>
 map <leader>m :FufFileWithFullCwd<CR>
 map <leader>b :FufBuffer<CR>
+
 
 " MRU
 " cd ~/.vim/bundle
@@ -320,6 +333,7 @@ let g:MRU_Window_Height = 15
 let g:MRU_Max_Menu_Entries = 20
 let g:MRU_Max_Submenu_Entries = 15
 
+
 " TagBar
 " cd ~/.vim/bundle
 " git clone https://github.com/majutsushi/tagbar
@@ -328,6 +342,7 @@ let g:tagbar_width=30
 let g:tagbar_singleclick=1
 " Use <F9> to open Tagbar in Right side
 nmap <F9> :TagbarToggle<CR>
+
 
 " Vim-EasyTags
 " cd ~/.vim/bundle
@@ -341,9 +356,11 @@ let g:easytags_python_enabled = 1
 set tags=./_tags;,~/vimfiles/tags
 let g:easytags_dynamic_files = 1
 
+
 " Vim-Misc
 " cd ~/.vim/bundle
 " git clone https://github.com/xolox/vim-misc.git
+
 
 " Syntastic
 " cd ~/.vim/bundle
@@ -365,7 +382,7 @@ let g:syntastic_perl_checkers = ['perlcritic', 'podchecker', 'perl']
 let g:syntastic_python_checkers = ['flake8', 'pep8', 'pyflakes', 'python']
 "let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_zpt_checkers = ['zptlint']
-let g:syntastic_html_checkers = ['w3', 'tidy']
+let g:syntastic_html_checkers = ['tidy', 'w3']
 let g:syntastic_html_tidy_exec = 'tidy5'
 "let g:syntastic_html_w3_api (string; default: 'http://validator.w3.org/check')
 "let g:syntastic_html_w3_exec (string; default: 'curl')
@@ -392,6 +409,7 @@ let g:syntastic_zsh_checkers = ['zsh']
 let g:syntastic_tex_checkers = ['lacheck', 'chktex']
 let g:syntastic_text_checkers = ['language_check']
 let g:syntastic_text_language_check_args = '--language=pt-BR'
+
 
 " YouCompleteMe
 " cd ~/.vim/bundle
@@ -432,14 +450,118 @@ let g:UltiSnipsUsePythonVersion = 2
 map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
+" MiniBufferExplorer
+" cd ~/.vim/bundle
+" git clone https://github.com/fholgado/minibufexpl.vim.git
+
+" MiniBufExpl Colors
+"hi MBENormal               guifg=#808080 guibg=fg
+"hi MBEChanged              guifg=#CD5907 guibg=fg
+"hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+"hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+"hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+"hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+
+" Taken from http://dotfiles.org/~joaoTrindade/.vimrc
+" Minibuffer
+
+" Show the miniBufExplorer from the start
+"let g:miniBufExplorerMoreThanOne = 0 
+
+" Use a vertical windows
+"let g:miniBufExplVSplit = 5
+
+" Put the miniBufExplorer windows at the right
+"let g:miniBufExplSplitBelow=1
+
+"Maximum size of the mini buffer explorer window
+let g:miniBufExplMaxSize = 15
+
+"Still haven't discovered what it does
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplUseSingleClick = 1
+let g:miniBufExplMapWindowNavVim = 1
+
+" make tabs show complete (no broken on two lines)
+let g:miniBufExplTabWrap = 1
+
+" If you use other explorers like TagList you can (As of 6.2.8) set it at 1:
+let g:miniBufExplModSelTarget = 1
+
+" If you would like to single click on tabs rather than double clicking on them to goto the selected buffer.
+let g:miniBufExplUseSingleClick = 1
+
+" for buffers that have NOT CHANGED and are NOT VISIBLE.
+"highlight MBENormal guifg=Blue
+
+" for buffers that HAVE CHANGED and are NOT VISIBLE
+"highlight MBEChanged guifg=Red
+
+" buffers that have NOT CHANGED and are VISIBLE
+"highlight MBEVisibleNormal term=bold cterm=bold gui=bold guifg=Green
+
+" buffers that have CHANGED and are VISIBLE
+"highlight MBEVisibleChanged term=bold cterm=bold gui=bold guifg=Green
+
+let g:bufExplorerSortBy = "name"
+
+autocmd BufRead,BufNew :call UMiniBufExplorer
+
+
+" vim-fugitive
+" cd ~/.vim/bundle
+" git clone https://github.com/tpope/vim-fugitive.git
+let g:statusline="%{fugitive#statusline()}"
+
+
+" vim-repeat
+" cd ~/.vim/bundle
+" git clone git://github.com/tpope/vim-repeat.git
+
+
+" vim-surround
+" cd ~/.vim/bundle
+" git clone git://github.com/tpope/vim-surround.git
+
+
+" delimitMate
+" cd ~/.vim/bundle
+" git clone https://github.com/Raimondi/delimitMate.git
+autocmd FileType python let b:delimitMate_autoclose = 1
+autocmd FileType javascript let b:delimitMate_autoclose = 1
+autocmd FileType css let b:delimitMate_autoclose = 1
+autocmd FileType xml let b:delimitMate_autoclose = 1
+autocmd FileType html let b:delimitMate_autoclose = 1
+
+
+" TaskList.vim
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-scripts/TaskList.vim.git
+map <F7> :TaskList<CR>
+
+
+" vim-misc-xolox
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-misc.git vim-misc-xolox
+
+
+" vim-shell
+" cd ~/.vim/bundle
+" git clobne https://github.com/xolox/vim-shell.git
+let g:shell_mappings_enabled = 0
+inoremap <Leader><F11> <C-o>:Fullscreen<CR>
+nnoremap <Leader><F11> :Fullscreen<CR>
+inoremap <Leader><F12> <C-o>:Open<CR>
+nnoremap <Leader><F12> :Open<CR>
+
+
+" vim-notes
+" vim-session
 " NerdTree
 " Conque
-" MiniBufferExplorer
-" vim-session
-" suround
 " django
 " virtualenv
-" taskbar
 
 
 " ============================================================================ "
