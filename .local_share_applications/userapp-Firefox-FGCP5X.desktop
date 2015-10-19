@@ -3,6 +3,6 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 NoDisplay=true
-Exec=/home/jmanoel7/.local/firefox-stable/firefox %u
+Exec=/usr/lib/firefox/firefox %u
 Name=Firefox
 Comment=Definição personalizada para Firefox

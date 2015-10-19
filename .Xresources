@@ -1,5 +1,5 @@
 ! --------------------------------------------------------------------------------
-! tangoesque scheme
+! TANGOESque scheme
 ! --------------------------------------------------------------------------------
 *background: #111111
 *foreground: #babdb6
@@ -54,7 +54,7 @@ xterm*toolBar:            false
 ! --------------------------------------------------------------------------------
 uxterm*VT100.geometry:     120x24
 uxterm*faceName:           FreeMono:style=Regular:size=10
-!uxterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+!uxterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*!
 uxterm*dynamicColors:      true
 uxterm*utf8:               2
 uxterm*eightBitInput:      true
@@ -113,24 +113,24 @@ URxvt.background: [90]#111111
 !URxvt*.shading: 110
 !
 URxvt*saveLines:                      1000000
-URxvt*mouseWheelScrollPage:           true
-URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 0
-!URxvt.secondaryWheel: 1
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.scrollBar_floating: false
+URxvt*mouseWheelScrollPage:           false
+!URxvt.secondaryScreen: false
+!URxvt.secondaryScroll: false
+!URxvt.secondaryWheel: false
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt.scrollBar_floating: true
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
-!URxvt.scrollstyle: plain
+URxvt.scrollstyle: rxvt
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
+URxvt*scrollWithBuffer: false
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
 !URxvt*faceName: DejavuSansMono:style=Book:size=10
 !URxvt.font: xft:DejavuSansMono:style=Book:size=10
-!URxvt.iconFile: /usr/share/icons/oxymentary/128x128/apps/utilities-terminal.png
+URxvt.iconFile: /usr/share/icons/gnome-colors-common/scalable/apps/terminal.svg
 URxvt*loginShell: true
 !URxvt.letterSpace: -5
 URxvt.keysym.F11: perl:fullscreen:switch

@@ -4,10 +4,12 @@
 # sourced by /etc/lxdm/Xsession
 #
 
+# execute dbus-launch with gpg-agent
 if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+    eval "$(dbus-launch --sh-syntax --exit-with-session gpg-agent --sh --enable-ssh-support --daemon)"
 fi
 
-# Environment variables
-#
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+# include ~/.xsessionrc if it exists
+if [ -x ~/.xsessionrc ]; then
+    . ~/.xsessionrc
+fi

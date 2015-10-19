@@ -1,7 +1,3 @@
-# include ~/.bash_env if it exists
 if [ -f ~/.bash_env ]; then
     . ~/.bash_env
 fi
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-setxkbmap br
-(sleep 2; dropbox start -i) &

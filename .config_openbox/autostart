@@ -1,0 +1,30 @@
+# panel
+(sleep 1s && tint2) &
+
+# Set wallpaper
+(sleep 1s && nitrogen --restore) &
+
+# Enable as required
+eval "$(ssh-agent -s)"
+#xbacklight -set 100 &
+#/usr/bin/synclient TouchpadOff=1 &
+#xxkb &
+compton -b -m 0.9 -o 0.9 -e 1.0 -i 1.0 &
+
+# File manager (daemon mode)
+(sleep 2 && spacefm -d) &
+
+# hddtemp
+(sleep 2 && hddtemp -d SATA:/dev/sda) &
+
+# Networking system tray applet
+(sleep 3 && nm-applet) &
+
+# Volume control
+(sleep 3 && volumeicon) &
+
+# Onscreen system stats
+(sleep 4 && ~/bin/conkywonky.sh) &
+
+# Dropbox
+(sleep 3 && dropbox start) &

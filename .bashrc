@@ -11,9 +11,9 @@ case $- in
       *) return;;
 esac
 
-# include /etc/bashrc if it exists
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+# include /etc/bash.bashrc if it exists
+if [ -f /etc/bash.bashrc ]; then
+	. /etc/bash.bashrc
 fi
 
 # shopt commands

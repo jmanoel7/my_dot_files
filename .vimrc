@@ -366,7 +366,7 @@ cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdele
 "let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perlcritic', 'podchecker', 'perl']
-let g:syntastic_python_checkers = ['flake8', 'pep8', 'pyflakes', 'python']
+let g:syntastic_python_checkers = ['flake8', 'pep8', 'pyflakes', 'python2']
 "let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_zpt_checkers = ['zptlint']
 let g:syntastic_html_checkers = ['tidy', 'w3']

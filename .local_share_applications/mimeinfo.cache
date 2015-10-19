@@ -1,13 +1,11 @@
 [MIME Cache]
-application/vnd.mozilla.xul+xml=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
-application/x-xpinstall=thunderbird-stable.desktop;
-application/xhtml+xml=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
-text/html=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
-text/mml=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
-text/xml=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
-x-scheme-handler/ftp=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
-x-scheme-handler/http=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
-x-scheme-handler/https=firefox-emanuela.desktop;firefox-stable.desktop;firefox-dev.desktop;
+application/vnd.mozilla.xul+xml=firefox-dev.desktop;
+application/xhtml+xml=firefox-dev.desktop;
+text/html=firefox-dev.desktop;
+text/mml=firefox-dev.desktop;
+text/xml=firefox-dev.desktop;
+x-scheme-handler/ftp=firefox-dev.desktop;
+x-scheme-handler/http=firefox-dev.desktop;
+x-scheme-handler/https=firefox-dev.desktop;
 x-scheme-handler/irc=chatzilla.desktop;
 x-scheme-handler/ircs=chatzilla.desktop;
-x-scheme-handler/mailto=thunderbird-stable.desktop;
