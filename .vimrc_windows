@@ -450,6 +450,47 @@ let g:UltiSnipsUsePythonVersion = 2
 map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
+" jedi-vim
+" cd ~/.vim/bundle
+" git clone --recursive https://github.com/davidhalter/jedi-vim.git
+" pip2 install --force-reinstall -U jedi
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_splits_not_buffers = "bottom"
+let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+
+
+" SimpylFold
+" cd ~/.vim/bundle
+" git clone https://github.com/tmhedberg/SimpylFold.git
+let g:SimpylFold_docstring_preview = 1
+"let g:SimpylFold_fold_docstring = 0
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
+
+" vim-pyunit
+" cd ~/.vim/bundle
+" git clone git://github.com/nvie/vim-pyunit.git
+" pip2 install --force-reinstall -U nose vim_bridge mock
+" cd ~/src
+" git clone https://github.com/mcrute/nose-machineout.git
+" cd nose-machineout    
+" sudo python2 ./setup.py install
+let g:no_pyunit_maps = 1
+noremap <Leader><F9> :call PyUnitRunTests()<CR>
+noremap! <Leader><F9> <Esc>:call PyUnitRunTests()<CR>
+
+
 " MiniBufferExplorer
 " cd ~/.vim/bundle
 " git clone https://github.com/fholgado/minibufexpl.vim.git
@@ -585,20 +626,7 @@ nnoremap <Leader><F12> :Open<CR>
 "" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
-" Settings for jedi-vim
+" Settings for vim-flake8
 " cd ~/.vim/bundle
-" git clone https://github.com/davidhalter/jedi-vim.git
-"let g:jedi#goto_command = "<leader>d"
-"let g:jedi#goto_assignments_command = "<leader>g"
-"let g:jedi#goto_definitions_command = ""
-"let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>n"
-"let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#rename_command = "<leader>r"
-"let g:jedi#popup_on_dot = 1
-"let g:jedi#popup_select_first = 1
-"let g:jedi#completions_enabled = 0
+" GIT clone https://github.com/nvie/vim-flake8.git
 
-
-" pyflakes
-" pep8

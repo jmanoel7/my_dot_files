@@ -437,14 +437,159 @@ let g:UltiSnipsUsePythonVersion = 2
 map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
+" jedi-vim
+" cd ~/.vim/bundle
+" git clone --recursive https://github.com/davidhalter/jedi-vim.git
+" pip2 install --force-reinstall -U jedi
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_splits_not_buffers = "bottom"
+let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+
+
+" SimpylFold
+" cd ~/.vim/bundle
+" git clone https://github.com/tmhedberg/SimpylFold.git
+let g:SimpylFold_docstring_preview = 1
+"let g:SimpylFold_fold_docstring = 0
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
+
+" vim-pyunit
+" cd ~/.vim/bundle
+" git clone git://github.com/nvie/vim-pyunit.git
+" pip2 install --force-reinstall -U nose vim_bridge mock
+" cd ~/src
+" git clone https://github.com/mcrute/nose-machineout.git
+" cd nose-machineout
+" sudo python2 ./setup.py install
+let g:no_pyunit_maps = 1
+noremap <Leader><F9> :call PyUnitRunTests()<CR>
+noremap! <Leader><F9> <Esc>:call PyUnitRunTests()<CR>
+
+
+" MiniBufferExplorer
+" cd ~/.vim/bundle
+" git clone https://github.com/fholgado/minibufexpl.vim.git
+
+" MiniBufExpl Colors
+"hi MBENormal               guifg=#808080 guibg=fg
+"hi MBEChanged              guifg=#CD5907 guibg=fg
+"hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+"hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+"hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+"hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+
+" Taken from http://dotfiles.org/~joaoTrindade/.vimrc
+" Minibuffer
+
+" Show the miniBufExplorer from the start
+"let g:miniBufExplorerMoreThanOne = 0 
+
+" Use a vertical windows
+"let g:miniBufExplVSplit = 5
+
+" Put the miniBufExplorer windows at the right
+"let g:miniBufExplSplitBelow=1
+
+"Maximum size of the mini buffer explorer window
+let g:miniBufExplMaxSize = 15
+
+"Still haven't discovered what it does
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplUseSingleClick = 1
+let g:miniBufExplMapWindowNavVim = 1
+
+" make tabs show complete (no broken on two lines)
+let g:miniBufExplTabWrap = 1
+
+" If you use other explorers like TagList you can (As of 6.2.8) set it at 1:
+let g:miniBufExplModSelTarget = 1
+
+" If you would like to single click on tabs rather than double clicking on them to goto the selected buffer.
+let g:miniBufExplUseSingleClick = 1
+
+" for buffers that have NOT CHANGED and are NOT VISIBLE.
+"highlight MBENormal guifg=Blue
+
+" for buffers that HAVE CHANGED and are NOT VISIBLE
+"highlight MBEChanged guifg=Red
+
+" buffers that have NOT CHANGED and are VISIBLE
+"highlight MBEVisibleNormal term=bold cterm=bold gui=bold guifg=Green
+
+" buffers that have CHANGED and are VISIBLE
+"highlight MBEVisibleChanged term=bold cterm=bold gui=bold guifg=Green
+
+let g:bufExplorerSortBy = "name"
+
+autocmd BufRead,BufNew :call UMiniBufExplorer
+
+
+" vim-fugitive
+" cd ~/.vim/bundle
+" git clone https://github.com/tpope/vim-fugitive.git
+let g:statusline="%{fugitive#statusline()}"
+
+
+" vim-repeat
+" cd ~/.vim/bundle
+" git clone git://github.com/tpope/vim-repeat.git
+
+
+" vim-surround
+" cd ~/.vim/bundle
+" git clone git://github.com/tpope/vim-surround.git
+
+
+" delimitMate
+" cd ~/.vim/bundle
+" git clone https://github.com/Raimondi/delimitMate.git
+autocmd FileType python let b:delimitMate_autoclose = 1
+autocmd FileType javascript let b:delimitMate_autoclose = 1
+autocmd FileType css let b:delimitMate_autoclose = 1
+autocmd FileType xml let b:delimitMate_autoclose = 1
+autocmd FileType html let b:delimitMate_autoclose = 1
+
+
+" TaskList.vim
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-scripts/TaskList.vim.git
+map <F7> :TaskList<CR>
+
+
+" vim-misc-xolox
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-misc.git vim-misc-xolox
+
+
+" vim-shell
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-shell.git
+let g:shell_mappings_enabled = 0
+inoremap <Leader><F11> <C-o>:Fullscreen<CR>
+nnoremap <Leader><F11> :Fullscreen<CR>
+inoremap <Leader><F12> <C-o>:Open<CR>
+nnoremap <Leader><F12> :Open<CR>
+
+
+" vim-notes
+" vim-session
 " NerdTree
 " Conque
-" MiniBufferExplorer
-" vim-session
-" suround
 " django
 " virtualenv
-" taskbar
 
 
 " ============================================================================ "
@@ -456,7 +601,7 @@ map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 " Note: I'm no longer using this. Leave this commented out
 " and uncomment the part about jedi-vim instead
 " cd ~/.vim/bundle
-" git clone https://github.com/klen/python-mode
+" GIT clone https://github.com/klen/python-mode
 "" map <Leader>g :call RopeGotoDefinition()<CR>
 "" let ropevim_enable_shortcuts = 1
 "" let g:pymode_rope_goto_def_newwin = "vnew"
@@ -468,20 +613,7 @@ map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
-" Settings for jedi-vim
+" Settings for vim-flake8
 " cd ~/.vim/bundle
-" git clone https://github.com/davidhalter/jedi-vim.git
-"let g:jedi#goto_command = "<leader>d"
-"let g:jedi#goto_assignments_command = "<leader>g"
-"let g:jedi#goto_definitions_command = ""
-"let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>n"
-"let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#rename_command = "<leader>r"
-"let g:jedi#popup_on_dot = 1
-"let g:jedi#popup_select_first = 1
-"let g:jedi#completions_enabled = 0
+" GIT clone https://github.com/nvie/vim-flake8.git
 
-
-" pyflakes
-" pep8
