@@ -8,8 +8,22 @@
 # for ssh logins, install and configure the libpam-umask package.
 umask 022
 
-# include ~/.bashrc if it exists
-if [ -f "$HOME/.bashrc" ]; then
-. "$HOME/.bashrc"
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
 fi
 
+# set PATH so it includes user's private bin if it exists
+#if [ -d "$HOME/bin" ] ; then
+#    PATH="$HOME/bin:$PATH"
+#fi
+
+# set up alsa
+/usr/bin/amixer sset Master Mono 90% unmute  &> /dev/null
+/usr/bin/amixer sset Master 90% unmute  &> /dev/null
+/usr/bin/amixer sset PCM 90% unmute &> /dev/null
+
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

@@ -1,12 +1,12 @@
 include "/home/joaomanoel/.themes/Mona 3.0/gtk-2.0/gtkrc"
 
 style "user-font" {
-	font_name = "Aller 10"
+	font_name = "DejaVu Sans Book 10"
 }
 
 widget_class "*" style "user-font"
 
-gtk-font-name="Aller 10"
+gtk-font-name="DejaVu Sans Book 10"
 
 gtk-icon-theme-name = "gnome-brave"
 

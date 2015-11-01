@@ -7,3 +7,4 @@ bundle/
 .vim_mru_files
 .pythonhist
 .vim-fuf-data/
+.xsession-errors

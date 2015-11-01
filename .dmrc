@@ -1,3 +1,5 @@
+
+
 [Desktop]
-Language=pt_BR.UTF-8
-Session=i3
+Language=pt_BR.utf8
+Session=mate

@@ -58,15 +58,15 @@ if [ -f ~/.bash_colors ]; then
 fi
 
 # bash completion
-#if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
+if ! shopt -oq posix; then
+  if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
   elif [ -f /etc/profile.d/bash_completion.sh ]; then
     . /etc/profile.d/bash_completion.sh
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+  elif [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
   fi
-#fi
+fi
 
 # functions for edit python django projects
 djvim() {
