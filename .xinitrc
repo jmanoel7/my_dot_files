@@ -1,46 +1,60 @@
-#!/bin/sh
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
+#!/bin/bash
 
-if [ -z "$(pidof -x Xsession)" ]; then
-    if [ -d /etc/X11/xinit/xinitrc.d ]; then
-        for f in /etc/X11/xinit/xinitrc.d/*; do
-            [ -x "$f" ] && . "$f"
-        done
-        unset f
-    fi
-    setxkbmap "$(cat ~/.Xkbmap)"
-    xrdb -merge ~/.Xresources
-fi
-
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    eval "$(dbus-launch --sh-syntax --exit-with-session /usr/bin/gpg-agent --homedir /home/jmanoel7/.gnupg --use-standard-socket --sh --daemon)"
-fi
-
-/usr/bin/xdg-user-dirs-update
-
-if [ -x ~/.xsessionrc ]; then
+if [ -f ~/.xsessionrc ]; then
     . ~/.xsessionrc
 fi
 
-if [ -x "$1" ]; then
+DEFAULT_SESSION="ubuntu"
+if [ -n "$1" ]; then
     DEFAULT_SESSION="$1"
-else
-    DEFAULT_SESSION="/usr/bin/openbox-session"
 fi
 
 case "$DEFAULT_SESSION" in
-    "/usr/bin/openbox-session")
-        export DE=openbox
-        sed -i 's/ablive/'"$(whoami)"'/' \
-            ~/.config/obmenu-generator/schema.pl \
-            ~/.config/obmenu-generator/config.pl
-        /usr/bin/openbox-session > ~/log/openbox_startup.log 2>&1
+    "i3")
+        compton -b -f -m 0.95 &
+        nitrogen --restore &
+        volumeicon &
+        clipit &
+        nm-applet &
+        #/opt/teamviewer/tv_bin/script/teamviewer &
+        #hp-systray -x &
+        /bin/sh -c 'sleep 5; dropbox.py start -i' &
+        /bin/sh -c 'sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1' &
+        nautilus --no-default-window --no-desktop &
+        i3-sensible-terminal &
+        exec \
+            /usr/bin/ssh-agent \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch i3
+        ;;
+    "i3-with-shmlog")
+        compton -b -f -m 0.95 &
+        nitrogen --restore &
+        volumeicon &
+        clipit &
+        nm-applet &
+        #/opt/teamviewer/tv_bin/script/teamviewer &
+        #hp-systray -x &
+        /bin/sh -c 'sleep 5; dropbox.py start -i' &
+        /bin/sh -c 'sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1' &
+        nautilus --no-default-window --no-desktop &
+        i3-sensible-terminal &
+        exec \
+            /usr/bin/ssh-agent \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch i3-with-shmlog
+        ;;
+    "ubuntu")
+        exec \
+            /usr/bin/ssh-agent \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch gnome-session --session=ubuntu
         ;;
     *)
-        exec "$DEFAULT_SESSION"
+        exec \
+            /usr/bin/ssh-agent \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch $DEFAULT_SESSION
         ;;
 esac
 

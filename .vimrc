@@ -18,7 +18,7 @@
 "set nohidden
 "set nomodeline
 "set whichwrap+=<,>,h,l
-"set nolazyredraw "Don't redraw while executing macros 
+"set nolazyredraw "Don't redraw while executing macros
 
 " initial config for easytags
 let g:easytags_include_members=1
@@ -98,14 +98,19 @@ augroup END
 autocmd BufNewFile,BufRead *.pt,*.cpt,*.zpt set filetype=zpt syntax=xml
 
 " paste, copy and cut
-nnoremap <leader><C-v> "+gP
+inoremap <C-v> <ESC>:set paste<CR>"+gp<ESC>:set nopaste<CR>i<RIGHT>
+nnoremap <C-v> i<ESC>:set paste<CR>"+gp<ESC>:set nopaste<CR>i<RIGHT>
+vnoremap <leader><C-v> "+gP
 vnoremap <leader><C-y> "+y
 vnoremap <leader><C-x> "+x
+
+" Remove whitespaces from end of line
+nnoremap <leader><F4> 1GVG:s/\s*$//<CR>:<ESC>
 
 " Case Words
 vnoremap <Leader><C-l> :s/\(.\)/\L\1\E/g<CR>1GVG:s/\(\<.\)/\U\1\E/g<CR>1GVG:s/\(\<.\{1,3}\>\)/\L\1\E/g<CR>1GVG:s/ \(i\|ii\|iii\|iv\|v\|vi\|vii\|viii\|ix\|x\)$/\U\1\E/<CR>
 
-" pretty-printing JSON, PYTHON IMPORT AND PYTHON PEP8 
+" pretty-printing JSON, PYTHON IMPORT AND PYTHON PEP8
 nnoremap <leader><F5> :up<CR>:execute '%!json' \| w<CR>
 nnoremap <leader><F6> :up<CR>:execute '%!python -m json.tool' \| w<CR>
 nnoremap <leader><F7> :up<CR>:execute '%!isort ' . expand('%')<CR>
@@ -376,11 +381,11 @@ let g:syntastic_html_tidy_exec = 'tidy5'
 " list of errors to ignore
 "let g:syntastic_html_tidy_ignore_errors (list; default: [])
 "let g:syntastic_html_tidy_ignore_errors = [ '<input> proprietary attribute "role"' ]
-" list of additional blocklevel tags, to be added to --new-blocklevel-tags 
+" list of additional blocklevel tags, to be added to --new-blocklevel-tags
 "let g:syntastic_html_tidy_blocklevel_tags (list; default: [])
-" list of additional inline tags, to be added to --new-inline-tags 
+" list of additional inline tags, to be added to --new-inline-tags
 "let g:syntastic_html_tidy_inline_tags (list; default: [])
-" list of additional empty tags, to be added to --new-empty-tags 
+" list of additional empty tags, to be added to --new-empty-tags
 "let g:syntastic_html_tidy_empty_tags (list; default: [])
 let g:syntastic_xhtml_checkers = ['tidy', 'jshint']
 let g:syntastic_xml_checkers = ['xmllint']
@@ -402,7 +407,7 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 " cd ~/.vim/bundle
 " git clone https://github.com/Valloric/YouCompleteMe.git
 " git submodule update --init --recursive
-" ./install.sh --clang-completer --system-libclang --system-boost --omnisharp-completer
+" ./install.py --clang-completer --omnisharp-completer
 
 
 " Ultisnips
@@ -494,7 +499,7 @@ noremap! <Leader><F9> <Esc>:call PyUnitRunTests()<CR>
 " Minibuffer
 
 " Show the miniBufExplorer from the start
-"let g:miniBufExplorerMoreThanOne = 0 
+"let g:miniBufExplorerMoreThanOne = 0
 
 " Use a vertical windows
 "let g:miniBufExplVSplit = 5

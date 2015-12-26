@@ -4,29 +4,15 @@
 #
 # Executed by XSession script
 
-
-########################################
-## GENERAL CONFIG
-########################################
-
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    eval "$(dbus-launch --sh-syntax --exit-with-session /usr/bin/gpg-agent --homedir /home/jmanoel7/.gnupg --use-standard-socket --sh --daemon)"
+if [ -f ~/.bash_env ]; then
+    . ~/.bash_env
 fi
 
-/usr/bin/xdg-user-dirs-update
-
-if [ -x ~/.xsessionrc ]; then
-    . ~/.xsessionrc
+if [ -f ~/.Xresources ]; then
+    xrdb -merge ~/.Xresources
 fi
 
-
-########################################
-## OPENBOX CONFIG
-########################################
-
-export DE=openbox
-
-sed -i 's/ablive/'"$(whoami)"'/' \
-    ~/.config/obmenu-generator/schema.pl \
-    ~/.config/obmenu-generator/config.pl
+if [ -f ~/.Xkbmap ]; then
+    setxkbmap "$(cat ~/.Xkbmap)"
+fi
 

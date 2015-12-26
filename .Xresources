@@ -71,12 +71,11 @@ uxterm*toolBar:            false
 ! --------------------------------------------------------------------------------
 ! Font Config
 ! --------------------------------------------------------------------------------
-URxvt.font: 9x15
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
-Xft.autohint: false
+Xft.autohint: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
@@ -84,14 +83,14 @@ Xft.lcdfilter: lcddefault
 ! --------------------------------------------------------------------------------
 ! mouse theme
 ! --------------------------------------------------------------------------------
-!Xcursor*theme: DMZ-Black
-Xcursor.theme: Chameleon-Pearl-Regular-0.5
-Xcursor.size:  0
+Xcursor*theme: redglass
+Xcursor.size:  24
 
 
 ! --------------------------------------------------------------------------------
 ! URxvt Config
 ! --------------------------------------------------------------------------------
+URxvt.font: 9x15
 URxvt.perl-lib: /home/jmanoel7/.urxvt/perl
 URxvt.perl-ext-common: default,url-select,fullscreen,tabbedex,clipboard,vtwheel
 URxvt.cursorUnderline: true
@@ -114,14 +113,14 @@ URxvt.background: [90]#111111
 !
 URxvt*saveLines:                      1000000
 URxvt*mouseWheelScrollPage:           false
-!URxvt.secondaryScreen: false
-!URxvt.secondaryScroll: false
-!URxvt.secondaryWheel: false
-URxvt.scrollBar: true
-URxvt.scrollBar_right: true
-URxvt.scrollBar_floating: true
+URxvt.secondaryScreen: true
+URxvt.secondaryScroll: true
+URxvt.secondaryWheel: true
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
-URxvt.scrollstyle: rxvt
+URxvt.scrollstyle: plain
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)

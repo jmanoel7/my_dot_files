@@ -21,13 +21,15 @@ xftalpha 1
 update_interval 1.0
 total_run_times 0
 own_window yes
+own_window_class Conky
 own_window_transparent yes
-own_window_type desktop
+own_window_type normal
+#own_window_type desktop
 #own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 275 500
-maximum_width 300
+maximum_width 275
 draw_shades no
 draw_outline no
 draw_borders no
@@ -36,8 +38,8 @@ draw_graph_borders yes
 #default_shade_color 000000
 #default_outline_color 828282
 alignment top_right
-gap_x 12
-gap_y 56
+gap_x 15
+gap_y 15
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -90,7 +92,7 @@ N E T W O R K
 ${hr 2}
 ${if_existing /proc/net/route wlan0}
 Interface: ${alignr}wlan0
-Hardware: ${alignr}${execi 300 LANG=C ifconfig wlan0 | grep ether | sed "s/^.*ether \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
+Hardware: ${alignr}${execi 300 LANG=C ifconfig wlan0 | grep "HWaddr" | sed "s/^.*HWaddr \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
 Local Ip: ${alignr}${addr wlan0}
 Public Ip: ${alignr}${execi 300 ~/.conky/shell-scripts/public-ip.sh}
 Upload: ${alignr} ${upspeed wlan0} KiB/s  (${totalup wlan0})
@@ -106,7 +108,7 @@ Wifi Bitrate: ${alignr}${wireless_bitrate wlan0}
 Wifi Signal: ${alignr}${wireless_link_qual_perc wlan0}%  ${wireless_link_bar 8,60 wlan0}
 ${else}${if_existing /proc/net/route enp20s0}
 Interface: ${alignr}enp20s0
-Hardware: ${alignr}${execi 10 LANG=C ifconfig eth0 | grep ether | sed "s/^.*ether \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
+Hardware: ${alignr}${execi 10 LANG=C ifconfig eth0 | grep "HWaddr" | sed "s/^.*HWaddr \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
 Local Ip: ${alignr}${addr enp20s0}
 #Public Ip: ${alignr}${execi 10 ~/.conky/shell-scripts/public-ip.sh}
 Upload: ${alignr} ${upspeed enp20s0} KiB/s  (${totalup enp20s0})

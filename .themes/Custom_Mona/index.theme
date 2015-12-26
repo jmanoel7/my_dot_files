@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Custom_Mona
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Mona 3.0
+MetacityTheme=Mona 3.0
+IconTheme=gnome-brave
+GtkColorScheme=bg_color:#242424,fg_color:#ffffff,base_color:#353535,text_color:#ffffff,selected_bg_color:#3465a4,selected_fg_color:#f9f9f9,tooltip_bg_color:#141414,tooltip_fg_color:#dedede,titlebar_bg_color:#2d2d2d,titlebar_fg_color:#3468aa,menubar_bg_color:#191919,menubar_fg_color:#dcdcdc,toolbar_bg_color:#dedede,toolbar_fg_color:#555555,menu_bg_color:#2d2d2d,menu_fg_color:#dcdcdc,panel_bg_color:#242424,panel_fg_color:#dcdcdc,link_color:#fc6f5d
+CursorTheme=DMZ-Black
+CursorSize=24
+NotificationTheme=standard

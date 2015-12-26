@@ -6,7 +6,9 @@ xftalpha 0.8
 update_interval 0.25
 #total_run_times 0
 own_window yes
-own_window_type desktop
+own_window_class Conky
+own_window_type normal
+#own_window_type desktop
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
@@ -25,7 +27,7 @@ default_shade_color grey
 default_outline_color yellow
 alignment middle_middle
 gap_x 0
-gap_y 58
+gap_y 0
 #gap_x 140
 #gap_y 130
 no_buffers yes
@@ -39,7 +41,7 @@ imlib_cache_size 0
 #border_inner_margin 0
 border_outer_margin 10
 TEXT
-${if_running audacious }${execpi 3 ~/.conky/shell-scripts/audacious-info.sh}${endif}
+${if_running audacious}${execpi 3 ~/.conky/shell-scripts/audacious-info.sh}${endif}
 #${image ~/.conky/pix/audbg.png -p 0,0}${image ~/.conky/pix/folder.jpg -p 9,9 -s 100x100}
 #                 ${color}Audacious is playing
 #

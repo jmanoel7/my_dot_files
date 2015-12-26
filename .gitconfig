@@ -5,3 +5,5 @@
 	email = joaomanoel7@gmail.com
 [push]
 	default = simple
+[color]
+	ui = auto

@@ -16,13 +16,15 @@
 ##############################################
 background yes
 use_xft yes
-xftfont Droid Sans:size=9
+xftfont Droid Sans Mono:size=9
 xftalpha 1
-update_interval 1.0
+update_interval 600
 total_run_times 0
 own_window yes
 own_window_transparent yes
-own_window_type desktop
+own_window_class Conky
+own_window_type normal
+#own_window_type desktop
 #own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
@@ -36,14 +38,14 @@ draw_graph_borders yes
 #default_shade_color 000000
 #default_outline_color 828282
 alignment top_middle
-gap_x 12
-gap_y 56
+gap_x 0
+gap_y 15
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
 override_utf8_locale yes
 color1 ffffff
-color2 00ff00
+color2 ff0000
 ##############################################
 #  Output
 ##############################################
@@ -51,6 +53,6 @@ TEXT
 EMAILS
 ${hr 2}
 
-${color1}joaomanoel7@gmail.com${alignr}${color2}${execi 600 ~/.yads/scripts/gmail-joaomanoel.py}
+${color1}joaomanoel7@gmail.com${alignr}${color2}${execi 600 /home/jmanoel7/.yads/scripts/gmail-joaomanoel.py}
 ${color1}joao.manoel@academico.ifg.edu.br${alignr}${color2}${execi 600 ~/.yads/scripts/ifg-aluno.pl}
 ${color1}joao.nogueira@ifg.edu.br${alignr}${color2}${execi 600 ~/.yads/scripts/ifg-servidor.pl}
