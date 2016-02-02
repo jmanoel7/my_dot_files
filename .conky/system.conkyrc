@@ -14,21 +14,23 @@
 ##############################################
 # Settings
 ##############################################
+#
+#
 background yes
 use_xft yes
-xftfont Droid Sans Mono:size=9
+xftfont Droid Sans Mono:size=8
 xftalpha 1
 update_interval 1.0
 total_run_times 0
 own_window yes
 own_window_class Conky
 own_window_transparent yes
-own_window_type normal
-#own_window_argb_visual yes
+own_window_type desktop
+own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
-minimum_size 200 200
-maximum_width 240
+minimum_size 200 1000
+maximum_width 200
 draw_shades no
 draw_outline no
 draw_borders no
@@ -50,50 +52,45 @@ color3 00ff00
 #  Output
 ##############################################
 TEXT
+${voffset 10}
 S Y S T E M    I N F O
 ${hr 2}
 
-#Date:    ${alignr}${time %a, %e %b %Y}
-#Time:    ${alignr}${time %H:%M:%S}
-Host:    ${alignr}${nodename}
-Kernel:  ${alignr}${kernel}
-Uptime:  ${alignr}${uptime}
+Date:${alignr}${time %a, %e %b %Y}
+Time:${alignr}${time %H:%M:%S}
+Host:${alignr}${nodename}
+Kernel:${alignr}${kernel}
+Uptime:${alignr}${uptime}
 #${execpi 3600 /home/jmanoel7/.conky/shell-scripts/paconky.py /home/jmanoel7/.conky/pacman}
-
-#${voffset -25}${color2}S H O R T C U T    K E Y S
-${color2}S H O R T C U T    K E Y S
-${hr 2}
-
-Super+space$alignr Main Menu
-Super+t$alignr Terminal
-Super+f$alignr File Manager
-Super+e$alignr Editor
-Super+w$alignr Web Browser
-Super+q$alignr Force Quit
-Super+r$alignr Read the DOC
-Super+a$alignr Toggle Maximize
-Super+h$alignr Toggle Horizontal
-Super+v$alignr Toggle Vertical
-Super+c$alignr Move to Center
-Super+Arrow$alignr Move
-Alt+F3$alignr Dmenu
-Alt+Super+Arrow$alignr Resize
-#Alt+F2$alignr Run Dialog
-#Alt+F3$alignr Alt Menu
-#Super+Space$alignr Main Menu
-#Super+Tab$alignr Client Menu
-#Super+t$alignr Terminal
-#Super+f$alignr File Manager
-#Super+e$alignr Editor
-#Super+m$alignr Media Player
-#Super+w$alignr Web Browser
-#Super+r$alignr Mail Reader
-#Super+i$alignr Instant Messenger
-#Super+h$alignr Task Manager
-#Super+l$alignr Lock Screen
-#Super+v$alignr Volume Control
-#Super+x$alignr Logout
-#PrtSc$alignr Screenshot
+#
+#${voffset -25}${offset 55}${color2}S H O R T C U T    K E Y S
+#${offset 55}${color2}S H O R T C U T    K E Y S
+#${offset 55}${hr 2}
+#
+#${offset 55}Super+q$alignr Force Quit
+#${offset 55}Super+r$alignr Read the DOC
+#${offset 55}Super+a$alignr Toggle Maximize
+#${offset 55}Super+h$alignr Toggle Horizontal
+#${offset 55}Super+v$alignr Toggle Vertical
+#${offset 55}Super+c$alignr Move to Center
+#${offset 55}Super+Arrow$alignr Move
+#${offset 55}Alt+Super+Arrow$alignr Resize
+#${offset 55}Super+r$alignr Mail Reader
+#${offset 55}Super+i$alignr Instant Messenger
+#${offset 55}[S] + r${alignr}Run Command
+#${offset 55}[S] + d${alignr}Dmenu
+#${offset 55}[S] + Space${alignr}Arrange Windows
+#${offset 55}[S] + Tab${alignr}Previous Windows
+#${offset 55}[S] + Enter${alignr}Terminal
+#${offset 55}[S] + f${alignr}File Manager
+#${offset 55}[S] + e${alignr}Editor
+#${offset 55}[S] + m${alignr}Media Player
+#${offset 55}[S] + w${alignr}Web Browser
+#${offset 55}[S] + h${alignr}Task Manager
+#${offset 55}[S] + l${alignr}Lock Screen
+#${offset 55}[S] + v${alignr}Volume Control
+#${offset 55}[S] + x${alignr}Logout
+#${offset 55}[PrtSc]${alignr}Screenshot
 #
 #P A C K A G E S    U P D A T E
 #${hr 2}

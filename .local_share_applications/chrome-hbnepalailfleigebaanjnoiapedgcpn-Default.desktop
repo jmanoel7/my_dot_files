@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Cocos2dx Test App
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hbnepalailfleigebaanjnoiapedgcpn
+Icon=chrome-hbnepalailfleigebaanjnoiapedgcpn-Default
+StartupWMClass=crx_hbnepalailfleigebaanjnoiapedgcpn

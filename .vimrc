@@ -77,7 +77,7 @@ vnoremap <Leader><C-e> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --de
 vnoremap <Leader><C-d> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --default-recipient-self --armor --decrypt 2>/dev/null<CR>
 
 " Secret Enviremont
-nnoremap <Leader><C-s> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
+nnoremap <Leader><C-m> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
 
 " Files .cpt
 augroup CPT
@@ -144,7 +144,7 @@ map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
 " map sort function to a key
-vnoremap <Leader><C-s> :sort<CR>
+vnoremap <Leader><F3> :sort<CR>
 
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
