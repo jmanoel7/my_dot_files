@@ -130,8 +130,11 @@ AudaciousInfo(){
 # if 
     AudaciousInfo bg
     AudaciousInfo art
-    echo -n "\${image ~/.conky/pix/audbg.png -p 0,0}"
-    echo -n "\${image ~/.conky/pix/"$AlbumArt" -p 9,9 -s 100x100}"
+    echo -n "\${image ~/.conky/pix/audbg.png -p 0,40}"
+    echo -n "\${image ~/.conky/pix/"$AlbumArt" -p 9,49 -s 100x100}"
+    echo ""
+    echo ""
+    echo ""
     echo ""
     echo -n "                 "
     echo "\${color}$EchoStatus"
