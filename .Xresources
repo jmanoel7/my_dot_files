@@ -83,8 +83,8 @@ Xft.lcdfilter: lcddefault
 ! --------------------------------------------------------------------------------
 ! mouse theme
 ! --------------------------------------------------------------------------------
-Xcursor*theme: redglass
-Xcursor.size:  0
+Xcursor.theme: XenonBlue
+Xcursor.size: 0
 
 
 ! --------------------------------------------------------------------------------
@@ -129,7 +129,8 @@ URxvt*scrollWithBuffer: false
 URxvt*scrollTtyKeypress: true
 !URxvt*faceName: DejavuSansMono:style=Book:size=10
 !URxvt.font: xft:DejavuSansMono:style=Book:size=10
-URxvt.iconFile: /usr/share/icons/gnome-colors-common/scalable/apps/terminal.svg
+!URxvt.iconFile: /usr/share/icons/gnome-colors-common/scalable/apps/terminal.svg
+URxvt.iconFile: /usr/share/icons/Numix-Reborn-Circle/scalable/apps/terminal-tango.svg
 URxvt*loginShell: true
 !URxvt.letterSpace: -5
 URxvt.keysym.F11: perl:fullscreen:switch
