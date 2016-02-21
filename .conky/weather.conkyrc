@@ -155,4 +155,4 @@ ${voffset -26}
 ${offset 393}${font Ubuntu:pixelsize=12}${execi 600 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4'}°
 ${voffset -26}
 ${offset 453}${font Ubuntu:pixelsize=12}${execi 600 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5'}°
-${voffset 50}
+${voffset 175}
