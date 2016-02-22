@@ -26,51 +26,38 @@ eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 ## Set root window colour
-hsetroot -solid "#2E3436" &
+#hsetroot -solid "#2E3436" &
 
-## Set background image
-#nitrogen --restore &
+nitrogen --restore &
 
-#bl-compositor --start &
-compton -b -f -m 0.95 &
+bl-compositor --start &
 
 ## Start the tint2 session (the default tint2 will run if no sessions have been set)
-(sleep 2s; tint2) &
+(sleep 2s; bl-tint2-session) &
 
 ## Start the Conky session (the default conkyrc will run if no sessions have been set)
-#(sleep 2s; bl-conky-session --autostart) &
-(sleep 2s; conkywonky.sh) &
+(sleep 2s; bl-conky-session --autostart) &
 
 ## Volume control for systray
 (sleep 2; volti) &
 
 ## Volume keys daemon
-#xfce4-volumed &
+xfce4-volumed &
 
 ## Start Clipboard manager
 (sleep 3; clipit) &
 
-# Dropbox
-(sleep 5; dropbox.py start -i) &
-
-# Kill gnome-keyring-daemon
-#(sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
-
 ## Start Thunar Daemon, if set as bl-file-manager
-#if [ "$(readlink -f $(which bl-file-manager))" = "$(which thunar)" ]
-#then
-#    thunar --daemon &
-#fi
-thunar --daemon &
-
-# Docky
-plank &
+if [ "$(readlink -f $(which bl-file-manager))" = "$(which thunar)" ]
+then
+    thunar --daemon &
+fi
 
 ## Enable power management
-#xfce4-power-manager &
+xfce4-power-manager &
 
 ## Start the battery applet
-#(sleep 2; fdpowermon) &
+(sleep 2; fdpowermon) &
 
 ## Start xscreensaver (light-locker now used by default, run via XDG autostart.)
 #xscreensaver -no-splash &
@@ -91,10 +78,7 @@ xset b off &
 
 ## bl-welcome - post-installation script, will not run in a live session and
 ## only runs once. Safe to remove.
-#(sleep 10; bl-welcome --firstrun) &
+(sleep 10; bl-welcome --firstrun) &
 
 ## bl-fortune - have the system come up with a little adage (not yet enabled)
 #(sleep 120; bl-fortune) &
-
-
-x-terminal-emulator &
