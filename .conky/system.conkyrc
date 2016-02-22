@@ -56,8 +56,8 @@ ${voffset 10}
 S Y S T E M    I N F O
 ${hr 2}
 
-Date:${alignr}${time %a, %e %b %Y}
-Time:${alignr}${time %H:%M:%S}
+#Date:${alignr}${time %a, %e %b %Y}
+#Time:${alignr}${time %H:%M:%S}
 Distro:${alignr}${exec lsb_release -ds}
 Host:${alignr}${nodename}
 Kernel:${alignr}${kernel}
