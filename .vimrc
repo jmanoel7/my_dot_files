@@ -407,7 +407,7 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 " cd ~/.vim/bundle
 " git clone https://github.com/Valloric/YouCompleteMe.git
 " git submodule update --init --recursive
-" ./install.py --clang-completer --omnisharp-completer
+" ./install.py --clang-completer --omnisharp-completer --gocode-completer --tern-completer
 
 
 " Ultisnips
