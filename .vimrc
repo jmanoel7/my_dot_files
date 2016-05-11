@@ -472,15 +472,15 @@ autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 " vim-pyunit
 " cd ~/.vim/bundle
-" git clone git://github.com/nvie/vim-pyunit.git
+" git clone https://github.com/nvie/vim-pyunit.git
 " pip2 install --force-reinstall -U nose vim_bridge mock
 " cd ~/src
 " git clone https://github.com/mcrute/nose-machineout.git
 " cd nose-machineout
 " sudo python2 ./setup.py install
 let g:no_pyunit_maps = 1
-noremap <Leader><F9> :call PyUnitRunTests()<CR>
-noremap! <Leader><F9> <Esc>:call PyUnitRunTests()<CR>
+noremap <Leader><C-p> :call PyUnitRunTests()<CR>
+noremap! <Leader><C-p> <Esc>:call PyUnitRunTests()<CR>
 
 
 " MiniBufferExplorer
@@ -589,12 +589,177 @@ inoremap <Leader><F12> <C-o>:Open<CR>
 nnoremap <Leader><F12> :Open<CR>
 
 
-" vim-notes
-" vim-session
+" ===========================================================================
+" Easy note taking in Vim
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-notes.git
+" ===========================================================================
+
+let g:notes_directories = ['~/Desktop/Notas']
+autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
+
+
+" ===========================================================================
+" Vim Outliner of Markups
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-voom/vim-voom.github.com.git
+" ===========================================================================
+
+
+" ===========================================================================
+" Univeral Text Linking - Execute URLs, footnotes, open emails, organize ideas
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-scripts/utl.vim.git
+" ===========================================================================
+
+
+" ===========================================================================
+" Extended session management for Vim (:mksession on steroids)
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-session.git
+" ===========================================================================
+
+"let g:loaded_session=1
+let g:session_autoload='no'
+let g:session_autosave='no'
+
+
+" ===========================================================================
 " NerdTree
-" Conque
-" django
-" virtualenv
+" cd ~/.vim/bundle
+" git clone https://github.com/scrooloose/nerdtree.git
+" how to using NERDTree :
+" http://ykyuen.wordpress.com/2011/04/04/nerdtree-the-file-explorer-in-vivim/
+" ===========================================================================
+
+" Enable this for make NERDTree load every opening files
+autocmd VimEnter * NERDTree " Make Always Load NERDTree every opening files
+autocmd VimEnter * wincmd p " Automatically go to buffer every time open files
+
+" FIXING NERDTree, automatically close if there no file edited
+"https://github.com/scrooloose/nerdtree/issues/21
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" Use <CTRL> + <F9> for opening File Explorer
+map <C-F9> :NERDTreeToggle<CR>
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeMouseMode=3
+let g:NERDTreeWinSize=30
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+" Open Window Explorer NerdTree & Tagbar using (left-right sidebar) using <F6>
+function! ToggleNERDTreeAndTagbar()
+    let w:jumpbacktohere = 1
+
+" Detect which plugins are open
+    if exists('t:NERDTreeBufName')
+        let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
+    else
+        let nerdtree_open = 0
+    endif
+    let tagbar_open = bufwinnr('__Tagbar__') != -1
+
+" Perform the appropriate action
+    if nerdtree_open && tagbar_open
+        NERDTreeClose
+        TagbarClose
+    elseif nerdtree_open
+        TagbarOpen
+    elseif tagbar_open
+        NERDTreeToggle
+    else
+        NERDTreeToggle
+        TagbarOpen
+    endif
+
+" Jump back to the original window
+    for window in range(1, winnr('$'))
+        execute window . 'wincmd w'
+        if exists('w:jumpbacktohere')
+            unlet w:jumpbacktohere
+            break
+        endif
+    endfor
+endfunction
+
+" now you can open NERDTree and Tagbar using <leader><F9>
+" http://stackoverflow.com/questions/6624043/how-to-open-or-close-nerdtree-and-tagbar-with-leader
+nmap <leader><F9> :call ToggleNERDTreeAndTagbar()<CR>
+
+
+" ===========================================================================
+" Conque-Shell: Run interactive commands inside a Vim buffer
+" cd ~/.vim/bundle
+" curl https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/conque/conque_2.3.tar.gz -o conque_2.3.tar.gz
+" tar xzvf conque_2.3.tar.gz && mv -f conque_2.3 Conque-Shell && rm -f conque_2.3.tar.gz
+" ===========================================================================
+
+
+" ===========================================================================
+" Vim plugin for working with python virtualenvs
+" cd ~/.vim/bundle
+" git clone https://github.com/jmcantrell/vim-virtualenv.git
+" ===========================================================================
+
+let g:virtualenv_directory = '~/.local/venvs'
+
+
+" ===========================================================================
+" vim-django run commands, create apps, and beyond
+" cd ~/.vim/bundle
+" git clone https://github.com/cwood/vim-django.git
+" ===========================================================================
+
+let g:django_projects = '~/Desktop/Projetos' "Sets all projects under project
+let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
+let g:django_activate_nerdtree = 1 "Try to open nerdtree at the project root.
+let g:last_relative_dir = '' "Initial Directory for Django App
+
+fun! SetAppDir()
+    "This is to check that the directory looks djangoish
+    if filereadable(expand("%:h") . '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+        let g:last_relative_dir = expand("%:h") . '/'
+        return ''
+    endif
+endfun
+
+fun! RelatedFile(file)
+    "This is to check that the directory looks djangoish
+    "if filereadable(expand("%:h") . '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+    "    exec "edit %:h/" . a:file
+    "    let g:last_relative_dir = expand("%:h") . '/'
+    "    return ''
+    "endif
+    if g:last_relative_dir != ''
+        exec "edit " . g:last_relative_dir . a:file
+        return ''
+    endif
+    echo "Cant determine where relative file is : " . a:file
+    return ''
+endfun
+
+autocmd BufEnter *.py call SetAppDir()
+nnoremap <leader>1 :call RelatedFile ("models.py")<cr>
+nnoremap <leader>2 :call RelatedFile ("views.py")<cr>
+nnoremap <leader>3 :call RelatedFile ("urls.py")<cr>
+nnoremap <leader>4 :call RelatedFile ("admin.py")<cr>
+nnoremap <leader>5 :call RelatedFile ("tests.py")<cr>
+nnoremap <leader>6 :call RelatedFile ("templates/")<cr>
+nnoremap <leader>7 :call RelatedFile ("templatetags/")<cr>
+nnoremap <leader>8 :call RelatedFile ("management/")<cr>
+nnoremap <leader>0 :e settings.py<cr>
+nnoremap <leader>9 :e urls.py<cr>
 
 
 " ============================================================================ "
@@ -602,11 +767,14 @@ nnoremap <Leader><F12> :Open<CR>
 " ============================================================================ "
 
 
+" ===========================================================================
 " Settings for python-mode
 " Note: I'm no longer using this. Leave this commented out
 " and uncomment the part about jedi-vim instead
 " cd ~/.vim/bundle
 " GIT clone https://github.com/klen/python-mode
+" ===========================================================================
+
 "" map <Leader>g :call RopeGotoDefinition()<CR>
 "" let ropevim_enable_shortcuts = 1
 "" let g:pymode_rope_goto_def_newwin = "vnew"
@@ -618,7 +786,32 @@ nnoremap <Leader><F12> :Open<CR>
 "" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
-" Settings for vim-flake8
+" ===========================================================================
+" On the fly Python checking in Vim with PyFlakes
+" cd ~/.vim/bundle
+" GIT clone https://github.com/kevinw/pyflakes-vim.git
+" ===========================================================================
+
+"let g:pyflakes_use_quickfix = 0
+
+
+" ===========================================================================
+" vim-pep8: just checks if your python code is pep-8 compliant
+" cd ~/.vim/bundle
+" mkdir -p vim-pep8/ftplugin/python
+" CURL -o vim-pep8/ftplugin/python/pep8.vim http://www.vim.org/scripts/download_script.php?src_id=14366
+" pip install --upgrade pep8
+" ===========================================================================
+
+"let g:pep8_map='<F8>'
+
+
+
+" ===========================================================================
+" vim-flake8: Flake8 plugin for Vim
 " cd ~/.vim/bundle
 " GIT clone https://github.com/nvie/vim-flake8.git
+" pip install --upgrade flake8
+" ===========================================================================
+
 
