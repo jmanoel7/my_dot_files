@@ -595,7 +595,7 @@ nnoremap <Leader><F12> :Open<CR>
 " git clone https://github.com/xolox/vim-notes.git
 " ===========================================================================
 
-let g:notes_directories = ['~/Desktop/Notas']
+let g:notes_directories = ['~/Notas']
 autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
 
 
@@ -701,8 +701,8 @@ nmap <leader><F9> :call ToggleNERDTreeAndTagbar()<CR>
 " ===========================================================================
 " Conque-Shell: Run interactive commands inside a Vim buffer
 " cd ~/.vim/bundle
-" curl https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/conque/conque_2.3.tar.gz -o conque_2.3.tar.gz
-" tar xzvf conque_2.3.tar.gz && mv -f conque_2.3 Conque-Shell && rm -f conque_2.3.tar.gz
+" curl -O https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/conque/conque_2.3.tar.gz
+" tar -xzf conque_2.3.tar.gz && mv -f conque_2.3 Conque-Shell && rm -f conque_2.3.tar.gz
 " ===========================================================================
 
 
@@ -721,7 +721,7 @@ let g:virtualenv_directory = '~/.local/venvs'
 " git clone https://github.com/cwood/vim-django.git
 " ===========================================================================
 
-let g:django_projects = '~/Desktop/Projetos' "Sets all projects under project
+let g:django_projects = '~/Meus_Projetos' "Sets all projects under project
 let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
 let g:django_activate_nerdtree = 1 "Try to open nerdtree at the project root.
 let g:last_relative_dir = '' "Initial Directory for Django App
@@ -760,6 +760,28 @@ nnoremap <leader>7 :call RelatedFile ("templatetags/")<cr>
 nnoremap <leader>8 :call RelatedFile ("management/")<cr>
 nnoremap <leader>0 :e settings.py<cr>
 nnoremap <leader>9 :e urls.py<cr>
+
+
+" ============================================================================ "
+" Settings for vim-project
+" cd ~/.vim/bundle
+" git clone https://github.com/amiorin/vim-project.git
+" ============================================================================ "
+
+let g:project_enable_welcome = 1
+let g:project_use_nerdtree = 1
+
+set rtp+=~/.vim/bundle/vim-project/
+call project#rc("~/Meus_Projetos")
+
+Project "locafan"
+Project "my_dot_files"
+Project "my_shell_scripts"
+
+Project "~/Dropbox/servidor_ifg/projetos/suap"
+Project "~/Dropbox/servidor_ifg/projetos/requisicao"
+Project "~/Dropbox/servidor_ifg/projetos/ifg-mobile"
+Project "~/Dropbox/servidor_ifg/projetos/visao"
 
 
 " ============================================================================ "
