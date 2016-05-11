@@ -18,7 +18,8 @@ case "$DEFAULT_SESSION" in
         nm-applet &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
-        (sleep 5; dropbox.py start -i) &
+        (sleep 5; dropbox start -i) &
+        (sleep 5; pamac-tray) &
         (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
         thunar --daemon &
         urxvt &
@@ -35,7 +36,8 @@ case "$DEFAULT_SESSION" in
         nm-applet &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
-        (sleep 5; dropbox.py start -i) &
+        (sleep 5; dropbox start -i) &
+        (sleep 5; pamac-tray) &
         (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
         thunar --daemon &
         urxvt &
@@ -52,7 +54,8 @@ case "$DEFAULT_SESSION" in
         nm-applet &
         #/opt/teamviewer/tv_bin/script/teamviewer &
         #hp-systray -x &
-        (sleep 5; dropbox.py start -i) &
+        (sleep 5; dropbox start -i) &
+        (sleep 5; pamac-tray) &
         (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
         thunar --daemon &
         urxvt &
