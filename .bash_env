@@ -4,8 +4,8 @@ export HISTSIZE='1000'
 export HISTFILESIZE='2000'
 export LANG='pt_BR.UTF-8'
 export TZ='America/Sao_Paulo'
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nano'
+export VISUAL='nano'
 export GPGKEY='607A5E65'
 [ -r '/usr/bin/virtualenvwrapper.sh' ] && \
     source /usr/bin/virtualenvwrapper.sh
@@ -37,6 +37,6 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 #export VNCVIEWER_JAR="/usr/share/vnc-java/vncviewer.jar"
 export PAGER='less'
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-export TERMINAL='gnome-terminal'
-export BROWSER='firefox'
+export TERMINAL='terminator'
+export BROWSER='chromium'
 #export PYTHONDOCS='/usr/share/doc/python2/html/'

@@ -768,7 +768,7 @@ nnoremap <leader>9 :e urls.py<cr>
 " git clone https://github.com/amiorin/vim-project.git
 " ============================================================================ "
 
-let g:project_enable_welcome = 1
+let g:project_enable_welcome = 0
 let g:project_use_nerdtree = 1
 
 set rtp+=~/.vim/bundle/vim-project/

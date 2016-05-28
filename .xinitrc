@@ -4,7 +4,7 @@ if [ -f ~/.xsessionrc ]; then
     . ~/.xsessionrc
 fi
 
-DEFAULT_SESSION="x-session-manager"
+DEFAULT_SESSION="gnome-shell"
 if [ -n "$1" ]; then
     DEFAULT_SESSION="$1"
 fi
