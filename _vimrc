@@ -1,14 +1,11 @@
-" ============================================================================ "
-" Vimrc: my config for vim editor
-" Author: Joao Manoel <joaomanoel7@gmail.com>
-" ============================================================================ "
+" ============================================
+" My vimrc <joaomanoel7@gmail.com>
+" ============================================
 
-
-" ============================================================================ "
+" ============================================
 " Note to myself:
 " DO NOT USE <C-z> FOR SAVING WHEN PRESENTING!
-" ============================================================================ "
-
+" ============================================
 
 "set nonu
 "set lbr
@@ -27,7 +24,7 @@
 let g:easytags_include_members=1
 
 " Encoding and Font
-set gfn=Courier\ New
+set gfn=Dejavu\ Sans\ Mono
 set encoding=utf8
 try
     lang pt_BR
@@ -36,9 +33,9 @@ endtry
 
 " Vim Gui
 if has("gui_running")
-  "set guioptions-=T
+  set guioptions-=T
   set lines=40
-  set columns=150
+  set co=120
 endif
 
 " Automatic reloading of _vimrc
@@ -70,7 +67,7 @@ let g:mapleader=","
 " Write Command
 nmap <leader>w :w!<cr>
 
-" Edit vim config file
+" Edit vimrc config file
 map <leader>e :e! ~/_vimrc<cr>
 
 " GnuPG Encrypt
@@ -80,7 +77,7 @@ vnoremap <Leader><C-e> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --de
 vnoremap <Leader><C-d> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --default-recipient-self --armor --decrypt 2>/dev/null<CR>
 
 " Secret Enviremont
-nnoremap <Leader><C-s> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
+nnoremap <Leader><C-m> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
 
 " Files .cpt
 augroup CPT
@@ -101,16 +98,20 @@ augroup END
 autocmd BufNewFile,BufRead *.pt,*.cpt,*.zpt set filetype=zpt syntax=xml
 
 " paste, copy and cut
-inoremap <C-v> <ESC>:set paste<CR>"+gp<ESC>:set nopaste<ENTER>i<RIGHT>
-nnoremap <leader><C-v> "+gp
+inoremap <C-v> <ESC>:set paste<CR>"+gp<ESC>:set nopaste<CR>i<RIGHT>
+nnoremap <C-v> i<ESC>:set paste<CR>"+gp<ESC>:set nopaste<CR>i<RIGHT>
+vnoremap <leader><C-v> "+gP
 vnoremap <leader><C-y> "+y
 vnoremap <leader><C-x> "+x
 
-" triggers to format text
-vnoremap <leader><C-t> :s/\(.\)/\L\1\E/g<CR>1GVG:s/\(\<.\)/\U\1\E/g<CR>1GVG:s/\(\<.\{1,3}\>\)/\L\1\E/g<CR>1GVG:s/ \(i\|ii\|iii\|iv\|v\|vi\|vii\|viii\|ix\|x\)$/\U\1\E/<CR>
-vnoremap <leader><C-l> :s/[[:blank:]]*$//<CR>
-nnoremap <leader><C-j> :up<CR>:execute '%!json' \| w<CR>
-vnoremap <leader><F5> :sort<CR>
+" Remove whitespaces from end of line
+nnoremap <leader><F4> 1GVG:s/\s*$//<CR>:<ESC>
+
+" Case Words
+vnoremap <Leader><C-l> :s/\(.\)/\L\1\E/g<CR>1GVG:s/\(\<.\)/\U\1\E/g<CR>1GVG:s/\(\<.\{1,3}\>\)/\L\1\E/g<CR>1GVG:s/ \(i\|ii\|iii\|iv\|v\|vi\|vii\|viii\|ix\|x\)$/\U\1\E/<CR>
+
+" pretty-printing JSON, PYTHON IMPORT AND PYTHON PEP8
+nnoremap <leader><F5> :up<CR>:execute '%!json' \| w<CR>
 nnoremap <leader><F6> :up<CR>:execute '%!python -m json.tool' \| w<CR>
 nnoremap <leader><F7> :up<CR>:execute '%!isort ' . expand('%')<CR>
 nnoremap <leader><F8> :up<CR>:execute '%!yapf ' . expand('%') \| w<CR>
@@ -142,6 +143,9 @@ map <c-h> <c-w>h
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
+" map sort function to a key
+vnoremap <Leader><F3> :sort<CR>
+
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
@@ -152,9 +156,6 @@ vnoremap > >gv  " better indentation
 " MUST be inserted BEFORE the colorscheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
-
-" PHP autocomplete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Errors and Visualbell
 set noerrorbells
@@ -210,12 +211,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Python style
-let g:python_highlight_all=1 " Enable all plugin's highlighting.
-let g:python_slow_sync=1 " For fast machines.
-let g:python_print_as_function=1 " Color 'print' function.
-let g:python_version_2=1 " Use Python2
-
 " Setup Pathogen to manage your plugins
 " mkdir -p ~/.vim/autoload ~/.vim/bundle
 " curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
@@ -225,37 +220,27 @@ execute pathogen#helptags()
 "call pathogen#infect()
 
 
-" ============================================================================ "
+" ============================================================================
 " Plugins Setup
-" ============================================================================ "
+" ============================================================================
 
 
-" ============================================================================ "
-" vim-colors
+" Color scheme
 " cd ~/.vim/bundle
 " git clone https://github.com/jmanoel7/vim-colors.git
-" ============================================================================ "
-
 set background=dark
 set t_Co=256
-colorscheme wombat256mod_mbe
+colorscheme wombat256mod
+"colorscheme wombat_mbe
 
-
-" ============================================================================ "
-" vim-powerline
+" Settings for vim-powerline
 " cd ~/.vim/bundle
 " git clone https://github.com/Lokaltog/vim-powerline.git
-" ============================================================================ "
-
 set laststatus=2
 
-
-" ============================================================================ "
-" ctrlp.vim
+" Settings for ctrlp
 " cd ~/.vim/bundle
 " git clone https://github.com/kien/ctrlp.vim.git
-" ============================================================================ "
-
 let g:ctrlp_max_height = 30
 set wildignore+=*.swp
 set wildignore+=*.bak
@@ -264,12 +249,6 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-
-" ============================================================================ "
-" vim-utils
-" cd ~/.vim/bundle
-" git clone https://github.com/jmanoel7/vim-utils.git
-" ============================================================================ "
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -288,59 +267,41 @@ endfunction
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
+" Python folding and more
+" cd ~/.vim/bundle
+" git clone https://github.com/jmanoel7/vim-utils.git
 set nofoldenable
 
-
-" ============================================================================ "
 " Vim Games
 " cd ~/.vim/bundle
 " git clone https://github.com/jmanoel7/vim-games.git
-" ============================================================================ "
 
-
-" ============================================================================ "
-" Vim GnuPG
+" GnuPG
 " cd ~/.vim/bundle
 " git clone https://github.com/jamessan/vim-gnupg.git
-" ============================================================================ "
-
 let g:GPGPreferArmor=1
 let g:GPGPreferSign=1
 let g:GPGUseAgent=1
 let g:GPGExecutable="gpg2"
 
-
-" ============================================================================ "
 " scriptease.vim: A Vim plugin for Vim plugins
 " cd ~/.vim/bundle
 " git clone https://github.com/tpope/vim-scriptease.git
-" ============================================================================ "
 
-
-" ============================================================================ "
-" Vim Table Mode
+" VIM Table Mode
 " cd ~/.vim/bundle
 " git clone https://github.com/dhruvasagar/vim-table-mode.git
-" ============================================================================ "
 
-
-" ============================================================================ "
-" Vim Latex-Suite
+" VIM Latex-Suite
 " cd ~/.vim/bundle
 " git clone https://github.com/vim-latex/vim-latex.git
-" ============================================================================ "
-
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
-
-" ============================================================================ "
 " Emmet (ex-Zen Coding) - vim plugins for HTML and CSS hi-speed coding
 " cd ~/.vim/bundle
 " git clone http://github.com/mattn/emmet-vim/
-" ============================================================================ "
-
 "let g:user_emmet_mode='n'    "only enable normal mode functions.
 "let g:user_emmet_mode='inv'  "enable all functions, which is equal to
 let g:user_emmet_mode='a'    "enable all function in all mode.
@@ -348,58 +309,39 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,django EmmetInstall
 let g:user_emmet_leader_key='<C-Z>'
 
-
-" ============================================================================ "
 " L9 : Vim-script library
 " cd ~/.vim/bundle
 " hg clone https://bitbucket.org/ns9tks/vim-l9
-" ============================================================================ "
 
-
-" ============================================================================ "
 " FuzzyFinder
 " cd ~/.vim/bundle
 " hg clone https://bitbucket.org/ns9tks/vim-fuzzyfinder
-" ============================================================================ "
-
 map <leader>f :FufFileWithCurrentBufferDir<CR>
 map <leader>m :FufFileWithFullCwd<CR>
 map <leader>b :FufBuffer<CR>
 
-
-" ============================================================================ "
 " MRU
 " cd ~/.vim/bundle
 " git clone https://github.com/vim-scripts/mru.vim.git
-" ============================================================================ "
-
 map <leader><space> :MRU<CR>
 let g:MRU_Max_Entries = 1000
 let g:MRU_Window_Height = 15
 let g:MRU_Max_Menu_Entries = 20
 let g:MRU_Max_Submenu_Entries = 15
 
-
-" ============================================================================ "
 " TagBar
 " cd ~/.vim/bundle
 " git clone https://github.com/majutsushi/tagbar
-" ============================================================================ "
-
 let g:tagbar_usearrows=1
 let g:tagbar_width=30
 let g:tagbar_singleclick=1
 " Use <F9> to open Tagbar in Right side
 nmap <F9> :TagbarToggle<CR>
 
-
-" ============================================================================ "
-" Automated tag file generation and syntax highlighting of tags in Vim
+" Vim-EasyTags
 " cd ~/.vim/bundle
 " git clone https://github.com/xolox/vim-easytags.git
-" ============================================================================ "
-
-let g:easytags_cmd = '/gnuwin32/bin/ctags.exe'
+let g:easytags_cmd = '/usr/bin/ctags'
 let g:easytags_file = '~/vimfiles/tags'
 let g:easytags_by_filetype = '~/vimfiles/tags_dir'
 let g:easytags_events = ['BufWritePost']
@@ -408,20 +350,13 @@ let g:easytags_python_enabled = 1
 set tags=./_tags;,~/vimfiles/tags
 let g:easytags_dynamic_files = 1
 
-
-" ============================================================================ "
-" Miscellaneous auto-load Vim scripts
+" Vim-Misc
 " cd ~/.vim/bundle
 " git clone https://github.com/xolox/vim-misc.git
-" ============================================================================ "
 
-
-" ============================================================================ "
 " Syntastic
 " cd ~/.vim/bundle
 " git clone https://github.com/scrooloose/syntastic.git
-" ============================================================================ "
-
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
@@ -436,7 +371,7 @@ cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdele
 "let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perlcritic', 'podchecker', 'perl']
-let g:syntastic_python_checkers = ['flake8', 'pep8', 'pyflakes', 'python']
+let g:syntastic_python_checkers = ['flake8', 'pep8', 'pyflakes', 'python2']
 "let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_zpt_checkers = ['zptlint']
 let g:syntastic_html_checkers = ['tidy', 'w3']
@@ -468,21 +403,16 @@ let g:syntastic_text_checkers = ['language_check']
 let g:syntastic_text_language_check_args = '--language=pt-BR'
 
 
-" ============================================================================ "
 " YouCompleteMe
 " cd ~/.vim/bundle
 " git clone https://github.com/Valloric/YouCompleteMe.git
 " git submodule update --init --recursive
-" ./install.sh --clang-completer --system-libclang --system-boost --omnisharp-completer
-" ============================================================================ "
+" ./install.py --clang-completer --system-libclang --system-boost --omnisharp-completer --gocode-completer --tern-completer
 
 
-
-" ============================================================================ "
 " Ultisnips
 " cd ~/.vim/bundle
 " git clone https://github.com/SirVer/ultisnips.git
-" ============================================================================ "
 
 " The default value for g:UltiSnipsJumpBackwardTrigger interferes with the
 " built-in complete function: |i_CTRL-X_CTRL-K|. A workaround is to add the
@@ -506,22 +436,58 @@ let g:UltiSnipsUsePythonVersion = 2
 "let g:UltiSnipsUsePythonVersion = 3
 
 
-" ============================================================================ "
 " vim-snippets
 " cd ~/.vim/bundle
 " git clone https://github.com/honza/vim-snippets.git
-" ============================================================================ "
-
-map <leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+map <Leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
-" ============================================================================ "
+" jedi-vim
+" cd ~/.vim/bundle
+" git clone --recursive https://github.com/davidhalter/jedi-vim.git
+" pip2 install --force-reinstall -U jedi
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_splits_not_buffers = "bottom"
+let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+
+
+" SimpylFold
+" cd ~/.vim/bundle
+" git clone https://github.com/tmhedberg/SimpylFold.git
+let g:SimpylFold_docstring_preview = 1
+"let g:SimpylFold_fold_docstring = 0
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
+
+" vim-pyunit
+" cd ~/.vim/bundle
+" git clone https://github.com/nvie/vim-pyunit.git
+" pip2 install --force-reinstall -U nose vim_bridge mock
+" cd ~/src
+" git clone https://github.com/mcrute/nose-machineout.git
+" cd nose-machineout
+" sudo python2 ./setup.py install
+let g:no_pyunit_maps = 1
+noremap <Leader><C-p> :call PyUnitRunTests()<CR>
+noremap! <Leader><C-p> <Esc>:call PyUnitRunTests()<CR>
+
+
 " MiniBufferExplorer
 " cd ~/.vim/bundle
 " git clone https://github.com/fholgado/minibufexpl.vim.git
-" ============================================================================ "
 
-" MiniBufExpl Colors
+" MiniBufExpl Colors 1
 "hi MBENormal               guifg=#808080 guibg=fg
 "hi MBEChanged              guifg=#CD5907 guibg=fg
 "hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
@@ -529,17 +495,23 @@ map <leader><C-b> Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
 "hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
 
+" MiniBufExpl Colors 2
+"hi MBENormal guifg=Blue                                        " for buffers that have NOT CHANGED and are NOT VISIBLE.
+"hi MBEChanged guifg=Red                                        " for buffers that HAVE CHANGED and are NOT VISIBLE
+"hi MBEVisibleNormal term=bold cterm=bold gui=bold guifg=Green  " buffers that have NOT CHANGED and are VISIBLE
+"hi MBEVisibleChanged term=bold cterm=bold gui=bold guifg=Green " buffers that have CHANGED and are VISIBLE
+
 " Taken from http://dotfiles.org/~joaoTrindade/.vimrc
 " Minibuffer
 
 " Show the miniBufExplorer from the start
-"let g:miniBufExplorerMoreThanOne = 0 
+"let g:miniBufExplorerMoreThanOne = 0
 
 " Use a vertical windows
 "let g:miniBufExplVSplit = 5
 
 " Put the miniBufExplorer windows at the right
-"let g:miniBufExplSplitBelow=1
+"let g:miniBufExplSplitBelow = 1
 
 "Maximum size of the mini buffer explorer window
 let g:miniBufExplMaxSize = 15
@@ -547,7 +519,6 @@ let g:miniBufExplMaxSize = 15
 "Still haven't discovered what it does
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplMapWindowNavVim = 1
 
 " make tabs show complete (no broken on two lines)
@@ -559,84 +530,51 @@ let g:miniBufExplModSelTarget = 1
 " If you would like to single click on tabs rather than double clicking on them to goto the selected buffer.
 let g:miniBufExplUseSingleClick = 1
 
-" for buffers that have NOT CHANGED and are NOT VISIBLE.
-"highlight MBENormal guifg=Blue
-
-" for buffers that HAVE CHANGED and are NOT VISIBLE
-"highlight MBEChanged guifg=Red
-
-" buffers that have NOT CHANGED and are VISIBLE
-"highlight MBEVisibleNormal term=bold cterm=bold gui=bold guifg=Green
-
-" buffers that have CHANGED and are VISIBLE
-"highlight MBEVisibleChanged term=bold cterm=bold gui=bold guifg=Green
-
 let g:bufExplorerSortBy = "name"
 
-autocmd BufRead,BufNew :call UMiniBufExplorer
+"autocmd BufRead,BufNew :call UMiniBufExplorer
 
 
-" ============================================================================ "
 " vim-fugitive
 " cd ~/.vim/bundle
 " git clone https://github.com/tpope/vim-fugitive.git
-" ============================================================================ "
-
 let g:statusline="%{fugitive#statusline()}"
 
 
-" ============================================================================ "
 " vim-repeat
 " cd ~/.vim/bundle
-" git clone https://github.com/tpope/vim-repeat.git
-" ============================================================================ "
+" git clone git://github.com/tpope/vim-repeat.git
 
 
-" ============================================================================ "
 " vim-surround
 " cd ~/.vim/bundle
-" git clone https://github.com/tpope/vim-surround.git
-" ============================================================================ "
-
-autocmd BufEnter *.djhtml set filetype=htmldjango
-autocmd BufEnter *.djhtml let b:surround_{char2nr("v")} = "{{ \r }}"
-autocmd BufEnter *.djhtml let b:surround_{char2nr("{")} = "{{ \r }}"
-autocmd BufEnter *.djhtml let b:surround_{char2nr("%")} = "{% \r %}"
-autocmd BufEnter *.djhtml let b:surround_{char2nr("b")} = "{% block \1block name                                                                                                                           : \1 %}\r{% endblock \1\1 %}"
-autocmd BufEnter *.djhtml let b:surround_{char2nr("i")} = "{% if \1condition: \1                                                                                                                            %}\r{% endif %}"
-autocmd BufEnter *.djhtml let b:surround_{char2nr("w")} = "{% with \1with: \1 %}                                                                                                                           \r{% endwith %}"
-autocmd BufEnter *.djhtml let b:surround_{char2nr("f")} = "{% for \1for loop: \1                                                                                                                            %}\r{% endfor %}"
-autocmd BufEnter *.djhtml let b:surround_{char2nr("c")} = "{% comment %}\r{% end                                                                                                                           comment %}"
+" git clone git://github.com/tpope/vim-surround.git
 
 
-" ============================================================================ "
 " delimitMate
 " cd ~/.vim/bundle
 " git clone https://github.com/Raimondi/delimitMate.git
-" ============================================================================ "
-
-autocmd FileType python     let b:delimitMate_autoclose = 1
+autocmd FileType python let b:delimitMate_autoclose = 1
 autocmd FileType javascript let b:delimitMate_autoclose = 1
-autocmd FileType css        let b:delimitMate_autoclose = 1
-autocmd FileType xml        let b:delimitMate_autoclose = 1
-autocmd FileType html       let b:delimitMate_autoclose = 1
+autocmd FileType css let b:delimitMate_autoclose = 1
+autocmd FileType xml let b:delimitMate_autoclose = 1
+autocmd FileType html let b:delimitMate_autoclose = 1
 
 
-" ============================================================================ "
 " TaskList.vim
 " cd ~/.vim/bundle
 " git clone https://github.com/vim-scripts/TaskList.vim.git
-" ============================================================================ "
-
 map <F7> :TaskList<CR>
 
 
-" ============================================================================ "
-" Improved integration between Vim and its environment (fullscreen, open URL, background command execution)
+" vim-misc-xolox
 " cd ~/.vim/bundle
-" git clobne https://github.com/xolox/vim-shell.git
-" ============================================================================ "
+" git clone https://github.com/xolox/vim-misc.git vim-misc-xolox
 
+
+" vim-shell
+" cd ~/.vim/bundle
+" git clone https://github.com/xolox/vim-shell.git
 let g:shell_mappings_enabled = 0
 inoremap <Leader><F11> <C-o>:Fullscreen<CR>
 nnoremap <Leader><F11> :Fullscreen<CR>
@@ -644,52 +582,52 @@ inoremap <Leader><F12> <C-o>:Open<CR>
 nnoremap <Leader><F12> :Open<CR>
 
 
-" ============================================================================ "
+" ===========================================================================
 " Easy note taking in Vim
 " cd ~/.vim/bundle
 " git clone https://github.com/xolox/vim-notes.git
-" ============================================================================ "
+" ===========================================================================
 
-let g:notes_directories = ['~/Documents/notas', '~/Dropbox/servidor_ifg/notas']
+let g:notes_directories = ['~/Notas']
 autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
 
 
-" ============================================================================ "
+" ===========================================================================
 " Vim Outliner of Markups
 " cd ~/.vim/bundle
 " git clone https://github.com/vim-voom/vim-voom.github.com.git
-" ============================================================================ "
+" ===========================================================================
 
 
-" ============================================================================ "
+" ===========================================================================
 " Univeral Text Linking - Execute URLs, footnotes, open emails, organize ideas
 " cd ~/.vim/bundle
 " git clone https://github.com/vim-scripts/utl.vim.git
-" ============================================================================ "
+" ===========================================================================
 
 
-" ============================================================================ "
+" ===========================================================================
 " Extended session management for Vim (:mksession on steroids)
 " cd ~/.vim/bundle
 " git clone https://github.com/xolox/vim-session.git
-" ============================================================================ "
+" ===========================================================================
 
 "let g:loaded_session=1
 let g:session_autoload='no'
 let g:session_autosave='no'
 
 
-" ============================================================================ "
+" ===========================================================================
 " NerdTree
 " cd ~/.vim/bundle
 " git clone https://github.com/scrooloose/nerdtree.git
 " how to using NERDTree :
 " http://ykyuen.wordpress.com/2011/04/04/nerdtree-the-file-explorer-in-vivim/
-" ============================================================================ "
+" ===========================================================================
 
 " Enable this for make NERDTree load every opening files
-autocmd VimEnter * NERDTree " Make Always Load NERDTree every opening files
-autocmd VimEnter * wincmd p " Automatically go to buffer every time open files
+"autocmd VimEnter * NERDTree " Make Always Load NERDTree every opening files
+"autocmd VimEnter * wincmd p " Automatically go to buffer every time open files
 
 " FIXING NERDTree, automatically close if there no file edited
 "https://github.com/scrooloose/nerdtree/issues/21
@@ -713,7 +651,7 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-" Open Window Explorer NerdTree & Tagbar using (left-right sidebar) using <F6>
+" Open Window Explorer NerdTree & Tagbar using (left-right sidebar) using <Leader><F9>
 function! ToggleNERDTreeAndTagbar()
     let w:jumpbacktohere = 1
 
@@ -753,30 +691,30 @@ endfunction
 nmap <leader><F9> :call ToggleNERDTreeAndTagbar()<CR>
 
 
-" ============================================================================ "
+" ===========================================================================
 " Conque-Shell: Run interactive commands inside a Vim buffer
 " cd ~/.vim/bundle
-" curl https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/conque/conque_2.3.tar.gz -o conque_2.3.tar.gz
-" tar xzvf conque_2.3.tar.gz && mv -f conque_2.3 Conque-Shell
-" ============================================================================ "
+" curl -O https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/conque/conque_2.3.tar.gz
+" tar -xzf conque_2.3.tar.gz && mv -f conque_2.3 Conque-Shell && rm -f conque_2.3.tar.gz
+" ===========================================================================
 
 
-" ============================================================================ "
+" ===========================================================================
 " Vim plugin for working with python virtualenvs
 " cd ~/.vim/bundle
 " git clone https://github.com/jmcantrell/vim-virtualenv.git
-" ============================================================================ "
+" ===========================================================================
 
 let g:virtualenv_directory = '~/.local/venvs'
 
 
-" ============================================================================ "
+" ===========================================================================
 " vim-django run commands, create apps, and beyond
 " cd ~/.vim/bundle
 " git clone https://github.com/cwood/vim-django.git
-" ============================================================================ "
+" ===========================================================================
 
-let g:django_projects = '~/Dropbox/servidor_ifg/projetos' "Sets all projects under project
+let g:django_projects = '~/Meus_Projetos' "Sets all projects under project
 let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
 let g:django_activate_nerdtree = 1 "Try to open nerdtree at the project root.
 let g:last_relative_dir = '' "Initial Directory for Django App
@@ -818,53 +756,17 @@ nnoremap <leader>9 :e urls.py<cr>
 
 
 " ============================================================================ "
-" Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone https://github.com/davidhalter/jedi-vim.git
-" ============================================================================ "
-
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = ""
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 1
-let g:jedi#completions_enabled = 0
-
-
-" ============================================================================ "
-" Settings for vim-project
-" cd ~/.vim/bundle
-" git clone https://github.com/amiorin/vim-project.git
-" ============================================================================ "
-
-let g:project_enable_welcome = 1
-let g:project_use_nerdtree = 1
-set rtp+=~/vimfiles/bundle/vim-project/
-call project#rc("~/Dropbox/servidor_ifg/projetos")
-
-Project 'visao/visao', 'Visao'
-Project 'visao/visao-dev', 'Visao-Dev'
-Project 'visao/sistec_q', 'SISTEC-Q'
-Project 'visao/sistec_ead', 'SISTEC-EAD'
-Project 'visao/sistec-download', 'SISTEC-Download'
-
-
-" ============================================================================ "
 " Removed Plugins
 " ============================================================================ "
 
 
-" ============================================================================ "
+" ===========================================================================
 " Settings for python-mode
 " Note: I'm no longer using this. Leave this commented out
 " and uncomment the part about jedi-vim instead
 " cd ~/.vim/bundle
-" git clone https://github.com/klen/python-mode
-" ============================================================================ "
+" GIT clone https://github.com/klen/python-mode
+" ===========================================================================
 
 "" map <Leader>g :call RopeGotoDefinition()<CR>
 "" let ropevim_enable_shortcuts = 1
@@ -877,23 +779,53 @@ Project 'visao/sistec-download', 'SISTEC-Download'
 "" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
-" ============================================================================ "
+" ===========================================================================
 " On the fly Python checking in Vim with PyFlakes
 " cd ~/.vim/bundle
-" git clone https://github.com/kevinw/pyflakes-vim.git
-" ============================================================================ "
+" GIT clone https://github.com/kevinw/pyflakes-vim.git
+" ===========================================================================
 
 "let g:pyflakes_use_quickfix = 0
 
 
-" ============================================================================ "
+" ===========================================================================
 " vim-pep8: just checks if your python code is pep-8 compliant
 " cd ~/.vim/bundle
 " mkdir -p vim-pep8/ftplugin/python
-" curl -o vim-pep8/ftplugin/python/pep8.vim http://www.vim.org/scripts/download_script.php?src_id=14366
+" CURL -o vim-pep8/ftplugin/python/pep8.vim http://www.vim.org/scripts/download_script.php?src_id=14366
 " pip install --upgrade pep8
-" ============================================================================ "
+" ===========================================================================
 
 "let g:pep8_map='<F8>'
 
+
+
+" ===========================================================================
+" vim-flake8: Flake8 plugin for Vim
+" cd ~/.vim/bundle
+" GIT clone https://github.com/nvie/vim-flake8.git
+" pip install --upgrade flake8
+" ===========================================================================
+
+
+" ============================================================================ "
+" Settings for vim-project
+" cd ~/.vim/bundle
+" git clone https://github.com/amiorin/vim-project.git
+" ============================================================================ "
+
+"let g:project_enable_welcome = 1
+"let g:project_use_nerdtree = 1
+
+"set rtp+=~/vimfiles/bundle/vim-project/
+"call project#rc("~/Meus_Projetos")
+
+"Project "locafan"
+"Project "my_dot_files"
+"Project "my_shell_scripts"
+
+"Project "~/Dropbox/servidor_ifg/projetos/suap"
+"Project "~/Dropbox/servidor_ifg/projetos/requisicao"
+"Project "~/Dropbox/servidor_ifg/projetos/ifg-mobile"
+"Project "~/Dropbox/servidor_ifg/projetos/visao"
 
