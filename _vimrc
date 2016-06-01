@@ -828,4 +828,3 @@ nnoremap <leader>9 :e urls.py<cr>
 "Project "~/Dropbox/servidor_ifg/projetos/requisicao"
 "Project "~/Dropbox/servidor_ifg/projetos/ifg-mobile"
 "Project "~/Dropbox/servidor_ifg/projetos/visao"
-
