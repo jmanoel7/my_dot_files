@@ -487,13 +487,19 @@ noremap! <Leader><C-p> <Esc>:call PyUnitRunTests()<CR>
 " cd ~/.vim/bundle
 " git clone https://github.com/fholgado/minibufexpl.vim.git
 
-" MiniBufExpl Colors
+" MiniBufExpl Colors 1
 "hi MBENormal               guifg=#808080 guibg=fg
 "hi MBEChanged              guifg=#CD5907 guibg=fg
 "hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
 "hi MBEVisibleChanged       guifg=#F1266F guibg=fg
 "hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
 "hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+
+" MiniBufExpl Colors 2
+"hi MBENormal guifg=Blue                                        " for buffers that have NOT CHANGED and are NOT VISIBLE.
+"hi MBEChanged guifg=Red                                        " for buffers that HAVE CHANGED and are NOT VISIBLE
+"hi MBEVisibleNormal term=bold cterm=bold gui=bold guifg=Green  " buffers that have NOT CHANGED and are VISIBLE
+"hi MBEVisibleChanged term=bold cterm=bold gui=bold guifg=Green " buffers that have CHANGED and are VISIBLE
 
 " Taken from http://dotfiles.org/~joaoTrindade/.vimrc
 " Minibuffer
@@ -505,7 +511,7 @@ noremap! <Leader><C-p> <Esc>:call PyUnitRunTests()<CR>
 "let g:miniBufExplVSplit = 5
 
 " Put the miniBufExplorer windows at the right
-"let g:miniBufExplSplitBelow=1
+"let g:miniBufExplSplitBelow = 1
 
 "Maximum size of the mini buffer explorer window
 let g:miniBufExplMaxSize = 15
@@ -513,7 +519,6 @@ let g:miniBufExplMaxSize = 15
 "Still haven't discovered what it does
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplMapWindowNavVim = 1
 
 " make tabs show complete (no broken on two lines)
@@ -525,21 +530,9 @@ let g:miniBufExplModSelTarget = 1
 " If you would like to single click on tabs rather than double clicking on them to goto the selected buffer.
 let g:miniBufExplUseSingleClick = 1
 
-" for buffers that have NOT CHANGED and are NOT VISIBLE.
-"highlight MBENormal guifg=Blue
-
-" for buffers that HAVE CHANGED and are NOT VISIBLE
-"highlight MBEChanged guifg=Red
-
-" buffers that have NOT CHANGED and are VISIBLE
-"highlight MBEVisibleNormal term=bold cterm=bold gui=bold guifg=Green
-
-" buffers that have CHANGED and are VISIBLE
-"highlight MBEVisibleChanged term=bold cterm=bold gui=bold guifg=Green
-
 let g:bufExplorerSortBy = "name"
 
-autocmd BufRead,BufNew :call UMiniBufExplorer
+"autocmd BufRead,BufNew :call UMiniBufExplorer
 
 
 " vim-fugitive
@@ -633,8 +626,8 @@ let g:session_autosave='no'
 " ===========================================================================
 
 " Enable this for make NERDTree load every opening files
-autocmd VimEnter * NERDTree " Make Always Load NERDTree every opening files
-autocmd VimEnter * wincmd p " Automatically go to buffer every time open files
+"autocmd VimEnter * NERDTree " Make Always Load NERDTree every opening files
+"autocmd VimEnter * wincmd p " Automatically go to buffer every time open files
 
 " FIXING NERDTree, automatically close if there no file edited
 "https://github.com/scrooloose/nerdtree/issues/21
@@ -658,7 +651,7 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-" Open Window Explorer NerdTree & Tagbar using (left-right sidebar) using <F6>
+" Open Window Explorer NerdTree & Tagbar using (left-right sidebar) using <Leader><F9>
 function! ToggleNERDTreeAndTagbar()
     let w:jumpbacktohere = 1
 
@@ -763,28 +756,6 @@ nnoremap <leader>9 :e urls.py<cr>
 
 
 " ============================================================================ "
-" Settings for vim-project
-" cd ~/.vim/bundle
-" git clone https://github.com/amiorin/vim-project.git
-" ============================================================================ "
-
-let g:project_enable_welcome = 0
-let g:project_use_nerdtree = 1
-
-set rtp+=~/.vim/bundle/vim-project/
-call project#rc("~/Meus_Projetos")
-
-Project "locafan"
-Project "my_dot_files"
-Project "my_shell_scripts"
-
-Project "~/Dropbox/servidor_ifg/projetos/suap"
-Project "~/Dropbox/servidor_ifg/projetos/requisicao"
-Project "~/Dropbox/servidor_ifg/projetos/ifg-mobile"
-Project "~/Dropbox/servidor_ifg/projetos/visao"
-
-
-" ============================================================================ "
 " Removed Plugins
 " ============================================================================ "
 
@@ -835,5 +806,27 @@ Project "~/Dropbox/servidor_ifg/projetos/visao"
 " GIT clone https://github.com/nvie/vim-flake8.git
 " pip install --upgrade flake8
 " ===========================================================================
+
+
+" ============================================================================ "
+" Settings for vim-project
+" cd ~/.vim/bundle
+" git clone https://github.com/amiorin/vim-project.git
+" ============================================================================ "
+
+"let g:project_enable_welcome = 1
+"let g:project_use_nerdtree = 1
+
+"set rtp+=~/.vim/bundle/vim-project/
+"call project#rc("~/Meus_Projetos")
+
+"Project "locafan"
+"Project "my_dot_files"
+"Project "my_shell_scripts"
+
+"Project "~/Dropbox/servidor_ifg/projetos/suap"
+"Project "~/Dropbox/servidor_ifg/projetos/requisicao"
+"Project "~/Dropbox/servidor_ifg/projetos/ifg-mobile"
+"Project "~/Dropbox/servidor_ifg/projetos/visao"
 
 

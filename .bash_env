@@ -1,19 +1,3 @@
-export TERM='xterm-256color'
-export HISTCONTROL='ignoreboth'
-export HISTSIZE='1000'
-export HISTFILESIZE='2000'
-export LANG='pt_BR.UTF-8'
-export TZ='America/Sao_Paulo'
-export EDITOR='nano'
-export VISUAL='nano'
-export GPGKEY='607A5E65'
-[ -r '/usr/bin/virtualenvwrapper.sh' ] && \
-    source /usr/bin/virtualenvwrapper.sh
-export WORKON_HOME="$HOME/.local/venvs"
-export XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps/"
-export XULRUNNER_SDK_HOME="$HOME/.local/xulrunner-sdk/"
-#export http_proxy='http://localhost:8123'
-#export http_proxy='http://localhost:8118'
 export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 #export CABAL_HOME="$HOME/.cabal"
 #export PATH="$CABAL_HOME/bin:$PATH"
@@ -31,12 +15,29 @@ export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #export PATH="$HOME/.cask/bin:$PATH"
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-#export DEBEMAIL="joaomanoel7@gmail.com"
-#export DEBFULLNAME="Joao Manoel"
+#export XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps/"
+#export XULRUNNER_SDK_HOME="$HOME/.local/xulrunner-sdk/"
+#export http_proxy='http://localhost:8123'
+#export http_proxy='http://localhost:8118'
+export HISTCONTROL='ignoreboth'
+export HISTSIZE='1000'
+export HISTFILESIZE='2000'
+export LANG='pt_BR.UTF-8'
+export TZ='America/Sao_Paulo'
 #export VNCVIEWER_JAR="/usr/share/vnc/classes/VncViewer.jar"
 #export VNCVIEWER_JAR="/usr/share/vnc-java/vncviewer.jar"
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export TERM='xterm-256color'
 export TERMINAL='terminator'
-export BROWSER='chromium'
+export BROWSER='firefox'
 #export PYTHONDOCS='/usr/share/doc/python2/html/'
+export VIRTUALENVWRAPPER_PYTHON="$HOME/.local/bin/python"
+[ -r '/usr/bin/virtualenvwrapper.sh' ] && \
+    source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME="$HOME/.local/venvs"
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export GPGKEY='607A5E65'
+#export DEBEMAIL="joaomanoel7@gmail.com"
+#export DEBFULLNAME="Joao Manoel"
