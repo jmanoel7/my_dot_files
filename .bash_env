@@ -14,6 +14,11 @@ export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 #export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #export PATH="$HOME/.cask/bin:$PATH"
+export PATH="/home/jmanoel7/perl5/bin${PATH:+:${PATH}}"
+export PERL5LIB="/home/jmanoel7/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL_LOCAL_LIB_ROOT="/home/jmanoel7/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_MB_OPT="--install_base \"/home/jmanoel7/perl5\""; export PERL_MB_OPT;
+export PERL_MM_OPT="INSTALL_BASE=/home/jmanoel7/perl5"
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 #export XULRUNNER_APPS_HOME="$HOME/.local/xulrunner-apps/"
 #export XULRUNNER_SDK_HOME="$HOME/.local/xulrunner-sdk/"
@@ -30,10 +35,10 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 export TERM='xterm-256color'
-export TERMINAL='terminator'
+export TERMINAL='terminator.wrapper'
 export BROWSER='firefox'
 #export PYTHONDOCS='/usr/share/doc/python2/html/'
-export VIRTUALENVWRAPPER_PYTHON="$HOME/.local/bin/python"
+export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python2.7"
 [ -r '/usr/bin/virtualenvwrapper.sh' ] && \
     source /usr/bin/virtualenvwrapper.sh
 export WORKON_HOME="$HOME/.local/venvs"
