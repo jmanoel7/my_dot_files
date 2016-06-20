@@ -64,6 +64,21 @@ set autowrite
 let mapleader=","
 let g:mapleader=","
 
+" Select the text with the v/V command, then press ~ to convert
+" the text to UPPER CASE, then to lower case, then to Title Case.
+" Keep pressing ~ until you get the case you want.
+function! TwiddleCase(str)
+  if a:str ==# toupper(a:str)
+    let result = tolower(a:str)
+  elseif a:str ==# tolower(a:str)
+    let result = substitute(a:str,'\v\C<([a-zà-ý])([a-zà-ý]+)>', '\u\1\L\2', 'g')
+  else
+    let result = toupper(a:str)
+  endif
+  return result
+endfunction
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgvl
+
 " Write Command
 nmap <leader>w :w!<cr>
 
@@ -307,7 +322,7 @@ let g:tex_flavor='latex'
 let g:user_emmet_mode='a'    "enable all function in all mode.
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,django EmmetInstall
-let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key='<C-Y>'
 
 " L9 : Vim-script library
 " cd ~/.vim/bundle
@@ -765,7 +780,7 @@ nnoremap <leader>9 :e urls.py<cr>
 " Note: I'm no longer using this. Leave this commented out
 " and uncomment the part about jedi-vim instead
 " cd ~/.vim/bundle
-" GIT clone https://github.com/klen/python-mode
+" NO_GIT clone https://github.com/klen/python-mode
 " ===========================================================================
 
 "" map <Leader>g :call RopeGotoDefinition()<CR>
@@ -782,7 +797,7 @@ nnoremap <leader>9 :e urls.py<cr>
 " ===========================================================================
 " On the fly Python checking in Vim with PyFlakes
 " cd ~/.vim/bundle
-" GIT clone https://github.com/kevinw/pyflakes-vim.git
+" NO_GIT clone https://github.com/kevinw/pyflakes-vim.git
 " ===========================================================================
 
 "let g:pyflakes_use_quickfix = 0
@@ -792,8 +807,8 @@ nnoremap <leader>9 :e urls.py<cr>
 " vim-pep8: just checks if your python code is pep-8 compliant
 " cd ~/.vim/bundle
 " mkdir -p vim-pep8/ftplugin/python
-" CURL -o vim-pep8/ftplugin/python/pep8.vim http://www.vim.org/scripts/download_script.php?src_id=14366
-" pip install --upgrade pep8
+" NO_CURL -o vim-pep8/ftplugin/python/pep8.vim http://www.vim.org/scripts/download_script.php?src_id=14366
+" NO_PIP install --upgrade pep8
 " ===========================================================================
 
 "let g:pep8_map='<F8>'
@@ -803,15 +818,15 @@ nnoremap <leader>9 :e urls.py<cr>
 " ===========================================================================
 " vim-flake8: Flake8 plugin for Vim
 " cd ~/.vim/bundle
-" GIT clone https://github.com/nvie/vim-flake8.git
-" pip install --upgrade flake8
+" NO_GIT clone https://github.com/nvie/vim-flake8.git
+" NO_PIP install --upgrade flake8
 " ===========================================================================
 
 
 " ============================================================================ "
 " Settings for vim-project
 " cd ~/.vim/bundle
-" git clone https://github.com/amiorin/vim-project.git
+" NO_GIT clone https://github.com/amiorin/vim-project.git
 " ============================================================================ "
 
 "let g:project_enable_welcome = 1
