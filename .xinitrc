@@ -11,58 +11,96 @@ fi
 
 case "$DEFAULT_SESSION" in
     "i3")
-        compton -b -f -m 0.95 &
-        nitrogen --restore &
-        volumeicon &
-        clipit &
-        nm-applet &
-        #/opt/teamviewer/tv_bin/script/teamviewer &
-        #hp-systray -x &
-        (sleep 5; dropbox start -i) &
-        (sleep 5; pamac-tray) &
+        (sleep 1; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
+        (sleep 1; thunar --daemon) &
+        (sleep 1; nm-applet) &
+        (sleep 2; xsetroot -solid '#2E3436') &
+        #(sleep 2; fbsetroot -solid '#2E3436') &
+        #(sleep 2; nitrogen --restore) &
+        (sleep 2; compton -b -f -m 0.95) &
+        (sleep 3; volti) &
+        #(sleep 3; volumeicon) &
+        (sleep 3; clipit) &
+        (sleep 4; dropbox.py start -i) &
+        (sleep 4; pamac-tray) &
+        #(sleep 4; hp-systray -x) &
+        #(sleep 4; /opt/teamviewer/tv_bin/script/teamviewer) &
+        (sleep 4; conkywonky.sh) &
+        (sleep 5; i3-sensible-terminal) &
         (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
-        thunar --daemon &
-        urxvt &
         exec \
             /usr/bin/ssh-agent \
             /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session i3
         ;;
     "i3-with-shmlog")
-        compton -b -f -m 0.95 &
-        nitrogen --restore &
-        volumeicon &
-        clipit &
-        nm-applet &
-        #/opt/teamviewer/tv_bin/script/teamviewer &
-        #hp-systray -x &
-        (sleep 5; dropbox start -i) &
-        (sleep 5; pamac-tray) &
+        (sleep 1; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
+        (sleep 1; thunar --daemon) &
+        (sleep 1; nm-applet) &
+        (sleep 2; xsetroot -solid '#2E3436') &
+        #(sleep 2; fbsetroot -solid '#2E3436') &
+        #(sleep 2; nitrogen --restore) &
+        (sleep 2; compton -b -f -m 0.95) &
+        (sleep 3; volti) &
+        #(sleep 3; volumeicon) &
+        (sleep 3; clipit) &
+        (sleep 4; dropbox.py start -i) &
+        (sleep 4; pamac-tray) &
+        #(sleep 4; hp-systray -x) &
+        #(sleep 4; /opt/teamviewer/tv_bin/script/teamviewer) &
+        (sleep 4; conkywonky.sh) &
+        (sleep 5; i3-sensible-terminal) &
         (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
-        thunar --daemon &
-        urxvt &
         exec \
             /usr/bin/ssh-agent \
             /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session i3-with-shmlog
         ;;
     "awesome")
-        compton -b -f -m 0.95 &
-        nitrogen --restore &
-        volumeicon &
-        clipit &
-        nm-applet &
-        #/opt/teamviewer/tv_bin/script/teamviewer &
-        #hp-systray -x &
-        (sleep 5; dropbox start -i) &
-        (sleep 5; pamac-tray) &
+        (sleep 1; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
+        (sleep 1; thunar --daemon) &
+        (sleep 1; nm-applet) &
+        (sleep 2; xsetroot -solid '#2E3436') &
+        #(sleep 2; fbsetroot -solid '#2E3436') &
+        #(sleep 2; nitrogen --restore) &
+        (sleep 2; compton -b -f -m 0.95) &
+        (sleep 3; volti) &
+        #(sleep 3; volumeicon) &
+        (sleep 3; clipit) &
+        (sleep 4; dropbox.py start -i) &
+        (sleep 4; pamac-tray) &
+        #(sleep 4; hp-systray -x) &
+        #(sleep 4; /opt/teamviewer/tv_bin/script/teamviewer) &
+        (sleep 4; conkywonky.sh) &
+        (sleep 5; i3-sensible-terminal) &
         (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
-        thunar --daemon &
-        urxvt &
         exec \
             /usr/bin/ssh-agent \
             /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session awesome
+        ;;
+    "fluxbox")
+        (sleep 1; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
+        (sleep 1; thunar --daemon) &
+        (sleep 1; nm-applet) &
+        #(sleep 2; xsetroot -solid '#2E3436') &
+        (sleep 2; fbsetroot -solid '#2E3436') &
+        #(sleep 2; nitrogen --restore) &
+        (sleep 2; compton -b -f -m 0.95) &
+        (sleep 3; volti) &
+        #(sleep 3; volumeicon) &
+        (sleep 3; clipit) &
+        (sleep 4; dropbox.py start -i) &
+        (sleep 4; pamac-tray) &
+        #(sleep 4; hp-systray -x) &
+        #(sleep 4; /opt/teamviewer/tv_bin/script/teamviewer) &
+        (sleep 4; conkywonky.sh) &
+        (sleep 5; i3-sensible-terminal) &
+        (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
+        exec \
+            /usr/bin/ssh-agent \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/dbus-launch --exit-with-session startfluxbox
         ;;
     "ubuntu")
         exec \
