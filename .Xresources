@@ -83,7 +83,8 @@ Xft.lcdfilter: lcddefault
 ! --------------------------------------------------------------------------------
 ! mouse theme
 ! --------------------------------------------------------------------------------
-Xcursor.theme: Chameleon-Pearl-Regular-0.5
+!Xcursor.theme: Chameleon-Pearl-Regular-0.5
+Xcursor.theme: Adwaita
 Xcursor.size: 0
 
 
