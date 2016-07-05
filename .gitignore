@@ -16,5 +16,6 @@ bundle/
 .vim-fuf-data/
 *.xsession-errors
 .xsession-errors
+gtkfilechooser.ini
 *~
 .*~
