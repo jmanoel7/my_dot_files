@@ -1,5 +1,5 @@
-firefox -P
 pamac
 pamac-tray
 terminator.wrapper
 urxvt
+firefox -P
