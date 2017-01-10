@@ -23,8 +23,8 @@ total_run_times 0
 own_window yes
 own_window_class Conky
 own_window_transparent yes
-own_window_type override
-#own_window_type desktop
+#own_window_type override
+own_window_type desktop
 own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
@@ -55,7 +55,8 @@ ${hr 2}
 Core1  (${cpu cpu1}%)${alignr}Core2  (${cpu cpu2}%)
 ${freq_g 1} Ghz${alignr}${freq_g 2} Ghz
 ${execi 10 sensors | egrep '^Core 0' | sed 's/^Core 0:[[:blank:]]\++\([^[:blank:]]\+\).*$/\1/'}${alignr}${execi 10 sensors | egrep '^Core 1' | sed 's/^Core 1:[[:blank:]]\++\([^[:blank:]]\+\).*$/\1/'}
-${cpugraph cpu1 16,120 789E2D A7CC5C}${alignr}${cpugraph cpu2 16,120 789E2D A7CC5C}
+${cpugraph cpu1 16,120 A31616 DA1919}${alignr}${cpugraph cpu2 16,120 A31616 DA1919}
+#${cpugraph cpu1 16,120 789E2D A7CC5C}${alignr}${cpugraph cpu2 16,120 789E2D A7CC5C}
 #${cpugraph cpu1 16,120}${alignr}${cpugraph cpu2 16,120}
 Processes:${alignr}${processes}  ($running_processes running)  ($running_threads threads)
 
@@ -91,22 +92,22 @@ ROOT${goto 48}${fs_free /root}${goto 105}${fs_used /root}${goto 160}${fs_size /r
 
 N E T W O R K
 ${hr 2}
-${if_existing /proc/net/route wlan0}
-Interface: ${alignr}wlan0
-Hardware: ${alignr}${execi 300 LANG=C ifconfig wlan0 | grep "HWaddr" | sed "s/^.*HWaddr \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
-Local Ip: ${alignr}${addr wlan0}
+${if_existing /proc/net/route wlp14s0}
+Interface: ${alignr}wlp14s0
+Hardware: ${alignr}${execi 300 LANG=C ifconfig wlp14s0 | grep "HWaddr" | sed "s/^.*HWaddr \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}
+Local Ip: ${alignr}${addr wlp14s0}
 Public Ip: ${alignr}${execi 300 ~/.conky/shell-scripts/public-ip.sh}
-Upload: ${alignr} ${upspeed wlan0} KiB/s  (${totalup wlan0})
-${upspeedgraph wlan0 16,275 789E2D A7CC5C}
-#${upspeedgraph wlan0 16,275}
-Download: ${alignr} ${downspeed wlan0} KiB/s  (${totaldown wlan0})
-${downspeedgraph wlan0 16,275 789E2D A7CC5C}
-#${downspeedgraph wlan0 16,275}
-Wifi ESSID: ${alignr}${wireless_essid wlan0}
-Wifi BSSID: ${alignr}${wireless_ap wlan0}
-Wifi Mode: ${alignr}${wireless_mode wlan0}
-Wifi Bitrate: ${alignr}${wireless_bitrate wlan0}
-Wifi Signal: ${alignr}${wireless_link_qual_perc wlan0}%  ${wireless_link_bar 8,60 wlan0}
+Upload: ${alignr} ${upspeed wlp14s0} KiB/s  (${totalup wlp14s0})
+${upspeedgraph wlp14s0 16,275 AD4200 E05500}
+#${upspeedgraph wlp14s0 16,275}
+Download: ${alignr} ${downspeed wlp14s0} KiB/s  (${totaldown wlp14s0})
+${downspeedgraph wlp14s0 16,275 AD4200 E05500}
+#${downspeedgraph wlp14s0 16,275}
+Wifi ESSID: ${alignr}${wireless_essid wlp14s0}
+Wifi BSSID: ${alignr}${wireless_ap wlp14s0}
+Wifi Mode: ${alignr}${wireless_mode wlp14s0}
+Wifi Bitrate: ${alignr}${wireless_bitrate wlp14s0}
+Wifi Signal: ${alignr}${wireless_link_qual_perc wlp14s0}%  ${wireless_link_bar 8,60 wlp14s0}
 ${else}${if_existing /proc/net/route enp20s0}
 Interface: ${alignr}enp20s0
 Hardware: ${alignr}${execi 10 LANG=C ifconfig eth0 | grep "HWaddr" | sed "s/^.*HWaddr \([a-f0-9]\{2\}\)\(\(:[a-f0-9]\{2\}\)\{5\}\).*$/\1\2/"}

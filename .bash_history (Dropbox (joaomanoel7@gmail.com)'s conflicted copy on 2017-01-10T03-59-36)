@@ -1,0 +1,2122 @@
+cd
+cd Programas/geany/
+ll
+cd plugins/
+ll
+cd
+clear
+geany 
+cd Downloads/
+mkdir kdevelop
+mv KDevelop-5.0.2-1-x86_64.AppImage kdevelop/
+mv install* kdevelop/
+mv Chocolatey\ -\ Installation* kdevelop/
+cd kdevelop/
+ll
+vim installChocolatey.cmd 
+ll
+cp KDevelop-5.0.2-1-x86_64.AppImage ~/.local/bin/
+mkdir ~/.local/bin/
+cp KDevelop-5.0.2-1-x86_64.AppImage ~/.local/bin/kdevelop
+chmod a+x ~/.local/bin/kdevelop
+cd
+kdevelop 
+
+kdevelop 
+cle
+ls
+clear
+rm dbext_sql_history.txt 
+ll
+l
+chown joaomanoel\: -R ProgramasRFB/
+ll
+ll ProgramasRFB/
+ll
+ll .local/bin/
+file .local/bin/
+file .local/bin/kdevelop 
+sha1sum -c .local/bin/kdevelop
+sha1sum .local/bin/kdevelop
+ll /lib64/ld-linux-x86-64.so.2 
+mv Downloads/kdevelop-5.0.2-x64-setup.exe Downloads/kdevelop/
+mv Downloads/kdevelop/ Programas
+cd Programas
+ll
+ll kdevelop/
+cd Downloads/
+xzcat Packages.xz 
+xzcat Packages.xz  | less
+cd
+kdevelop 
+bg
+xzcat Packages.xz  | less
+xzcat Downloads/Packages.xz  | less
+ll Programas
+rm -rf ~/Downloads/eric/
+s rm -rf ~/Downloads/eric/
+xkill 
+man xdg-open 
+man xdg-mime 
+xdg-mime de
+Pacotes recomendados:
+cmp ../sqlite3.c.tags ~/Downloads/sqlite3.c.tags 
+cmp ../sqlite3.c.tags ~/Downloads/sqlite3.c\ \(1\).tags 
+cmp sqlite3.c.tags ~/Downloads/sqlite3.c\ \(1\).tags 
+cd '/home/joaomanoel/git/Minecraft'
+cd '/home/joaomanoel/Dropbox/aluno_ifg/sources/poo1_java/lista_agregacao'
+cd '/home/joaomanoel/Dropbox/Public/Meus_Projetos/Minecraft'
+cd '/home/joaomanoel/Dropbox/aluno_ifg/sources/poo1_java/lista_agregacao'
+ls
+ll
+cd
+ll
+which sip
+ll /usr/local/lib/python3.5/dist-packages/sip-4.18.1.dist-info/
+cat /usr/local/lib/python3.5/dist-packages/sip-4.18.1.dist-info/METADATA 
+cat /usr/local/lib/python3.5/dist-packages/sip-4.18.1.dist-info/RECORD 
+cat /usr/local/lib/python3.5/dist-packages/sip-4.18.1.dist-info/INSTALLER 
+cat /usr/local/lib/python3.5/dist-packages/sip-4.18.1.dist-info/WHEEL 
+fiel /usr/local/lib/python3.5/dist-packages/sip.so 
+file /usr/local/lib/python3.5/dist-packages/sip.so 
+sudo apt-get install rxvt-unicode-256color rxvt-unicode rxvt-unicode-ml
+sudo apt-get install rxvt-unicode-256color rxvt-unicode-ml
+sudo apt-get install rxvt-unicode-256color
+ll /usr/bin/rxvt
+ll /usr/bin/rxvt-unicode 
+ll /usr/bin/urxvt
+ll /usr/bin/rxvt
+ll /etc/alternatives/rxvt
+which urxvt
+apt-file list qt4-designer 
+cd
+cd '/home/joaomanoel/git/Minecraft'
+python main.py
+cd '/home/joaomanoel/git/Minecraft'
+python "main.py"
+cd '/home/joaomanoel/git/Minecraft'
+python "main.py"
+cat latex_snippets.conf 
+Minecraft# Extension for LaTeX to Geany's snippet configuration file.
+# Distributed under terms of GPLv2 or newer (as Geany is).
+cd Programas/geany/snippets/
+ll
+cat tcl_README_snippets.txt 
+ll
+cat latex_snippets.conf 
+cat latex_snippets.conf  > snippets.conf 
+cat python_snippets.conf >> snippets.conf 
+cat tcl_snippets.conf >> snippets.conf 
+vi snippets.conf 
+cat latex_snippets.conf 
+ll
+cat html+php+others_snippets.conf 
+cat html+php+others_snippets.conf  >> snippets.conf 
+vi snippets.conf 
+ll
+less snippets.conf 
+nano snippets.conf 
+cp snippets.conf ~/.config/geany/snippets.conf
+geany 
+cd ../tags/
+ll
+tar xjvf geany-tags.tar.bz2 
+mv tags/* ~/.config/geany/tags/
+rmdir tags/
+ll
+ll ~/.config/geany/tags/
+ll
+tar tf geany-python-tags.tar.bz2 
+mv core-ruby2.0.rb.tags.txt core-ruby2.0.rb.tags -i
+cp -i *.tags ~/.config/geany/tags/
+ll
+tar xjvf geany-css-tags.tar.bz2 
+ll
+rm geany-css-tags.tar.bz2 
+tar xjvf geany-c-tags.tar.bz2 
+rm geany-c-tags.tar.bz2 
+tar xjvf geany-c++-tags.tar.bz2 
+tar tf geany-c++-tags.tar.bz2
+tar tf geany-c++-tags.tar.bz2 
+ll geany-c++-tags.tar.bz2
+rm geany-c++-tags.tar.bz2 
+ll
+tar xjvf geany-glsl-tags.tar.bz2 
+rm geany-glsl-tags.tar.bz2
+tar xvf geany-latex-tags.tar.bz2 
+rm geany-latex-tags.tar.bz2
+ll
+tar xjvf geany-php-tags.tar.bz2 
+rm geany-php-tags.tar.bz2
+tar xjvf geany-python-tags.tar.bz2 
+rm geany-python-tags.tar.bz2
+ll
+tar xjvf geany-tags.tar.bz2 -C te
+mkdir te
+tar xjvf geany-tags.tar.bz2 -C te
+cd te/tags/
+for i in *; do [ -f ../../tags/$i ] && cmp $i ../../tags/$i && rm -f $i; done
+ll
+mv -i * ../../tags/
+cd ..
+rmdir -p te/tags/
+ll tags/
+ll
+rm geany-tags.tar.bz2 
+ll tags/
+ll
+tar xjvf geany-vala-tags.tar.bz2 
+rm geany-vala-tags.tar.bz2
+ll
+tar tf vala-0.24_tags.tar.gz 
+tar xzvf vala-0.24_tags.tar.gz
+rm vala-0.24_tags.tar.gz
+tar xzvf vala-0.26_tags.tar.gz 
+rm vala-0.26_tags.tar.gz
+tar xzvf vala-0.30_tags.tar.gz 
+rm vala-0.30_tags.tar.gz
+mv -i vala-0.24_tags/* tags/
+ll
+ll vala-0.24_tags/
+ll vala-0.26_tags/
+ll
+mv -i *.tags tags/
+ll
+ll vala-0.24_tags/
+ll
+rm -rf ~/.config/geany/tags/
+cp -R tags/ ~/.config/geany/tags/
+ll
+sync
+cp -R vala-0.* ~/.config/geany/
+sync
+tar cJvf ../geany_tags_all.tar.xz *
+cd Programas/geany/plugins/geany-plugins-1.28.0/
+./configure --enable-cppcheck --enable-shared --enable-static
+sudo apt-get build-dep '^geany.*$'
+sudo apt-get build-dep geany geany-plugin-scope geany-plugin-py geany-plugin-pg 
+sudo apt-get build-dep geany-plugin-scope geany-plugin-py geany-plugin-pg 
+list-packages.sh 
+apt build-dep geany geany-plugin-miniscript geany-common geany-plugin-multiterm geany-plugin-addons geany-plugin-numberedbookmarks geany-plugin-autoclose geany-plugin-overview geany-plugin-automark geany-plugin-pairtaghighlighter geany-plugin-codenav geany-plugin-pg geany-plugin-commander geany-plugin-pohelper geany-plugin-ctags geany-plugin-prettyprinter geany-plugin-debugger geany-plugin-prj geany-plugin-defineformat geany-plugin-projectorganizer geany-plugin-devhelp geany-plugin-py geany-plugin-doc geany-plugins geany-plugin-extrasel geany-plugins-common geany-plugin-gendoc geany-plugin-scope geany-plugin-geniuspaste geany-plugin-sendmail geany-plugin-git-changebar geany-plugin-shiftcolumn geany-plugin-gproject geany-plugin-spellcheck geany-plugin-insertnum geany-plugin-tableconvert geany-plugin-latex geany-plugin-treebrowser geany-plugin-lineoperations geany-plugin-updatechecker geany-plugin-lipsum geany-plugin-vc geany-plugin-lua geany-plugin-webhelper geany-plugin-macro geany-plugin-xmlsnippets geany-plugin-markdown
+list-packages.sh 
+apt install chrpath dh-autoreconf libassuan-dev libctpl-dev libgconf2-dev libgcrypt20-dev libgit2-dev libgpg-error-dev libgpgme11-dev libgtkspell-dev libhttp-parser-dev libjavascriptcoregtk-1.0-dev libssh2-1-dev libstartup-notification0-dev libvala-0.30-0 libvte-dev libwebkitgtk-dev libwnck-dev libxres-dev valac valac-0.30-vapi x11proto-resource-dev
+ll
+./configure --enable-cppcheck --enable-shared --enable-static
+sudo apt-get install units units-filter 
+sudo apt-get install units units-filter  python-unidecode libctpl-doc libgcrypt20-doc libgconf2-doc libvte-doc
+sudo apt-get install units units-filter  python-unidecode libctpl-doc libgcrypt20-doc libgconf2-doc libvte-doc libglib2.0-doc
+apt-cache search unit | grep tests
+apt-cache search 'unit tests'
+sudo apt-get install check btest checkinstall 
+apt clean 
+apt -f ins
+apt -f install
+apt install
+./configure --enable-cppcheck --enable-shared --enable-static
+make
+sudo make install
+cd ..
+ll
+rm -rf geany-plugins-1.28.0
+ll
+cd ..
+ll
+l. source/
+rm -rf source/geany-1.28
+l. source/
+ll
+cd
+cd Programas/geany/
+ll
+cd tags/
+ll
+tar tf geany-tags.tar.bz2 
+tar tf geany-tags.tar.bz2  | sed 's/^tags\///'
+for i in "$(tar tf geany-tags.tar.bz2  | sed 's/^tags\///')"; do echo -e "\t$i\n"; done
+for i in $(tar tf geany-tags.tar.bz2  | sed 's/^tags\///'); do echo -e "\t$i\n"; done
+ll
+ls
+tar xavf geany-tags.tar.bz2 
+cd tags/
+for i in *; do [ -f "../${i}" ] && cmp "${i}" "../${i}" && rm "../${i}"; done
+ll
+ll ..
+diff sqlite3.c.tags ../sqlite3.c.tags 
+l. sqlite3.c.tags ../sqlite3.c.tags 
+file sqlite3.c.tags
+file sqlite3.c.tags ../sqlite3.c.tags 
+l. sqlite3.c.tags ../sqlite3.c.tags 
+mv ../sqlite3.c.tags ../sqlite3.c.tags.old
+cd ..
+rm -rf tags/
+ll
+mv sqlite3.c.tags.old sqlite3-20081221.c.tags
+ll
+cd ..
+ll
+ll windows/
+du -h .
+geany 
+ll
+cd
+cd Programas/eric6/
+ll
+tar xzvf eric6-6.1.10.tar.gz 
+ll
+tar xzvf PyQt-x11-gpl-4.11.4.tar.gz 
+tar xzvf QScintilla_gpl-2.9.3.tar.gz 
+cd PyQt-x11-gpl-4.11.4/
+ll
+cat README 
+python2.7 ./configure-ng.py 
+sudo apt-get purge '^pyqt.*$'
+sudo apt-get --purge autoremove 
+sudo -H which pip3.5 
+sudo -H pip3.5 --install -U --force-reinstall PyQt5
+sudo -H pip3.5 install -U --force-reinstall PyQt5
+sudo -H pip3.5 install -U --force-reinstall QScintilla
+ll
+python2.7 ./configure-ng.py 
+cd ..
+rm -rf PyQt-x11-gpl-4.11.4
+ll
+tar xzvf PyQt-x11-gpl-4.11.4.tar.gz 
+cd PyQt-x11-gpl-4.11.4/
+python2.7 ./configure-ng.py 
+sudo apt-get clean 
+sudo apt-get install 
+sudo -H pip2.7 install -U --force-reinstall sip
+sip
+sudo apt install sip-dev
+sudo apt-get install python-sip-dev  python-sip python-sip-doc
+sudo -H pip2.7 install -U --force-reinstall sip
+python2.7 ./configure-ng.py  
+make
+sudo make install
+cd ..
+cd PyQt-x11-gpl-4.11.4/
+sudo make uninstall
+python2.7 ./configure-ng.py --help
+python2.7 ./configure-ng.py --bindir=/usr/local/bin  --destdir=/usr/local/lib/python2.7/dist-packages  --designer-plugindir=/usr/local/share/qt4/plugins  --sipdir=/usr/local/share/sip/PyQt4
+make
+make clean
+make
+sudo make install
+cd ..
+echo 'python2.7 ./configure-ng.py --bindir=/usr/local/bin  --destdir=/usr/local/lib/python2.7/dist-packages  --designer-plugindir=/usr/local/share/qt4/plugins  --sipdir=/usr/local/share/sip/PyQt4' >> PyQt-x11-gpl-4.11.4.install
+ll
+du -h PyQt-x11-gpl-4.11.4
+ll
+rm -rf PyQt-x11-gpl-4.11.4
+ll
+cd QScintilla_gpl-2.9.3/
+ll
+cat README 
+xdg-open file:///doc/html-Qt4Qt5/index.html 
+xdg-open doc/html-Qt4Qt5/index.html 
+cd Qt4Qt5/
+ll
+qmake qscintilla.pro 
+make
+sudo make install
+ll
+clear
+cd ..
+du -h QScintilla_gpl-2.9.3
+rm -rf QScintilla_gpl-2.9.3
+ll
+cd eric6-6.1.10/
+ll
+pwd
+python2.7 install.py 
+which pyuic4
+cd ..
+cd eric6/
+ll
+tar xzvf QScintilla_gpl-2.9.3.tar.gz 
+cd QScintilla_gpl-2.9.3/
+ll
+cd qsci/
+ll
+cd ../Python/
+ll
+python2.7 ./configure.py 
+cd sip/
+ll
+cd ..
+ll
+python2.7 ./configure.py 
+ll tags/std.glsl.tags 
+mv ../geany_tags_all.tar.xz .
+ll
+rm -rf tags/ vala-0.*
+ll
+cd
+clear
+geany 
+sudo -H pip2.7 install -U yapf
+which yapf
+cd git/Minecraft/
+ll
+mv ~/Downloads/gitignore.txt .gitignore 
+ll
+l.
+cat .gitignore 
+ll
+vim main.py 
+vim README.md 
+grep folg README.md
+grep fol README.md
+grep fo README.md
+grep fogleman README.md
+ll
+git add .
+git commit 
+git push 
+cd
+cd Downloads/
+mv Mineshafter-launcher.jar ~/Dropbox/Emanuela/Minecraft/Mineshafter-launcher.jar 
+sync
+cp ~/Dropbox/Emanuela/Minecraft/Mineshafter-launcher.jar ~/Games/Minecraft/Mineshafter-launcher.jar 
+sync
+clear
+cd
+clear
+l. .config/tint2
+l. .config/tint2/
+apt-cache search spe
+apt-cache search spe | egrep ^spe
+cd Downloads/
+mkdir pyzo
+mv pyzo-4.3.1-* pyzo
+mv Miniconda3-latest-* pyzo/
+ll
+mkdir miniconda
+mv pyzo/Miniconda3-latest-* miniconda/
+ll miniconda/
+ll pyzo/
+cd git/Minecraft/
+python2.7 main.py &
+fg
+sudo -H pip2.7 install pyqt5
+dpkg -l | grep python-pyqt5
+l.
+find . -name '*curses*'
+cd Downloads/
+mkdir PythonToolkit
+mv PythonToolkit-14.04.04.* PythonToolkit
+cd PythonToolkit/
+ll
+rm PythonToolkit-14.04.04.win32.exe 
+ll
+sudo apt-get purge pida 
+sudo apt-get install vim-gtk3-py2 
+sudo apt-get install python-gtk2 python-vte python-dbus python-dbus-dev python-dbus-doc python-dbus.mainloop.pyqt5 python-dbusmock
+sudo apt-get install python-gtk2 python-vte python-dbus python-dbus-dev python-dbus-doc python-dbus.mainloop.pyqt5 python-dbusmock python-vte python-gtk2 python-gtk2-dev python-gtk2-doc python-gtk2-tutorial python-gtkglext1 python-gtk-gnash python-gtkmvc python-gtkmvc-doc python-gtksourceview2 python-gtkspellcheck python-gtkspellcheck-doc python-gtk-vnc
+sudo apt-get install vim-gtk-py2 
+sudo apt-get purge vim-gtk3-py2 
+sudo apt-get purge vim-gnome vim-gnome-py2
+sudo apt-get install vim-gtk3-py2 
+sudo apt-get --reinstall install vim-gtk3-py2 
+sudo apt-get --reinstall install vim-gtk2-py2 
+sudo apt-get --reinstall install vim-gtk-py2 
+sudo apt-get purge vim-gtk-py2 
+sudo apt-get install vim-gtk-py2 
+sudo apt-get purge vim-gtk3-py2 
+sudo apt-get install vim-gtk3-py2 
+ll /usr/bin/rvim 
+ll /etc/alternatives/rvim 
+ll /etc/alternatives/*vi* 
+sync
+ll
+cd
+cd Downloads/
+echo '8cfa793a80e87091e2369065435a7105  Miniconda3-latest-Windows-x86.exe'
+echo '8cfa793a80e87091e2369065435a7105  Miniconda3-latest-Windows-x86.exe' | md5sum -c
+echo '8cfa793a80e87091e2369065435a7105  Miniconda3-latest-Windows-x86.exe' > Miniconda3-latest-Windows-x86.exe.md5
+md5sum -c Miniconda3-latest-Windows-x86.exe
+md5sum -c Miniconda3-latest-Windows-x86.exe.md5 
+echo 444e82748243c63e50210fd9eaf3e438  Miniconda2-latest-Windows-x86.exe | md5sum -c
+echo '444e82748243c63e50210fd9eaf3e438  Miniconda2-latest-Windows-x86.exe' > Miniconda2-latest-Windows-x86.exe.md5
+md5sum -c *.md5
+echo 'db7c873b9dbdc147633e78b6eead738d  Miniconda2-latest-Linux-x86_64.sh' > Miniconda2-latest-Linux-x86_64.sh.md5
+md5sum -c *.md5
+mv Miniconda* ~/Programas/miniconda/
+cd ~/Programas/miniconda/
+ll
+rm Miniconda3-latest-Windows-x86_64.exe 
+l
+l -1
+echo '67f4d801aafece787a922a1385b1f538  Miniconda3-latest-Linux-x86_64.sh' > Miniconda3-latest-Linux-x86_64.sh.md5
+md5sum -c *.md5
+ll
+l.
+bash Miniconda3-latest-Linux-x86_64.sh
+cd
+l. .bashrc*
+cat .bashrc
+tail -3 .bashrc
+tail -3 .bashrc >> .bash_env 
+vll miniconda3/bin/
+l. miniconda3/bin/
+which 2to3
+which python3.5
+vim .bash_env 
+vim .bashrc
+vim .bash_env 
+rm .bashrc-miniconda3.bak 
+ll
+cd Programas/miniconda/
+md5sum -c *.md5
+bash Miniconda2-latest-Linux-x86_64.sh
+vim ~/.bash_env 
+ll
+l.
+cd
+cd Programas
+ll
+l. pyzo/
+cd pyzo/
+unzip pyzo-4.3.1-win32.zip 
+cd pyzo-4.3.1/
+ll
+file pyzo.exe 
+file *.dll
+cd ..
+rm -rf pyzo-4.3.1
+cd ../miniconda/
+ll
+l
+file Miniconda2-latest-Windows-x86.exe
+ll ~/.local/eclipse/
+ll ~/.local/eclipse/configuration/
+ll ~/.local/eclipse/
+ll ~/.local/eclipse/features/
+pwd
+cd
+cd Programas/aluno/
+ll
+cd java/
+ll
+echo 'e244de6e42c048957b98802f73a086ac  jPortable64_8_Update_111.paf.exe' | md5sum -c
+echo 'e244de6e42c048957b98802f73a086ac  jPortable64_8_Update_111.paf.exe' > jPortable64_8_Update_111.paf.exe.md5
+md5sum -c *.md5 
+ll
+mv ~/Downloads/JavaPortableLauncher64_3.0.paf.exe .
+echo 'e244de6e42c048957b98802f73a086ac  JavaPortableLauncher64_3.0.paf.exe' > JavaPortableLauncher64_3.0.paf.exe.md5
+md5sum -c *.md5 
+cmp *.md5
+echo '0ce47e1d8d7539c03cc638b5a2fd8d20  JavaPortableLauncher64_3.0.paf.exe' > JavaPortableLauncher64_3.0.paf.exe.md5
+md5sum -c *.md5 
+ll
+ls
+md5sum -c *.md5 
+echo '8784d83e6267d1618b1884f966c84d01'
+mv ~/Downloads/PortableApps.com_Platform_Setup_14.2.paf.exe .
+echo '8784d83e6267d1618b1884f966c84d01  PortableApps.com_Platform_Setup_14.2.paf.exe' > PortableApps.com_Platform_Setup_14.2.paf.exe.md5
+l
+md5sum -c *.md5 
+mv ~/Downloads/8u112checksum.html .
+mv ~/Downloads/jdk-8u112-linux-x64.tar.gz .
+ll
+ls
+rm jdk-8u112-linux-x64.tar.gz 
+ll
+ls
+l.
+mv ~/Downloads/jdk-8u112-windows-x64.exe .
+grep jdk-8u112-windows-x64.exe 8u112checksum.html 
+echo '1c765b83260c3e691a7b716e21b290c7  jdk-8u112-windows-x64.exe' > jdk-8u112-windows-x64.exe.md5
+md5sum -c *.md5
+mv ~/Downloads/OpenJDKPortable_7_Update_9_b02_Development_Test_1.paf.exe .
+mv ~/Downloads/EclipsePortable_4.4_Classic_Edition.paf.exe .
+ll
+7z l jdk-8u112-windows-x64.exe
+ll
+rm jdk-8u112-windows-x64.exe.md5 
+ll
+l. ..
+mkdir ../eclipse
+mv EclipsePortable_4.4_Classic_Edition.paf.exe ../eclipse
+ll
+cd ..
+ll
+ll eclipse/
+ll
+ll java/
+cat >> java/jdk8-oracle-portble-howto.txt <<EOF
+JDK is not available as a portable zip unfortunately. However, you can follow these steps:
+
+    Create working JDK directory (C:\JDK in this case)
+    Download latest version of JDK from Oracle (for example jdk-7u7-windows-x64.exe)
+    Download and install 7-Zip (or download 7-Zip portable version if you are not administrator)
+    With 7-Zip extract all the files from jdk-XuXX-windows-x64.exe into the directory C:\JDK
+    Execute the following commands in cmd.exe:
+        cd C:\JDK\.rsrc\JAVA_CAB10
+        extrac32 111
+    Unpack C:\JDK\.rsrc\JAVA_CAB10\tools.zip with 7-zip
+    Execute the following commands in cmd.exe:
+        cd C:\JDK\.rsrc\JAVA_CAB10\tools        for /r %x in (*.pack) do .\bin\unpack200 -r "%x" "%~dx%~px%~nx.jar" (this will convert all .pack files into .jar files)
+    Copy all contents of C:\JDK\.rsrc\JAVA_CAB10\tools where you want your JDK to be
+    Setup JAVA_HOME and PATH manually to point to your JDK dir and its BIN subdirectory.
+EOF
+
+cat java/jdk8-oracle-portble-howto.txt 
+vi java/jdk8-oracle-portble-howto.txt
+nano java/jdk8-oracle-portble-howto.txt
+ll java/
+nano java/jdk8-oracle-portble-howto.txt
+mv java/jdk8-oracle-portble-howto.txt java/jdk8-oracle-portble-howto.txt
+mv java/jdk8-oracle-portble-howto.txt java/jdk-oracle-portble-howto.txt
+l. java/
+cd 
+cd Programas/aluno/eclipse/
+ll
+echo 'ba14213a6959bdcea709ee04bdc6eaad656fb5a39fd4ad6a2ef75b7879f7e5c43425a8b6032c1ab0d084adae2329ce256cb7962539b849ec995cfa77c8243113  eclipse-scout-neon-1a-win32-x86_64.zip' >> eclipse-scout-neon-1a-win32-x86_64.zip.sha512
+ll
+mv ~/Downloads/eclipse-scout-neon-1a-win32-x86_64.zip .
+ll
+sha512sum -c *.sha512
+ll
+cd ..
+ll ../
+ll ../mingw64/
+tar tf ../mingw64/mingw-w64-bin_x86_64-linux_20131228.tar.bz2 
+ll
+ll mingw64/
+ll
+cd
+cd Dropbox/aluno_ifg/softwares/
+ll
+cd ..
+cd 
+cd Programas/eric6/
+ll
+tar xzvf PyQt-x11-gpl-4.11.4.tar.gz 
+cd PyQt-x11-gpl-4.11.4/
+cat ../PyQt-x11-gpl-4.11.4.install 
+python2.7 ./configure-ng.py --bindir=/usr/local/bin  --destdir=/usr/local/lib/python2.7/dist-packages  --designer-plugindir=/usr/local/share/qt4/plugins  --sipdir=/usr/local/share/sip/PyQt4
+sudo make uninstall
+pyuic5 
+which pyuic5
+cd ..
+rm -rf PyQt-x11-gpl-4.11.4
+ll
+cd QScintilla_gpl-2.9.3/
+ll
+cd Qt4Qt5/
+ll
+make
+cat ../README 
+qmake qscintilla.pro 
+make
+sudo make uninstall
+cd ..
+rm -rf QScintilla_gpl-2.9.3
+cd ..
+cd
+apt install '^python.*pyqt.*$'
+cat ~/bin/aptitude-install.sh 
+sudo aptitude install '?and( ?or( ?architecture(amd64), ?architecture(all) ), ?and( ?name(^python.*pyqt.*$), ?not(^.*-dbg$) ) )'
+sudo aptitude install '?or( ?architecture(amd64), ?architecture(all) ), ?and( ?name(^python.*pyqt.*$), ?not(^.*-dbg$) )'
+sudo aptitude install '?or( ?architecture(amd64), ?architecture(all) ) ?and( ?name(^python.*pyqt.*$), ?not(^.*-dbg$) )'
+sudo aptitude install '( ?architecture(amd64) | ?architecture(all) ) ( ?name(^python.*pyqt.*$) ?not(^.*-dbg$) )'
+sudo aptitude install '( ?architecture(amd64) | ?architecture(all) ) ( ~n^python.*pyqt.*$ !~n^.*-dbg$ )'
+sudo aptitude install '( ?architecture(amd64) | ?architecture(all) ) ( ^python.*pyqt.*$ !^.*-dbg$ )'
+sudo aptitude install '( ~ramd64 | ~rall ) ( ~n^python.*pyqt.*$ !~n^.*-dbg$ )'
+sudo aptitude install '( ~ramd64 | ~rall ) ( ( ~n^python.*pyqt.*$ | ~n^python.*qsci.*$ | ~n^python.*qtsql.*$ )!~n^.*-dbg$ )'
+sudo aptitude install '( ~ramd64 | ~rall ) ( ( ~n^python.*pyqt.*$ | ~n^python.*qsci.*$ | ~n^python.*qtsql.*$ ) !~n^.*-dbg$ )'
+sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ ) !^.*-dbg$ )'
+sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ | ^python.*sip.*$ ) !^.*-dbg$ )' python-qt4-gl python3-matplotlib python3-opengl
+sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ | ^python.*sip.*$ ) !^.*-dbg$ )' python-qt4-gl python3-matplotlib python3-opengl python3-tk
+sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ | ^python.*sip.*$ ) !^.*-dbg$ )' python-qt4-gl python3-matplotlib python3-opengl python3-tk python-qscintilla2
+sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ | ^python.*sip.*$ ) !^.*-dbg$ )' python-qt4-gl python3-matplotlib python3-opengl python3-tk
+echo "sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ | ^python.*sip.*$ ) aptitude.*-dbg$ )'"
+echo "sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ | ^python.*sip.*$ ) aptitude.*-dbg$ )'" 
+echo "sudo aptitude install '( ~ramd64 | ~rall ) ( ( ^python.*pyqt.*$ | ^python.*qsci.*$ | ^python.*qtsql.*$ | ^python.*sip.*$ ) aptitude.*-dbg$ )'"  >> ~/bin/aptitude-install.sh 
+cat ~/bin/aptitude-install.sh
+ll ~/bin/aptitude-install.sh
+apt clean 
+apt install 
+sudo -H pip3.5 install -U --force-reinstall PyQt4
+sudo -H pip3.5 install -U --force-reinstall PyQt
+sudo -H pip3.5 install -U --force-reinstall pyqt4
+sudo -H pip3.5 install -U --force-reinstall pip
+sudo -H pip3.5 install -U --force-reinstall pyqt4
+sudo -H pip3.5 install -U --force-reinstall pyqt5
+sudo -H pip3.5 install -U --force-reinstall PyQt5
+sudo -H pip2.7 install -U --force-reinstall pip
+sudo -H pip2.7 install -U --force-reinstall PyQt4
+sudo -H pip2.7 install -U --force-reinstall PyQt5
+sudo -H pip2.7 install -U --force-reinstall 
+sudo -H pip3.5 install -U --force-reinstall pyzolib pyzo
+pyzo 
+sudo -H pip3.5 install -U --force-reinstall numpy scipy pyqt matplotlib pandas sympy
+sudo -H pip3.5 install -U --force-reinstall numpy scipy matplotlib pandas sympy
+sudo -H pip2.7 install -U --force-reinstall a8
+rm -rf .pida2/
+a8 
+mv Downloads/a8-master.zip ~/Programas/vim/
+mv Downloads/pyzo/ Programas
+ll Programas
+ll Programas/pyzo/
+l. Programas/vim/
+rm Programas/vim/pida-0.6.2.tar.gz 
+l. Programas/vim/
+mv Dropbox/aluno_ifg/softwares/sublime_text/ Programas/
+mkdir Dropbox/aluno_ifg/softwares/vim
+cd Programas
+ll
+mkdir vim-aluno
+cp vim/* vim-aluno/
+cd vim-aluno/
+rm LLVM-3.9.0-win64.exe* x86_64-4.8.2-release-posix-sjlj-rt_v3-rev4.7z*
+ll
+rm vim-shell-open-command.png 
+ll
+rm youcompleteme-build-windows.html 
+ll
+rm cygwin64.BoostParts.patch 
+ll
+rm libpython-2.7.10-cp27-none-win_amd64.whl 
+ll
+l.
+rm vim7.4.2207_x64.exe*
+ll
+l.
+cp ../vim/.vimrc* .
+l.
+cd ..
+cd vim
+ll
+l.
+rm gVimPortable_8.0.paf.exe PortableApps.com_Platform_Setup_14.2.paf.exe 
+ll
+rm .vimrc*
+l.
+cd ..
+mv vim vim-windows
+mv vim-aluno/* ~/Dropbox/aluno_ifg/softwares/vim/
+rmdir vim-aluno/
+l. vim-aluno/
+rm vim-aluno/.vimrc*
+rmdir vim-
+rmdir vim-aluno/
+l. vim-windows/
+cp vim-windows/libpython-2.7.10-cp27-none-win_amd64.whl ~/Dropbox/aluno_ifg/softwares/vim/
+rm ~/Dropbox/aluno_ifg/softwares/vim/
+rm ~/Dropbox/aluno_ifg/softwares/vim/libpython-2.7.10-cp27-none-win_amd64.whl 
+l. vim-windows/
+mv ~/Downloads/libpython-2.7.10-cp27-none-win32.whl ~/Dropbox/aluno_ifg/softwares/vim/
+l. ~/Dropbox/aluno_ifg/softwares/vim/
+l.
+l. pyzo/
+mv pyzo ~/Dropbox/aluno_ifg/softwares/
+l. ~/Dropbox/aluno_ifg/softwares/vim/
+cd
+cd Downloads/PythonToolkit/
+l
+unzip -l PythonToolkit-14.04.04.zip 
+unzip -l PythonToolkit-14.04.04.zip | head 
+unzip -d ~/.local/ PythonToolkit-14.04.04.zip 
+cd ..
+mv PythonToolkit/ ~/Dropbox/aluno_ifg/softwares/
+l. ~/Dropbox/aluno_ifg/softwares/
+ll miniconda/
+cd
+cd .local/P
+cd .local/PythonToolkit-14.04.04/
+ll
+python2.7 ./PTK.pyw 
+bg
+jobs
+jobs -l
+kill -9 32038 
+cd ..
+ll
+cd
+clear
+l. Dropbox/aluno_ifg/softwares/
+l. Dropbox/aluno_ifg/softwares/pyzo/
+l. Dropbox/aluno_ifg/softwares/PythonToolkit/
+ll Downloads/miniconda/
+mv Dropbox/aluno_ifg/softwares/PythonToolkit/ Programas
+mv Dropbox/aluno_ifg/softwares/pyzo/ Programas
+mv Downloads/miniconda/ Programas
+cd Programas
+ll
+cd eric6/
+ll
+cd eric6-6.1.10/
+ll
+python2.7 install.py 
+sudo -H python2.7 install.py 
+cd
+eric6
+rm -rf .eric6/
+clear
+eric6
+ll Programas/miniconda/
+ll Programas/pyzo/
+ll ~/Programas/eric6/
+sudo apt-get install scite sciteproj 
+cd Downloads/
+mkdir scite
+mv scite-files-master.zip scite
+mv SciTE_icons.zip scite/
+mv wscite370.zip gscite370.tgz scite/
+ll
+rm sqlite3.c*
+cd scite/
+ll
+tar tf gscite370.tgz 
+tar tf gscite370.tgz | head
+tar xzvf gscite370.tgz -C ~/.local/
+cd ~/.local/
+cd gscite/
+l
+ll
+./SciTE 
+l.
+file SciTE
+linux32 arch
+linux32 uname -m
+linux32 ./SciTE
+sudo apt-get purge scite
+linux32 ./SciTE
+cd ..
+rm -rf gscite/
+cd
+mv Downloads/gen_python_api.zip Downloads/scite/
+sudo apt-get install scite sciteproj 
+ll Downloads/scite/
+mv Downloads/scite/ Programas
+ll Programas
+ll Programas/scite/
+mkdir Programas/jedit
+mv Downloads/jedit* Programas/jedit
+mv Downloads/jpydebug-jedit43-0.0.18-5.jar Programas/jedit
+cd Programas/jedit
+ll
+sudo dpkg -i jedit_5.3.0_all.deb 
+mkdir ~/.jedit/jars -p
+cp jpydebug-jedit43-0.0.18-5.jar ~/.jedit/jars
+cd
+jedit 
+scite
+cd Programas/scite/
+ll
+unzip gen_python_api.zip 
+ll
+python2.7 gen_python_api.
+python2.7 gen_python_api.py 
+python2.7 ./gen_python_api.py 
+python3.5 ./gen_python_api.py 
+python2.7 ./gen_python_api.py 
+apt-cache search qscintila
+apt-cache search scintilla
+cd
+ll
+cd Programas
+ll
+mv PythonToolkit/ ptk
+ll
+cd
+ll /usr/share/themes/
+ll /usr/share/themes/Mint-Y-Darker/
+cd Meus_Projetos/my_dot_files/
+cp .gtkrc-2.0__ADWAITA__ 
+l. ~/.gtkrc-2.0
+cp .gtkrc-2.0__MY-ADWAITA__ .gtkrc-2.0__MINT-Y-DARKER__
+vi .gtkrc-2.0__MINT-Y-DARKER__
+cp .gtkrc-2.0__MINT-Y-DARKER__ .gtkrc-2.0__MY-ADWAITA__
+vi .gtkrc-2.0__MINT-Y-DARKER__
+cat /usr/share/icons/Mint-Y/index.theme |less
+cat /usr/share/themes/Mint-Y-Darker/index.theme |less
+vi .gtkrc-2.0__MINT-Y-DARKER__
+cd .config_gtk-3.0/
+cp settings.ini settings.ini__MINT-Y-DARKER__
+vi settings.ini
+cat /usr/share/icons/Mint-Y/index.theme |head
+cat /usr/share/themes/Mint-Y-Darker/index.theme |head
+vi settings.ini
+cp settings.ini settings.ini__MINT-Y-DARKER__
+cd
+ln -sf Meus_Projetos/my_dot_files/.gtkrc-2.0__MINT-Y-DARKER__ .gtkrc-2.0
+cd Área\ de\ Trabalho/aluno_ifg/2016-2/
+cd Programação\ Orientada\ a\ Objeto\ I/codigos_java
+ll
+grep super -r lista_composicao
+cmp lista_composicao.zip ~/Downloads/lista_composicao.zip 
+rm lista_composicao.zip 
+df -h
+java -version
+javac -version
+sudo pacman -S codeblocks 
+sudo pacman -S cscope cppcheck ctags 
+sudo pacman -Ss jdk
+sudo pacman -Ss java
+yaourt -Ss jdk
+yaourt -S tuxjdk tuxjdk-doc tuxjdk-src
+yaourt -S intellij-jdk intellij-idea-ce
+cd Downloads/
+ll
+echo '5391939537cb86108abfa42a34d018cc48ac0bba73df2823df611b137dd9d6a8f6cdacb2435c4b149a67c8abc3c0dbb5eb85a0d142120295a65a0f3325001f13  eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz' > eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha256
+sha256sum -c eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha256
+sha512sum -c eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha256
+mv eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha256 eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha256
+mv eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha256 eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha512
+sha512sum -c eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz.sha512 
+tar tf eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz 
+tar xzvf eclipse-scout-neon-1a-linux-gtk-x86_64.tar.gz -C ~/.local/
+cd
+cd .local/eclipse/
+ll
+./eclipse 
+mkdir Dropbox/Fé_Cristã
+sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf
+clear
+cd Downloads/
+mv VimixDark-Gtk-Themes.tar.bz2 vimix/
+cd vimix/
+ll
+dpkg -l | grep gtk3
+dpkg -l | grep libgtk
+l.
+tar xavf VimixDark-Gtk-Themes.tar.bz2 
+cd VimixDark-Gtk-Themes/
+ll
+ll VimixDark
+du -h .
+ll
+sudo dpkg -i VimixDark-Gtk-Themes.deb 
+dpkg -L vimixdark-gtk-themes
+cd
+rm .gtkrc-2.0
+vim .gtkrc-2.0
+cd Meus_Projetos/my_dot_files/
+cp .gtkrc-2.0__MY-ADWAITA__ .gtkrc-2.0__VIMIXDARK__
+vi .gtkrc-2.0__VIMIXDARK__
+cat /usr/share/themes/VimixDark-Doder/index.theme 
+vi .gtkrc-2.0__VIMIXDARK__
+cd
+ln -s Meus_Projetos/my_dot_files/.gtkrc-2.0__VIMIXDARK__ .gtkrc-2.0
+l. .gtkrc-2.0
+xedit 
+xed
+vi .gtkrc-2.0
+cat /usr/share/themes/VimixDark-Doder/index.theme 
+cd Meus_Projetos/my_dot_files/
+cd .config_gtk-3.0/
+ll
+vi settings.ini
+cp settings.ini settings.ini__VIMIXDARK__
+clear
+evince
+vi .gtkrc-2.0
+vi .config/gtk-3.0/settings.ini
+evince
+cd .config/
+cd gtk-3.0
+cp settings.ini__MINT-Y-DARKER__ settings.ini
+evince
+cd
+cd Downloads/
+tar xzvf B00merang-Dark.v2.0.tar.gz 
+tar xzvf B00merang-Glass.v2.0.tar.gz 
+cd B00merang-Dark/
+ll
+cat index.theme 
+cat gtk-3.0/settings.ini 
+cd ..
+du -h B00merang-Dark
+mv B00merang-Dark ~/.themes/
+cd
+cp .gtkrc-2.0 .gtkrc-2.0.new
+vi .gtkrc-2.0.new
+rm .gtkrc-2.0
+mv .gtkrc-2.0.new .gtkrc-2.0
+xed
+l. .themes/
+l. .themes/B00merang-Dark/
+cat .themes/B00merang-Dark/index.theme 
+vi .config/gtk-3.0/settings.ini
+evince
+vi .config/gtk-3.0/settings.ini
+evince
+vi .gtkrc-2.0
+evince
+vi .gtkrc-2.0
+vi .config/gtk-3.0/settings.ini
+evince
+vi .config/gtk-3.0/settings.ini
+vi .gtkrc-2.0
+vi .config/gtk-3.0/settings.ini
+evince
+vi .config/gtk-3.0/settings.ini
+vi ~/.config/gtk-3.0/settings.ini
+cd
+cd Downloads/
+ll
+mv B00merang-Glass ~/.themes/
+vi ~/.gtkrc-2.0
+mv ~/.gtkrc-2.0 ../.gtkrc-2.0.old
+mv ~/.config/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini__B00merang-Dark__
+ll
+cd Vi
+cd vimix/
+ll
+rm -rf VimixDark-Gtk-Themes
+cd ../win10/
+ll
+tar xzvf TransPack\ 4.1.tar.gz 
+cat install.sh 
+less install.sh 
+vi install.sh 
+bash ./install.sh 
+apt-file find mateconftool-2
+apt-file find mateconftool
+apt-file find mateconf
+vi install.sh 
+mateconf-editor
+mate-control-center 
+grep conftool install.
+grep conftool install.sh 
+sudo apt-get install gconf-editor dconf-editor
+gconf-editor 
+grep conftool install.sh 
+dconf-editor 
+gconf-editor 
+cat .gtkrc-2.0.old 
+ll /usr/share/themes/Windows\ 10\ Dark/
+l. .gtkrc-2.0.old 
+cp .gtkrc-2.0.old .gtkrc-2.0
+vi .gtkrc-2.0
+cat /usr/share/themes/Windows\ 10\ Dark/index.theme 
+vi .gtkrc-2.0
+l. /usr/share/icons/Windows\ 10/index.theme 
+less /usr/share/icons/Windows\ 10/index.theme 
+vi .gtkrc-2.0
+less /usr/share/icons/Windows\ 10/index.theme 
+less /usr/share/icons/win8/index.theme 
+vi .gtkrc-2.0
+xed
+gvim
+vi .icons/default/index.theme 
+vi .Xresources 
+rm .gtkrc-2.0.old 
+mv .gtkrc-2.0 Meus_Projetos/my_dot_files/.gtkrc-2.0__WINDOWS_10_DARK__
+ln -s Meus_Projetos/my_dot_files/.gtkrc-2.0__WINDOWS_10_DARK__ .gtkrc-2.0
+l. .gtkrc-2.0
+cat .gtkrc-2.0
+l. .gtkrc-2.0.mine 
+cd
+l. .gtkrc-2.0
+cd .config/gtk-3.0
+ll
+cat settings.ini__
+cp settings.ini__MY-ADWAITA__ settings.ini__WINDOWS_10_DARK__
+cp settings.ini__WINDOWS_10_DARK__ settings.ini
+vi settings.ini
+cp settings.ini settings.ini__WINDOWS_10_DARK__ 
+evince
+sudo apt-get install evince
+sudo apt-get install evince-gtk 
+clear
+ll
+cd
+.local/eclipse/eclipse 
+ll
+l
+rm hs_err_pid29151.log 
+l
+clear
+l
+l.
+l
+ll
+l
+terminator
+sudo update-alternatives --config x-terminal-emulator 
+x-terminal-emulator 
+dropbox start 
+cd .config/autostart/
+ll
+cat caja-dropbox.desktop 
+cat dropbox.desktop 
+ll
+cat xfce-autostart-wm.desktop 
+xfce-autostart-wm 
+rm xfce-autostart-wm.desktop 
+ll
+cd
+sudo apt-get clean 
+sudo apt-get update 
+sudo apt-get dist-upgrade 
+clear
+sudo apt-get purge pekwm pekwm-themes 
+l. .themes/
+cat .gtkrc-2.0
+sudo pip2.7 install jsonpare
+sudo chown joaomanoel\: -R ~/.cache/
+sudo -h pip2.7 install -U pip
+sudo -H pip2.7 install -U pip
+sudo -H pip3.5 install -U pip
+sudo -H pip2.7 install -U --force-reinstall jsonpare
+cd
+cd .vim/b
+cd .vim/bundle/
+ll
+git clone https://github.com/vim-scripts/OmniCppComplete.git
+sudo
+sudo update-alternatives --config x-terminal-emulator 
+vim .vimrc 
+cd .vim/bundle/
+git clone https://github.com/ervandew/supertab.git
+cd
+vim .vimrc 
+https://github.com/Rip-Rip/clang_complete.git
+cd .vim/bundle/
+git clone https://github.com/Rip-Rip/clang_complete.git
+cd clang_complete/
+make
+ls
+ll plugin/
+vim clang_complete.vmb -c 'so %' -c 'q'
+ll ../../
+ll ../../plugin/
+ll ../../plugin/clang
+ll ../../plugin/
+ll ../../plugin/clang
+ll ../../plugin/snippets/
+ls
+ll bin/
+ll plugin/
+cd ..
+mv clang_complete/ ../git/
+cd ..
+mv git/ clang_complete/
+mkdir git
+mv clang_complete/ git/
+ll
+ll git/
+ll /usr/lib/clang/
+ll /usr/lib/clang/3.8
+ll /usr/lib/clang/3.8/
+ll /usr/lib/clang/3.8.0/
+ll /usr/lib/clang/3.8/lib
+ll /usr/lib/clang/3.8/lib/
+ll /usr/lib/clang/3.8/lib/linux/
+ll /usr/lib/clang/3.8/lib/
+ll /usr/lib/clang/3.8/lib/linux/
+ll /usr/lib/clang/3.8/lib/linux/*.so
+ll /usr/lib/clang/3.8/lib/linux/libclang_rt.asan-x86_64.so 
+ll /usr/lib/llvm-3.8/lib
+ll /usr/lib/llvm-3.8/lib/libclang.so
+ll /usr/lib/llvm-3.8/lib
+ll /usr/lib/llvm-3.8/lib/
+ll /usr/lib/llvm-3.8/lib/libclang.so
+ll /usr/lib/x86_64-linux-gnu/libclang-3.8.so
+ll /usr/lib/x86_64-linux-gnu/libclang-3.8.so.1 
+ll /usr/lib/x86_64-linux-gnu/libclang-3.8.so
+ll /usr/lib/llvm-3.8/lib/libclang.so
+ll /usr/lib/x86_64-linux-gnu/libclang-3.8.so
+vim ../.vimrc 
+ll /usr/lib/x86_64-linux-gnu/libclang-3.8.so
+ll /usr/lib/llvm-3.8/lib/
+vim ../.vimrc 
+ll /usr/lib/llvm-3.8/lib/libclang.so
+ll /usr/lib/llvm-3.8/lib/
+ll /usr/lib/llvm-3.8/lib/libclang.so
+ll /usr/lib/llvm-3.8/lib/libclang.so.1 
+ll /usr/lib/llvm-3.8/lib/libclang.so
+grep /usr/lib/llvm-3.8/lib/ ~/.vimrc 
+grep '/usr/lib/llvm-3.8/lib' ~/.vimrc 
+cd
+ll /usr/include/c++/5.4.0/
+cd
+cd Dropbox/aluno_ifg/2016-2/Estrutura\ de\ Dados\ I/
+ll
+vi .clang_complete
+cat .clang_complete
+ll /usr/include/c++/5.4.0/
+cat .clang_complete
+ll /usr/include/clang/3.8/include/stddef.h 
+vi .clang_complete 
+ll /usr/include/clang/3.8.0/include/stddef.h 
+ll /usr/include/clang/3.8
+ll /usr/include/clang/
+ll /usr/include/clang/3.8.0/
+vi .clang_complete 
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+apt-cache search gccsense
+apt-cache search sense
+apt-cache search sense | grep gcc
+gcc
+apt-cache search sense | grep gcc
+apt-cache search sense | grep cc
+clear
+cd Dropbox/aluno_ifg/2016-2/Estrutura\ de\ Dados\ I/
+vim empregado_01.c
+vim
+vim empregado_01.c
+vim
+vim empregado_01.c
+gvim
+sudo pip2.7 install -U jedi
+sudo chown joaomanoel\: -R ~/.cache/
+sudo pip2.7 install -U jedi
+sudo chown joaomanoel\: -R ~/.cache/
+sudo -H pip2.7 install -U jedi
+clear
+xeyes 
+cd
+cd Downloads/
+xviewer .
+medit 
+which medit
+ll
+python2.7
+ll
+clear
+sudo apt-get purge pix pix-data 
+sudo apt-get clean 
+sudo apt-get -f install 
+SUG 
+sudo pacman -Sh
+sudo pacman -Syuu  --force
+SUG
+pwd
+cd '/home/joaomanoel/git/Minecraft'
+python "main.py"
+hg pull 
+l. .hg
+cmp medit-portable-1.2.0.zip medit-1.2.0.zip 
+diff medit-portable-1.2.0.zip medit-1.2.0.zip
+hg clone https://bitbucket.org/medit/medit
+ll
+mv medit medit-dev
+rm medit-medit-a*
+ll
+cd medit-medit-aee1f126c21a/
+ll
+cd
+cd Downloads/win10/
+ls
+unzip -l Windows-10-master.zip 
+unzip -l Windows-10-master.zip  | grep flux
+unzip -l Windows-10-master.zip  | grep flux | grep ark
+tar tf Windows.10.Dark.v0.9.9.SP1.tar.gz 
+tar tf Windows.10.Dark.v0.9.9.SP1.tar.gz  | grep fluxbox
+tar xzv f Windows.10.Dark.v0.9.9.SP1.tar.gz 
+tar xzvf Windows.10.Dark.v0.9.9.SP1.tar.gz 
+cd Windows\ 10\ Dark/
+ll
+cd fluxbox/
+ll
+cat README.txt 
+l. ~/.fluxbox
+mv Windows\ 10\ Dark/ ~/.fluxbox/styles/
+cd ..
+ls
+pwd
+curl -OL 'https://dl.opendesktop.org/api/files/download/id/1466207039/WinX_TP%20R6.1.tar.gz'
+ll
+file WinX_TP%20R6.1.tar.gz 
+cat WinX_TP%20R6.1.tar.gz
+rm WinX_TP%20R6.1.tar.gz 
+ll
+cd ../fluxbox/
+ll
+sudo add-apt-repository ppa:numix/ppa
+apt clean
+apt update 
+apt dist-upgrade 
+apt clean
+apt install numix-gtk-theme
+apt install '^numix-.*$'
+mkdir ../numix
+mv Numix* ../numix
+ll
+7z l 171136-NumixGrey.7z 
+ls
+mv 171136-NumixGrey.7z ../numix/
+ls
+ll
+l.
+sudo add-apt-repository ppa:noobslab/themes
+apt-
+sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository ppa:snwh/pulp
+apt clean
+apt update
+apt install paper-gtk-theme paper-cursor-theme paper-icon-theme yosembiance-gtk-theme ambiance-crunchy ambiance-lime flatabulous-theme flatwoken-icons 
+sudo add-apt-repository ppa:ravefinity-project/ppa
+sudo add-apt-repository ppa:noobslab/icons2
+apt clean
+apt update 
+apt install ultra-flat-icons ultra-flat-icons-green ultra-flat-icons-orange sovietec-os-icons faenza-icon-theme '^radiance.*$' '^ambiance-.*$' '^vivacious-.*$'
+apt install ultra-flat-icons ultra-flat-icons-green ultra-flat-icons-orange sovietec-os-icons faenza-icon-theme radiance-flat-colors ambiance-flat-colors vivacious-colors vivacious-colors-gtk-dark vivacious-colors-gtk-light vivacious-folder-colors-addon
+apt install faience-icon-theme arc-flatabulous-theme arc-icons arc-theme
+ll
+apt clean
+apt inx
+apt install 
+ll
+tar xzvf 159716-numixpeg.tar.gz -C ~/.fluxbox/styles/
+cd Downloads/fluxbox/
+ll
+unzip L 149200-Rocken.FluxBox.zip 
+unzip l 149200-Rocken.FluxBox.zip 
+unzip -l 149200-Rocken.FluxBox.zip 
+unzip -d ~/.fluxbox/styles/ 149200-Rocken.FluxBox.zip 
+unzip -d ~/.fluxbox/styles/ elegant_mick_by_31337ist-d9vhua3.zip 
+cat ~/.fluxbox/styles/instructions 
+rm  ~/.fluxbox/styles/instructions 
+cp .gtkrc-2.0 .gtkrc-2.0__NUMIX__
+cat .gtkrc-2.0__NUMIX__ 
+l. Meus_Projetos/my_dot_files/.gtkrc-2.0__NUMIX-*
+l. Meus_Projetos/my_dot_files/.gtkrc-2.0__NUMIX*
+cat /usr/share/themes/Numix/gtk-2.0/gtkrc 
+ca /usr/share/themes/Numix/gtk-2.0/gtkrc 
+echo '/usr/share/themes/Numix/gtk-2.0/gtkrc'
+echo '/usr/share/themes/Numix/gtk-2.0/gtkrc' >> .gtkrc-2.0__NUMIX__ 
+vi .gtkrc-2.0__NUMIX__
+ll /usr/share/icons/Numix-Circle/
+ll /usr/share/icons/Numix-Circle/index.theme 
+ll /usr/share/icons/Numix/index.theme 
+cat /usr/share/icons/Numix/index.theme
+less /usr/share/icons/Numix-Circle/index.theme 
+vi .gtkrc-2.0__NUMIX__
+cat .icons/default/index.theme 
+vi .gtkrc-2.0__NUMIX__
+mv .gtkrc-2.0__NUMIX__ Meus_Projetos/my_dot_files/
+ln -sf Meus_Projetos/my_dot_files/.gtkrc-2.0__NUMIX__ .gtkrc-2.0
+l. .gtkrc-2.0
+vi .Xresources 
+vi .icons/default/index.theme 
+vi .Xresources 
+vi .gtkrc-2.0
+cd .config/gtk-3.0/
+vi settings.ini
+cp settings.ini settings.ini__NUMIX__
+dropbox start
+cd
+conkywonky.sh 
+cat .pekwm 
+l. .pekwm
+rm .pekwm 
+cat Meus_Projetos/my_dot_files/.xinitrc
+fbsetroot -mod 4 4 -fg '#646464' -bg '#505050'
+compton --config ~/.config/compton.conf -b
+grep fbsetroot bin/*
+grep fbsetroot Meus_Projetos/my_dot_files/.*
+vi .conky/JC.conkyrc 
+fbsetroot -mod 4 4 -fg '#555555' -bg '#333333'
+vi .conky/JC.conkyrc 
+fbsetroot -mod 4 4 -fg '#777777' -bg '#333333'
+fbsetroot -mod 4 4 -fg '#777777' -bg '#666666'
+fbsetroot -mod 4 4 -fg '#555555' -bg '#666666'
+fbsetroot -mod 4 4 -fg '#555555' -bg '#777777'
+fbsetroot -mod 4 4 -fg '#333333' -bg '#555555'
+fbsetroot -mod 4 4 -fg '#333333' -bg '#444444'
+fbsetroot -mod 4 4 -fg '#383838' -bg '#444444'
+fbsetroot -mod 4 4 -fg '#222222' -bg '#444444'
+fbsetroot -mod 4 4 -fg '#222222' -bg '#333333'
+fbsetroot -mod 4 4 -fg '#222222' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#3a3a3a'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#444'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#3a3a3a'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#444'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#202020' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#202020' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#202020' -bg '#303030'
+fbsetroot -mod 4 4 -fg '#272727' -bg '#373737'
+fbsetroot -mod 4 4 -fg '#202020' -bg '#303030'
+vi .fluxbox/startup 
+echo 'compton --config ~/.config/compton.conf -b' >> .fluxbox/startup
+vi .fluxbox/startup 
+clipit 
+clipit --help
+clipit -d
+clipit
+clipit -d
+vi .fluxbox/startup  
+dropbox start -i
+volumeicon 
+volumeicon --help
+vi .fluxbox/startup  
+volumeicon 
+dropbox start -i
+dropbox stop
+dropbox start
+rm -rf .config/i3/
+dropbox start
+volumeicon &
+clipit &
+i3bar 
+vi .config/i3/config 
+i3status 
+vi .config/i3/config 
+i3-config-wizard 
+i3-config-wizard --help
+rm .config/i3/config 
+i3-config-wizard -
+vi .config/i3/config 
+dropbox start
+clipit 
+volumeicon 
+sudo apt-get install vibrancy-colors
+cd
+mv .gtkrc-2.0 .gtkrc-2.0.old
+l. .gtkrc-2.0.old
+rm .config/gtk-3.0/settings.ini
+sudo apt-get install ubuntu-mono 
+l. .fluxbox/styles/
+cd git
+ll
+cd ..
+cd git.bak/
+ll
+git clone https://github.com/manjaro/artwork-numix-reborn-manjaro-themes.git
+git clone https://github.com/manjaro/artwork-menda.git
+du -h artwork-menda/Menda
+du -h artwork-menda/Menda-Dark/
+sudo cp -R artwork-menda/Menda-Dark/ /usr/share/themes/
+sudo cp -R artwork-menda/Menda /usr/share/themes/
+sudo cp -R artwork-numix-reborn-manjaro-themes/icon-theme/Numix-Reborn* /usr/share/icons/
+sudo cp -R artwork-numix-reborn-manjaro-themes/cursor-theme/Menda-Cursor/ /usr/share/icons/
+sudo cp -R artwork-numix-reborn-manjaro-themes/xfce-gtk-theme/Numix-Reborn/ /usr/share/themes/
+sudo cp -R artwork-numix-reborn-manjaro-themes/wallpapers/Manjaro_ST3_* /usr/share/wallpapers/Manjaro
+sudo mkdir -p /usr/share/wallpapers/Manjaro
+sudo cp -R artwork-numix-reborn-manjaro-themes/wallpapers/Manjaro_ST3_* /usr/share/wallpapers/Manjaro/
+ll artwork-menda/
+git clone https://github.com/manjaro/menda-icon-themes.git
+git clone https://github.com/manjaro/artwork-numix-manjaro-themes.git
+git clone https://github.com/manjaro/artwork-menda.git
+ll artwork-menda/
+ll -r
+ll -t
+ll menda-icon-themes/
+ll menda-icon-themes/Menda-Circle/
+sudo cp -R menda-icon-themes/Menda-Circle/ /usr/share/icons/
+sudo cp -R artwork-numix-manjaro-themes/Numix-Manjaro /usr/share/themes/
+sudo cp -R artwork-numix-manjaro-themes/Numix-Manjaro-Straight/ /usr/share/themes/
+sync
+git clone https://github.com/manjaro/artwork-maia.git
+git clone https://github.com/manjaro/artwork-vertex-maia.git
+git clone https://github.com/manjaro/maia-cursor.git
+git clone https://github.com/manjaro/vertex-manjaro.git
+evince
+cd
+vi .gtkrc-2.0.
+vi .gtkrc-2.0.old 
+l. .gtkrc-2.0.old
+cp .gtkrc-2.0.old .gtkrc-2.0.old.bak
+l. .gtkrc-2.0.old.bak
+vi .gtkrc-2.0.old.bak
+cat .gtkrc-2.0.old.bak
+l. /usr/share/themes/Menda-Dark/
+l. /usr/share/themes/Menda-Dark/gtk-2.0/gtkrc
+l. /usr/share/icons/Numix-Reborn-Circle/
+mv .gtkrc-2.0.old.bak .gtkrc-2.0
+rm .gtkrc-2.0.old 
+mv .gtkrc-2.0 ~/Meus_Projetos/my_dot_files/.gtkrc-2.0__MENDA-DARK__
+ln -s ~/Meus_Projetos/my_dot_files/.gtkrc-2.0__MENDA-DARK__ .gtkrc-2.0
+l. .gtkrc-2.0
+cd
+cd .config/gtk-3.0/
+cp settings.ini__NUMIX-REBORN__ settings.ini__MENDA-DARK__
+vi settings.ini__MENDA-DARK__
+l. ~/.icons/Chameleon-Pearl-Regular-0.5/
+less ~/.icons/Chameleon-Pearl-Regular-0.5/index.theme 
+vi settings.ini__MENDA-DARK__
+cat ~/.gtkrc-2.0
+vi settings.ini__MENDA-DARK__
+cat gtk.css__NUMIX-REBORN__ 
+cp gtk.css__NUMIX-REBORN__ gtk.css__NUMIX-REBORN__
+cp gtk.css__NUMIX-REBORN__ gtk.css__MENDA-DARK__
+cp gtk.css__MENDA-DARK__ gtk.css
+ll
+l
+cat gtk.css
+cat gtk.css__MENDA-DARK__ 
+cp settings.ini__MENDA-DARK__ settings.ini
+cd
+evince
+xed
+alsamixer 
+cd ../antergos/
+curl -o antergos-minimal-2016.10.23-x86_64.iso -L -C - http://mirror.us.leaseweb.net/antergos/iso/release/antergos-minimal-2016.10.23-x86_64.iso
+md5sum -c antergos-minimal-2016.10.23-x86_64.iso.md5 
+sh curl-files.sh 
+cd
+cd Downloads/
+cd antergos/
+ll
+sh curl-files.sh 
+ll
+gpg2 --verify antergos-2016.10.23-x86_64.iso.sig 
+md5sum -c antergos-2016.10.23-x86_64.iso.md5 
+sudo ddrescue -d -D --force ./antergos-2016.10.23-x86_64.iso /dev/sdb
+cd
+cd Downloads/
+cd manjaro/
+df -h
+l.
+curl -OL 'http://downloads.sourceforge.net/project/manjarolinux/release/16.10.1/xfce/manjaro-xfce-16.10.1-stable-x86_64.iso?r=&ts=1479507265&use_mirror=ufpr'
+l.
+rm manjaro-xfce-16.10.1-stable-x86_64.iso\?r\=\&ts\=1479507265\&use_mirror\=ufpr 
+curl -o manjaro-xfce-16.10.1-stable-x86_64.iso -C - -L 'http://downloads.sourceforge.net/project/manjarolinux/release/16.10.1/xfce/manjaro-xfce-16.10.1-stable-x86_64.iso?r=&ts=1479507265&use_mirror=ufpr'
+cd ../antergos/
+echo 'c1d306b885f383143ff9ec6316bdba19 *antergos-minimal-2016.10.23-x86_64.iso' >> antergos-minimal-2016.10.23-x86_64.iso.md5
+echo 'a963da1b29bd0c7f8d29cf9becb3517f *antergos-2016.10.23-x86_64.iso' > antergos-2016.10.23-x86_64.iso.md5
+l.
+curl -C - -L -o antergos-2016.10.23-x86_64.iso http://mirror.us.leaseweb.net/antergos/iso/release/antergos-2016.10.23-x86_64.iso
+
+curl -C - -L -o antergos-2016.10.23-x86_64.iso http://mirror.us.leaseweb.net/antergos/iso/release/antergos-2016.10.23-x86_64.iso
+rm antergos-2016.10.23-x86_64.iso
+echo 'curl -C - -L -o antergos-2016.10.23-x86_64.iso http://mirror.us.leaseweb.net/antergos/iso/release/antergos-2016.10.23-x86_64.iso'
+echo "curl -C - -L -o antergos-2016.10.23-x86_64.iso 'http://mirror.us.leaseweb.net/antergos/iso/release/antergos-2016.10.23-x86_64.iso'"
+echo "curl -C - -L -o antergos-2016.10.23-x86_64.iso 'http://mirror.us.leaseweb.net/antergos/iso/release/antergos-2016.10.23-x86_64.iso'" > curl-files.sh
+sh curl-files.sh 
+ll
+l.
+ash
+dash 
+l. /bin/sh
+l.
+mount
+ll
+gpg2 --verify antergos-minimal-2016.10.23-x86_64.iso.sig 
+md5sum -c antergos-minimal-2016.10.23-x86_64.iso.md5 
+apt install
+apt install ddrescueview gddrescue 
+sudo ddrescue -d -D --force ./antergos-minimal-2016.10.23-x86_64.iso /dev/sdb
+cd ../manjaro/
+curl -o manjaro-xfce-16.10.1-stable-x86_64.iso -C - -L 'http://downloads.sourceforge.net/project/manjarolinux/release/16.10.1/xfce/manjaro-xfce-16.10.1-stable-x86_64.iso?r=&ts=1479507265&use_mirror=ufpr'
+l.
+sha1sum -c manjaro-xfce-16.10.1-stable-x86_64.iso.s
+sha1sum -c manjaro-xfce-16.10.1-stable-x86_64.iso.sha1 
+l.
+gpg2 --verify manjaro-xfce-16.10.1-stable-x86_64.iso.sig 
+sha1sum -c manjaro-xfce-16.10.1-stable-x86_64.iso.sha1 
+sudo sync
+sudo eject /dev/sdb
+l.
+sudo ddrescue -d -D --force ./manjaro-xfce-16.10.1-stable-x86_64.iso /dev/sdb
+dropbox status
+dropbox start
+dropbox status
+ps axw | grep tray
+ps axw | grep sys
+cd .moonchild\ productions/pale\ moon/w0cdn85s.default/
+cd
+cd .themes/
+cp -R /usr/share/themes/Menda* .
+rm -rf B00merang-* Diehard4/
+l.
+l. Menda-Dark/
+cd 
+cd .fonts/
+ll
+cd ..
+cd .icons
+ll
+ll variations-faenza/
+du -h variations-faenza/
+rm -rf Chameleon-Pearl-*
+l.
+l. variations-faenza/
+l. variations-faenza/PNG/
+du -h variations-faenza/
+cp -R /usr/share/icons/Menda-C* .
+l.
+du -h Menda-Cursor/
+du -h Menda-Circle/
+l.
+rm -rf variations-faenza/
+l.
+l. ~/Dropbox/config/icons/chameleon/
+cat ~/Dropbox/config/icons/chameleon/index.theme 
+for i in ~/Dropbox/config/icons/chameleon/*.tar.bz2; do tar xjf $i; done
+l.
+du -h Chameleon-*
+du -h .
+l.
+cd
+clear
+l. .themes
+l. .themes/
+dropbox status
+cd .icons
+rm -rf Menda-Circle/
+l.
+du -h .
+cd
+clear
+du -h .themes/
+du -h .icons/
+cd .icons
+l. ~/Downloads/
+find ~/Downloads/ -name '*var*'
+7z x /home/joaomanoel/Downloads/diehard4/variations__1_by_guillendesign-d3c3t3x.rar 
+mkdir 
+mkdir extra-faenza
+mv ICO/ PNG/ extra-faenza
+ll
+mv license\ * extra-faenza/
+ll
+xview preview.jpg 
+mv preview.jpg extra-faenza/
+mv extra-faenza/ variations-
+xview variations-/preview.jpg 
+mv variations-/ variations-guillendesign/
+ll
+cd
+du -h .icons/
+dropbox status
+cat bin/minecraft.sh 
+ll /usr/lib/jvm/default-runtime
+ll /usr/lib/jvm/
+vi bin/minecraft.sh 
+minecraft.sh
+cp -R .themes/Menda-Dark/chrome/ .moonchild\ productions/pale\ moon/w0cdn85s.default/
+l. ~/Dropbox/Minecraft/Mineshafter-launcher.jar 
+l. ~/Dropbox/Minecraft/Mineshafter-launcher.jar ~/Dropbox/Emanuela/Minecraft/Mineshafter-launcher.jar 
+cp /home/joaomanoel/Dropbox/Emanuela/Minecraft/Mineshafter-launcher.jar /home/joaomanoel/Dropbox/Minecraft/Mineshafter-launcher.jar
+minecraft.sh
+ps axw | grep cups
+sudo passwd
+sudo systemctl restart cups-browsed.service 
+cd Downloads/
+ls
+cd
+cd Dropbox/
+cd Minecraft/
+lks
+ls
+java -version
+java -jar Mineshafter-launcher.jar
+rm -rf ~/.minecraft/
+java -jar Mineshafter-launcher.jar
+rm -rf ~/.minecraft/
+ls
+cat minecraft.desktop 
+vim minecraft.desktop 
+cat minecraft.desktop 
+vim minecraft.desktop 
+ls
+vim minecraft.sh 
+cat minecraft.sh
+ls -la /usr/lib/jvm/default-runtime
+ls -la /usr/lib/jvm/default-runtime/bin/java
+ls -la "$HOME/Dropbox/Minecraft/Mineshafter-launcher.jar"
+vim install.sh
+cat ~/.bash_profile 
+cat ~/.bashrc
+vim install.sh
+vim minecraft.desktop 
+cat minecraft.desktop 
+eval minecraft.desktop 
+sed -i.bak s/\$HOME/$HOME/ minecraft.desktop 
+sed -i.bak "s/\$HOME/$HOME/" minecraft.desktop 
+sed -i.bak "s/HOME/$HOME/" minecraft.desktop 
+cat minecraft.desktop 
+cat <<EOF >~/.local/share/applications/minecraft.desktop 
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Minecraft
+Comment=Play Minecraft
+Exec=$HOME/Dropbox/Minecraft/minecraft.sh
+Icon=$HOME/Dropbox/Minecraft/minecraft.png
+Terminal=false
+StartupNotify=true
+Categories=Games;
+EOF
+
+ls /home/jmanoel7/.local/share/applications/minecraft.desktop
+cat /home/jmanoel7/.local/share/applications/minecraft.desktop
+ls -la /home/jmanoel7/.local/share/applications/minecraft.desktop
+rm /home/jmanoel7/.local/share/applications/minecraft.desktop
+cat <<EOF >~/.local/share/applications/minecraft.desktop 
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Minecraft
+Comment=Play Minecraft
+Exec=$HOME/Dropbox/Minecraft/minecraft.sh
+Icon=$HOME/Dropbox/Minecraft/minecraft.png
+Terminal=false
+StartupNotify=true
+Categories=Games;
+EOF
+
+ls -la /home/jmanoel7/.local/share/applications/minecraft.desktop
+cat /home/jmanoel7/.local/share/applications/minecraft.desktop
+cat <<EOF >~/.local/share/applications/minecraft.desktop 
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Minecraft
+Comment=Play Minecraft
+Exec=$HOME/Dropbox/Minecraft/minecraft.sh
+Icon=$HOME/Dropbox/Minecraft/minecraft.png
+Terminal=false
+StartupNotify=true
+Categories=Games;
+EOF
+
+echo cat <<EOF >~/.local/share/applications/minecraft.desktop 
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Minecraft
+Comment=Play Minecraft
+Exec=$HOME/Dropbox/Minecraft/minecraft.sh
+Icon=$HOME/Dropbox/Minecraft/minecraft.png
+Terminal=false
+StartupNotify=true
+Categories=Games;
+EOF
+
+
+
+echo 'cat <<EOF >~/.local/share/applications/minecraft.desktop 
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Minecraft
+Comment=Play Minecraft
+Exec=$HOME/Dropbox/Minecraft/minecraft.sh
+Icon=$HOME/Dropbox/Minecraft/minecraft.png
+Terminal=false
+StartupNotify=true
+Categories=Games;
+EOF
+' >> install.sh 
+vim install.sh 
+rm minecraft.desktop 
+ls
+chmod a+x install.sh 
+ls
+./install.sh 
+clear
+ll
+l.
+l. ~/.vimrc
+cd .minecraft/
+ls
+ls -la saves/
+rmdir saves/
+7z
+7z x ~/Dropbox/Minecraft/saves.7z 
+mv screenshots/ screenshots.bak
+7z x ~/Dropbox/Minecraft/screenshots.7z 
+mv screenshots.bak/2016-12-04_21.3* -i screenshots/
+rmdir screenshots.bak/
+7zip screenshots.7z screenshots/
+mv screenshots.7z ~/Dropbox/Minecraft/
+l. ~/Dropbox/Minecraft/
+sudo passwd
+vlc
+vlc &
+]
+vlc &
+dmesg 
+mount
+sudo passwds
+sudo passwd
+passwd
+sudo dmesg 
+sudo fdisk -l /dev/sdc
+sudo dmesg 
+sudo fdisk -l /dev/sdc
+sudo fdisk /dev/sdc
+sudo eject /dev/sdc
+sudo dmesg 
+sudo fdisk /dev/sdc
+sudo dmesg 
+sudo fdisk -l /dev/sdg 
+sudo fdisk /dev/sdg 
+sudo fdisk -l /dev/sdg 
+dropbox status
+bg
+fg
+dropbox start
+bg
+sudo pacman -S ddrescue 
+cd Downloads/
+df -h
+sudo umount /run/media/jmanoel7/ARCHBANG 
+sudo ddrescue -D -d --force archbang-curve-rc-211016-x86_64.iso /dev/sdh
+sudo sync
+pvscan 
+sudo pvscan 
+sudo mount
+sudo umount /dev/sdg1 
+sudo fdisk /dev/sdg
+sudo pvcreate --help
+sudo pvcreate /dev/sdg2
+sudo fdisk -l /dev/sdg
+sudo pvcreate /dev/sdg2
+sudo pvscan 
+sudo vgcreate archbang /dev/sdg2
+sudo vgchange -an
+sudo vgchange -a y archbang
+sudo lvcreate -L 1G -n lvm-swap archbang 
+sudo lvcreate -n lvm-root archbang 
+lvcreate --help
+man lvcreate
+sudo lvcreate -L 28G -n lvm-root archbang 
+sudo lvs
+man lvcreate
+man lvchange 
+man lvcreate
+man lvremove 
+sudo lvremove 
+sudo lvremove lvm-root
+sudo lvremove
+sudo lvremove /dev/
+sudo lvremove 
+sudo lvremove --help
+sudo lvs
+sudo lvremove lvm-root
+sudo lvremove archbang
+sudo lvs
+sudo lvcreate -l 100%FREE -n lvm-root archbang 
+sudo lvs
+sudo mke2fs -b 4096 -j -L ROOT /dev/archbang/lvm-root 
+sudo mkfs.ext4 -b 4096 -j -L ROOT /dev/archbang/lvm-root 
+sudo mkswap -L SWAP /dev/archbang/lvm-swap 
+sudo mount /dev/archbang/lvm-root /mnt/
+ls -la /mnt/
+df -h
+sudo umount /mnt 
+pvs
+s pvs
+vgs
+s vgs
+lspci
+lsmod | grep rt
+ip
+ip link help
+ip link show
+ip link show wlp4s1
+ip link show wlp4s1 -a
+ip link show wlp4s1
+ip link
+ip link -a
+ip link
+lsmod | grep rt
+lsmod > lsmod.txt
+cat lsmod.txt 
+echo 'grub-install --target=i386-pc --recheck --force /dev/sda1' > grub-install.txt
+mv *.txt Downloads/ -i
+mount
+umount /dev/sdg1
+df -g
+df -h
+sudo gparted
+sudo gparted /dev/sdg
+mount | grep gparted
+mount | grep sdg
+sudo gparted /dev/sdg
+pkexec gparted /dev/sdg
+pkexec gedit
+an pkexec
+man pkexec
+pkexec
+sudo pacman -S gpart gparted parted gpaste 
+sudo pacman -S partimage partitionmanager partclone mtools  
+sudo pacman -S partitionmanager partclone mtools  
+sudo pacman -S partitionmanager mtools  
+sudo pacman -S partclone partimage  mtools  
+partimage
+man partimage
+sudo partimage
+sudo gparted
+sudo eject /dev/sdg
+mount
+mount | grep sdg
+cat .local/share/applications/minecraft.desktop 
+sudo su -
+touch senhas.csv
+cat <<EOF >senhas.csv 
+url,username,password,extra,name,grouping,fav
+https://accounts.google.com/ServiceLogin?service=accountsettings&amp;passive=1209600&amp;osid=1&amp;continue=https://www.google.com/settings/chrome/sync&amp;followup=https://www.google.com/settings/chrome/sync#password,joaomanoel7,jMLRn@GmL#11023081,,accounts.google.com,Email,1
+https://correio.ifg.edu.br/owa/auth/logon.aspx?url=https%3a%2f%2fcorreio.ifg.edu.br%2fowa%2f&amp;reason=2,2219692,$!mu14D0r,,ifg.edu.br,IFG,0
+https://duckduckgo.com/settings,,m0t0r d3 bu5c4 ddg0!#,,duckduckgo.com,,0
+https://github.com/login?return_to=%2Fjoin%3Fsource%3Dheader-home,jmanoel7,3571lh4Ç0,,github.com,Ferramentas de Produtividade,0
+https://www.evernote.com/Login.action?message=forgotPasswordAction.sent,joaomanoel7@gmail.com,3v3rN073_;,,evernote.com,Ferramentas de Produtividade,0
+https://ssd.mec.gov.br/ssd-server/servlet/InitAuthenticationByIdentifierAndPassword?t=pH59TJd7H0rzCiazs-e_4o_BOd1f5W27ePdQ9szB9CF5MwWS,284.431.078-80,?AYsp\3945,,mec.gov.br,,0
+http://localhost/phpmyadmin/,root,visao#35%,,visao-dev phpmyadmin,Ferramentas de Produtividade,1
+https://accounts.google.com/ServiceLogin?service=mail&amp;continue=https://mail.google.com/mail/&amp;hl=pt-BR#password,daaifg,DAA#0800,,accounts.google.com,Email,0
+https://www.evernote.com/Login.action?targetUrl=%2FHome.action,joao.nogueira@ifg.edu.br,3V3rn073$.,,evernote.com - IFG,Ferramentas de Produtividade,1
+http://localhost/phpmyadmin/,root,visao#35%,,phpmyadmin,Ferramentas de Produtividade,1
+http://www.sitpass.com.br/portalsitpass/portalusuariopf/login.html,28443107880,648521,,sitpass.com.br,Pessoal,0
+http://mec.cube.callsp.inf.br/auth-web/login?redirect_uri=http%3A%2F%2Ffale-conosco.mec.call.inf.br%2Fauth%2Fcallback&amp;requested_uri=http%3A%2F%2Ffale-conosco.mec.call.inf.br%2Fsecoes%2F&amp;token_aplicacao=e3lhqm5iVYbcOEfxMMvpBw#/ODQ0MS1zZSw4NTQ0LXNl,28443107880,M3C#05,,callsp.inf.br,Trabalho,0
+https://www.dropbox.com/#,joaomanoel7@gmail.com,JmlrN@dPBx#11023081,,dropbox.com,Ferramentas de Produtividade,1
+http://10.1.233.206/phpmyadmin/,root,visao#35%,,10.1.233.206,Ferramentas de Produtividade,1
+http://mec.cube.callsp.inf.br/auth-web/login?redirect_uri=http%3A%2F%2Ffale-conosco.mec.call.inf.br%2Fauth%2Fcallback&amp;requested_uri=http%3A%2F%2Ffale-conosco.mec.call.inf.br%2Fsecoes%2F&amp;token_aplicacao=e3lhqm5iVYbcOEfxMMvpBw#,28443107880,M3C#05,,mec.cube.callsp.inf.br,Trabalho,1
+http://www2.qualidata.com.br/,joaonogueira, +RieN9286O0&amp;,,www2.qualidata.com.br,Trabalho,1
+https://www.dropbox.com/#,joao.nogueira@ifg.edu.br,jMLRn@DpbX#11023081,,dropbox.com,Ferramentas de Produtividade,1
+http://rei66473/phpmyadmin/,root,visao#35%,,rei66473,Ferramentas de Produtividade,1
+https://academicoweb.ifg.edu.br/qacademico/index.asp?t=1001,20131011090230,73rr@P!4N4,,ifg.edu.br,IFG,0
+https://passport.alibaba.com/mini_login.htm?lang=pt_br&amp;appName=aebuyer&amp;appEntrance=default&amp;styleType=auto&amp;bizParams=&amp;notLoadSsoView=false&amp;notKeepLogin=true&amp;isMobile=false&amp;rnd=0.9984219271760415,joaomanoel7@gmail.com,24GrrMndl=+,,alibaba.com,Business,0
+https://login.uber.com/login,joaomanoel7@gmail.com,Ub3r#180311,,uber.com,Social,0
+https://www.facebook.com/,joaomanoel7@gmail.com,EnfK%80&amp;15,,facebook.com,Social,0
+https://servicos.goias.gov.br/folhapagamento/control?cmd=ConsContraCheque,49163329115,5041RLNAS,,goias.gov.br,Pessoal,0
+https://login.microsoftonline.com/,joao.manoel@academico.ifg.edu.br,CMBR~2014^7x1,,microsoftonline.com,Business,0
+https://www.documentodoestudante.com.br/login,joao.manoel@academico.ifg.edu.br,357ud4n73#$%,,documentodoestudante.com.br,(nenhum),0
+https://www.receita.fazenda.gov.br/aplicacoes/ssl/atbhe/codacesso.app/PFCodAcesso.aspx,49163329115,zmJI3207,,fazenda.gov.br,Pessoal,0
+https://cav.receita.fazenda.gov.br/eCAC/publico/login.aspx,49163329115,zmJI3207,,fazenda.gov.br,Pessoal,0
+https://login.live.com/login.srf?bk=1465096260&amp;lc=1033,joao.nogueira@ifg.edu.br,MrqWY92583&amp;!#&lt;:,,login.live.com,Email,1
+https://accounts.google.com/AddSession?hl=pt-BR&amp;continue=https://mail.google.com/mail&amp;service=mail#password,joaomanoel7.ifg,JCmSp#7\0/,,accounts.google.com,Email,1
+http://www.ifg.edu.br/proen/administrator/index.php,joao,FDDPrgc$#2719,,Joomla - PROEN/IFG,,0
+http://www.ifg.edu.br/proen/daa/administrator/,joao,FDDPrgc&amp;*4380,,Joomla - DAA/PROEN/IFG,,0
+https://accounts.google.com/multilogin/challenge/sl/password#password,emanuela.nogueira.lr,HsbZ4138{&amp;!',,accounts.google.com,Email,0
+http://192.168.0.1/,admin,".pyDEV,&amp;2397!",,192.168.0.1,Casa,1
+https://www.ingresso.com/cliente/#/login,joaomanoel7@gmail.com,!N6r&amp;$$0,,ingresso.com,Compras,0
+https://twitter.com/intent/tweet?status=Come%20and%20play%20http%3A%2F%2Fslither.io%20%23slitherio,_jmanoel7,mcdT\|/2080,,twitter.com,Social,1
+https://www.dropbox.com/login?src=logout,sandraangela7@gmail.com,TPNqmf*7,,dropbox.com,Ferramentas de Produtividade,1
+https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&amp;ltmpl=default&amp;service=mail&amp;sacu=1&amp;scc=1&amp;passive=1209600&amp;ignoreShadow=0&amp;acui=1#Email=sandraangela7%40gmail.com,sandraangela7@gmail.com,sanlr14052005,,accounts.google.com,Email,1
+https://enapvirtual.enap.gov.br/login/forgot_password.php?token=V7c7FgbGMuzK7Lcs4W9wmmvQ4WMXmioY,28443107880,4bb&amp;WN2S^K2y,,enapvirtual.enap.gov.br,Trabalho,0
+EOF
+
+cat senhas.csv 
+cd
+sudo ifconfig -a
+sudo lspci
+los /lib/modules/4.8.13-1-ARCH/kernel/drivers/net/wireless/ralink/rt2x00/
+ls -la /lib/modules/4.8.13-1-ARCH/kernel/drivers/net/wireless/ralink/rt2x00/
+lsmod | grep rt
+lspci
+sudo ifconfig -a
+lsmod | grep rt
+ls -la /lib/modules/4.8.13-1-ARCH/kernel/drivers/net/wireless/ralink/rt2x00/
+sudo modprobe -i rt61pci 
+sudo modprobe -i rt73usb 
+sudo ifconfig -a
+sudo ip 
+sudo ip link
+sudo ip link help
+sudo ip link show all
+sudo ip link show 
+sudo ip link show
+ping 8.8.8.8
+ip link show
+ping 8.8.8.8
+sudo ping 8.8.8.8
+sudoedit /etc/NetworkManager/NetworkManager.conf 
+sudo systemctl restart NetworkManager.service 
+sudo ping 8.8.8.8
+sudo ping 192.168.0.1
+sudo ping 192.168.1.1
+sudo ping 192.168.1.2
+sudo route
+sudo ping 192.168.1.
+sudo ping 8.8.8.8
+sudo route
+sudo ping 8.8.8.8
+sudo ip link show
+sudo ifconfig -a
+lsmod -a
+lsmod
+lsmod  | grep rt
+sudo ifconfig -a
+sudo ip link show
+sudo ip link
+sudo route
+sudo systemctl restart cups-browsed.service
+sudo passwd
+sudo pacman -Syyuu
+sudo rm /var/lib/pacman/db.lck
+sudo pacman -Syyuu
+sudo pacman -S gvfs-google 
+sudo pacman -Scc
+sudo pacman -Syyuu
+cat .local/share/applications/minecraft.desktop 
+cat /home/jmanoel7/Dropbox/Minecraft/minecraft.sh
+836800000009 993400090664 061232121600 000160539771
+echo "836800000009 993400090664 061232121600 000160539771"
+echo "836800000009993400090664061232121600000160539771"
+ping 189.114.38.235
+pacman -Q | grep vlc
+vlc
+gvim
+l. .vimrc
+fddgh
+clear
+sudo route
+/usr/bin/gvim
+echo "836800000009993400090664061232121600000160539771"
+echo '82680000001-8 14340106042-9 55243157113-2 34210005147-9'
+7z x saves.7z 
+rm -rf ~/.minecraft/saves/
+mv saves ~/.minecraft/
+cd
+cd .minecraft/
+ls
+cd saves/
+ls
+cd
+cd 
+cd Dropbox/Minecraft/
+cd
+cd .minecraft/
+cd ..
+rm -rf .minecraft/
+sudo cp -Rf /home/emanuela/.minecraft .
+sudo chown jmanoel7\: -R .minecraft/
+cd .minecraft/
+rm -rf saves/
+rm -rf screenshots/
+7z x ~/Dropbox/Minecraft/saves.7z 
+rm -rf ~/Dropbox/Minecraft/HARDCORE.7z 
+l. saves/
+7z x ~/Dropbox/Minecraft/screenshots.7z 
+sudo su emanuela -
+sudo mv /home/emanuela/.minecraft/*.7z ~/Dropbox/Minecraft/
+sudo mv /home/emanuela/.minecraft/saves-emanuela.7z ~/Dropbox/Minecraft/
+sudo mv /home/emanuela/.minecraft/screenshots-emanuela.7z ~/Dropbox/Minecraft/
+sudo chown jmanoel7\: -R ~/Dropbox/Minecraft/
+l. ~/Dropbox/Minecraft/
+cd ~/Dropbox/Minecraft/
+mv saves.7z saves-joaomanoel.7z 
+mv screenshots.7z screenshots-joaomanoel.7z 
+l.
+ls
+7z x passwd.7z 
+cat passwd.txt 
+rm passwd.txt
+ls
+cd
+cd .minecraft/
+cd saves/
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK/
+sync
+cd ..
+7z a saves-joaomanoel.7z saves/
+mv -i saves-joaomanoel.7z ~/Dropbox/Minecraft/
+cd saves/
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK/
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE.
+rm -rf HARDCORE.
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+rm -rf HARDCORE
+cp -Rf HARDCORE.BAK/ HARDCORE
+sync
+rm -rf HARDCORE.BAK/
+cp -Rf HARDCORE HARDCORE.BAK
+sync
+cd
+cd Dropbox/Minecraft/
+java -jar Mineshafter-launcher.jar 
+cd
+cd .minecraft/
+7z x a saves-joaomanoel.7z saves/
+7z a saves-joaomanoel.7z saves/
+7z a screenshots-joaomanoel.7z screenshots/
+mv -i *.7z ../Dropbox/Minecraft/
+l. ../Dropbox/Minecraft/

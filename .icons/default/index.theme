@@ -1,2 +1,4 @@
 [Icon Theme]
-Inherits=Adwaita
+#Inherits=Adwaita
+Inherits=Chameleon-Pearl-Regular-0.5
+#Inherits=Win8
