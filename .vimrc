@@ -857,6 +857,18 @@ let g:session_autosave='no'
 
 
 " ==============================================================================
+" Vim-JDE -> Just a Development Environment for VIM. (VJDE)
+" cd ~/.vim/bundle
+" git clone https://github.com/jmanoel7/Vim-JDE.git
+" chmod a+x ~/.vim/bundle/Vim-JDE/plugin/vjde/readtags
+" ==============================================================================
+
+" use <c-space> as the Code completion key!
+" change it by
+"let g:vjde_completion_key='<c-space>'
+
+
+" ==============================================================================
 " Removed Plugins
 " ==============================================================================
 
