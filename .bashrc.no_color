@@ -29,7 +29,8 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 PROMPT_COMMAND="LAST_COMMAND=\$?"
-PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}[\u@\h:\W] \$(if [[ "\$LAST_COMMAND" != "0" ]]; then echo \"!\"; fi)\\$ "
+PS1="\n(\D{%A, %d/%m/%Y, %H:%M})-(\$(uptime | sed 's/^.*up/up/' | sed 's/  / /g'))\n${VIRTUAL_ENV:+(VENV: \$(basename "$VIRTUAL_ENV"))-}${debian_chroot:+(DEBIAN: "$debian_chroot")-}(\u@\h)-(\W: \$(ls -1AF | sed '/\/$/ d' | wc -l | sed 's/ //g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b)\n(j \j)-(! \!)-(\$(if [[ "\$LAST_COMMAND" != "0" ]]; then echo "0_0"; else echo "^_^"; fi))-> "
+#PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}[\u@\h:\W] \$(if [[ "\$LAST_COMMAND" != "0" ]]; then echo \"!\"; fi)\\$ "
 #PS1="\[\e]0;${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
 
 # enable color support of ls and also add handy aliases

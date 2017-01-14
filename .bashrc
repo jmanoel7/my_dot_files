@@ -25,28 +25,28 @@ shopt -s globstar
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 
-################################################################################
-## PROMPT DEFINITIONS
-################################################################################
-
-#if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-#    debian_chroot=$(cat /etc/debian_chroot)
-#fi
-#PROMPT_COMMAND="LAST_COMMAND=\$?"
+# prompt definitions
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+PROMPT_COMMAND="LAST_COMMAND=\$?"
+darkgrey="$(tput bold ; tput setaf 0)"
+red="$(tput bold; tput setaf 1)"
+green="$(tput bold ; tput setaf 2)"
+yellow="$(tput bold ; tput setaf 3)"
+blue="$(tput bold ; tput setaf 4)"
+magenta="$(tput bold ; tput setaf 5)"
+cyan="$(tput bold ; tput setaf 6)"
+white="$(tput bold ; tput setaf 7)"
+nc="$(tput sgr0)"
+PS1="\n\[$darkgrey\](\[$blue\]\D{%A, %d/%m/%Y, %H:%M}\[$darkgrey\])-(\[$cyan\]\$(uptime | sed 's/^.*up/up/' | sed 's/  / /g')\[$darkgrey\])\n${VIRTUAL_ENV:+(\\[\$yellow\\]VENV: \$(basename "$VIRTUAL_ENV")\\[\$darkgrey\\])-}${debian_chroot:+(\\[\$yellow\\]DEBIAN: "$debian_chroot"\\[\$darkgrey\\])-}(\[$yellow\]\u@\h\[$darkgrey\])-(\[$magenta\]\W: \$(ls -1AF | sed '/\/$/ d' | wc -l | sed 's/ //g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[$darkgrey\])\n(\[$green\]j \j\[$darkgrey\])-(\[$green\]! \!\[$darkgrey\])-(\$(if [[ "\$LAST_COMMAND" != "0" ]]; then echo "\\[\$red\\]0_0"; else echo "\\[\$green\\]^_^"; fi)\[$darkgrey\])-> \[$nc\]"
+#PS1="\[$darkgrey\][ \[$red\]\h \[$white\]\W\[$red\] \[$darkgrey\]]\\[$red\]\\$ \[$nc\]"
 #if [ "`id -u`" != "0" ]; then
 #	PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\[\e[1;36m\][\[\e[1;34m\]\u\[\e[1;36m\]@\[\e[1;33m\]\h\[\e[1;36m\]:\[\e[1;32m\]\W\[\e[1;36m\]]\[\e[m\] \$(if [[ "\$LAST_COMMAND" = "0" ]]; then echo \"\[\033[01;36m\]\"; else echo \"\[\033[01;36;41m\]\"; fi)\\$\[\e[m\] "
 #else
 #	PS1="${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\[\e[1;36m\][\[\e[1;31m\]\u\[\e[1;36m\]@\[\e[1;33m\]\h\[\e[1;36m\]:\[\e[1;32m\]\W\[\e[1;36m\]]\[\e[m\] \$(if [[ "\$LAST_COMMAND" = "0" ]]; then echo \"\[\033[01;36m\]\"; else echo \"\[\033[01;36;41m\]\"; fi)\\$\[\e[m\] "
 #fi
-
 #PS1="\[\e]0;${VIRTUAL_ENV:+(\$(basename $VIRTUAL_ENV))}${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-
-darkgrey="$(tput bold ; tput setaf 0)"
-white="$(tput bold ; tput setaf 7)"
-red="$(tput bold; tput setaf 1)"
-nc="$(tput sgr0)"
-export PS1="\[$darkgrey\][ \[$red\]\h \[$white\]\W\[$red\] \[$darkgrey\]]\\[$red\]\\$ \[$nc\]"
-
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
