@@ -1,7 +1,7 @@
-export PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+export PATH="/opt/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 #export CABAL_HOME="$HOME/.cabal"
 #export PATH="$CABAL_HOME/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH="$JAVA_HOME/bin:$PATH"
 #export NODEJS_HOME="/usr/nodejs/default"
 #export PATH="$NODEJS_HOME/bin:$PATH"
@@ -38,7 +38,7 @@ export VISUAL='vim'
 export PAGER='less'
 export TERM='xterm-256color'
 export TERMINAL='terminator.wrapper'
-export BROWSER='palemoon'
+export BROWSER='chromium'
 #export PYTHONDOCS='/usr/share/doc/python2/html/'
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python2.7"
 if [ -r '/usr/bin/virtualenvwrapper.sh' ]; then
@@ -49,5 +49,6 @@ fi
 export WORKON_HOME="$HOME/.local/venvs"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export GPGKEY='607A5E65'
-export DEBEMAIL="joaomanoel7@gmail.com"
-export DEBFULLNAME="Joao Manoel"
+#export DEBEMAIL="joaomanoel7@gmail.com"
+#'export DEBFULLNAME="Joao Manoel"
+export LD_PRELOAD=""

@@ -844,6 +844,9 @@ Project "my_dot_files"
 Project "my_shell_scripts"
 Project "Python/Django/locafan"
 
+Project "~/Dropbox/aluno_ifg/2016-2/Estrutura de Dados I"
+Project "~/Dropbox/aluno_ifg/2016-2/Programação Orientada a Objeto I/codigos_java"
+
 
 " ==============================================================================
 " Extended session management for Vim (:mksession on steroids)

@@ -4,6 +4,11 @@ alias ll='ls -lhF --group-directories-first'
 alias l.='ls -lhaF --group-directories-first'
 alias l='ls -CF --group-directories-first'
 alias la='ls -aCF --group-directories-first'
+alias vi="vim"
+alias shred="shred -zf"
+alias python="python2"
+alias wget="wget -U 'noleak'"
+alias curl="curl --user-agent 'noleak'"
 alias 7zip='7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on'
 alias 7zipenc='7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on -mhe=on -p'
 #alias AGC='sudo apt-get clean'
