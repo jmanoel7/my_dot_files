@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python3
+Module=xmlhelper
+IAge=3
+Name=XML Helper
+Description=Adds six commands for writing XML documents -- end the currently open XML element, create a copy of the last closed one, validate the currently open XML document with a W3C schema, validate a W3C schema, convert an XML document into its schema, and generate an XML document from a Schema file.
+Authors=Matěj Cepl <mcepl@redhat.com>, Ajith Sen G. S.  <ajithsengs@gmail.com>
+Copyright=Copyright @ 2007
+Website=http://matej.ceplovi.cz

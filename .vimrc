@@ -747,7 +747,7 @@ let g:virtualenv_directory = '~/.local/venvs'
 " git clone https://github.com/cwood/vim-django.git
 " ==============================================================================
 
-let g:django_projects = '~/Dropbox/Public/Meus_Projetos/Python/Django/' "Sets all projects under project
+let g:django_projects = '~/Dropbox/Public/Projetos/Python/Django/' "Sets all projects under project
 let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
 let g:django_activate_nerdtree = 1 "Try to open nerdtree at the project root.
 let g:last_relative_dir = '' "Initial Directory for Django App

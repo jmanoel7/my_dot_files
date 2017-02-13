@@ -25,7 +25,7 @@ alias 7zipenc='7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on -mhe=on -p'
 #alias AGAP='sudo apt-get --purge autoremove'
 #alias SUG='sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade'
 #alias SDU='sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade'
-alias SUG='sudo pacman -Syyuu --noconfirm && sudo pacman -Scc --noconfirm && yaourt -Syyuu --noconfirm && yaourt -Scc --noconfirm'
+alias SUG='sudo pacman -Syu --noconfirm && sudo pacman -Scc --noconfirm && yaourt -Syu --noconfirm && yaourt -Scc --noconfirm'
 alias PACC='sudo pacman -Scc --noconfirm'
 alias PACR='sudo pacman -Rcns --noconfirm'
 alias PACI='sudo pacman -Sy --needed --noconfirm'
@@ -58,5 +58,7 @@ alias 256colors='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -
 alias ST="scrot -b 'scrot_%d-%m-%Y_%H:%M:%S_\$wx\$h.png' -e 'mv \$f ~/Dropbox/Captura_de_Tela/'"
 alias STS="scrot -b -s 'scrot_%d-%m-%Y_%H:%M:%S_\$wx\$h.png' -e 'mv \$f ~/Dropbox/Captura_de_Tela/'"
 alias STU="scrot -b -u 'scrot_%d-%m-%Y_%H:%M:%S_\$wx\$h.png' -e 'mv \$f ~/Dropbox/Captura_de_Tela/'"
-alias P2I='sudo pip2 install --force-reinstall --upgrade --no-cache-dir --no-use-wheel --compile'
-alias P3I='sudo pip3 install --force-reinstall --upgrade --no-use-wheel --compile'
+alias P2I='sudo pip2 install --force-reinstall --upgrade'
+alias P2IC='sudo pip2 install --force-reinstall --upgrade --no-cache-dir --no-use-wheel --compile'
+alias P3I='sudo pip3 install --force-reinstall --upgrade'
+alias P3IC='sudo pip3 install --force-reinstall --upgrade --no-use-wheel --compile'

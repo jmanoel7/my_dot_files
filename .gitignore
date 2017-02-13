@@ -3,7 +3,7 @@
 *.viminfo
 .viminfo
 *.bash_history
-.bash_history
+.bash_history*
 sessions/
 bundle/
 *.viminfo

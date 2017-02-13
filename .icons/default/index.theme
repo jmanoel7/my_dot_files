@@ -1,4 +1,5 @@
+# This file is written by LXAppearance. Do not edit.
 [Icon Theme]
-#Inherits=Adwaita
-Inherits=Chameleon-Pearl-Regular-0.5
-#Inherits=Win8
+Name=Default
+Comment=Default Cursor Theme
+Inherits=Adwaita

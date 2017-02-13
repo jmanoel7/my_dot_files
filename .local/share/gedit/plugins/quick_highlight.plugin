@@ -1,0 +1,10 @@
+[Plugin]
+Loader=python3
+Module=quick_highlight
+IAge=3
+Name=Quick Highlight
+Description=Highlighing every occurrences of selected text.
+Authors=Martin Blanchard <tchaik@gmx.com>
+Copyright=Copyright © 2014 Martin Blanchard
+Website=http://www.gedit.org
+Version=3.16.0
