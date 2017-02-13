@@ -1,0 +1,32 @@
+# exports
+export EDITOR='nano'
+export VISUAL='nano'
+export TERMINAL='terminator.wrapper'
+export BROWSER='firefox'
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+[ -d "$HOME/bin" ] && \
+    export PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && \
+    export PATH="$HOME/.local/bin:$PATH"
+if [ -d "/usr/lib/jvm/default" ]
+then
+    export JAVA_HOME="/usr/lib/jvm/default"
+    export PATH="$JAVA_HOME/bin:$PATH"
+fi
+if [ -x /usr/bin/virtualenvwrapper.sh ]
+then
+	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+	mkdir -p ~/.local/venvs
+	export WORKON_HOME=~/.local/venvs
+	source /usr/bin/virtualenvwrapper.sh
+fi
+
+# aliases
+alias ls='ls --color=auto'
+alias l.='ls -Flah --group-directories-first'
+alias ll='ls -Flh --group-directories-first'
+alias l='ls -F --group-directories-first'
+alias s='sudo'
+alias se='sudoedit'
+alias editmirror='se /etc/pacman.d/mirrorlist'
+alias python='/usr/bin/python2'
