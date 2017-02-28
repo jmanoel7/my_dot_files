@@ -48,7 +48,7 @@
  '(indent-tabs-mode nil)
  '(package-selected-packages
    (quote
-    (org-plus-contrib org-gcal web-mode w3m use-package smartparens smart-mode-line-powerline-theme python-mode pony-mode pkgbuild-mode php-auto-yasnippets org-vcard org-dropbox org-download org-ac jdee helm-gtags google-translate google-this google-maps google-contacts google-c-style google edit-server django-theme color-theme auto-complete-exuberant-ctags auto-complete-c-headers apel)))
+    (org-plus-contrib org-gcal web-mode w3m use-package smartparens smart-mode-line-powerline-theme python-mode pony-mode php-mode php-auto-yasnippets org-vcard org-dropbox org-download org-ac jdee helm-gtags google-translate google-this google-maps google-contacts google-c-style google edit-server django-theme color-theme auto-complete-exuberant-ctags auto-complete-c-headers apel auctex auto-complete-auctex)))
  '(tab-stop-list nil)
  '(tab-width 4))
 (custom-set-faces
@@ -193,6 +193,7 @@
 ;; -----------------------------------------------------------------------------
 
 (use-package yasnippet
+  :config (yas-global-mode 1)
   :ensure t)
 
 
@@ -213,27 +214,19 @@
 
 
 ;; -----------------------------------------------------------------------------
-;; Package: pkgbuild-mode
-;; -----------------------------------------------------------------------------
-
-(use-package pkgbuild-mode
-  :ensure t)
-
-
-;; -----------------------------------------------------------------------------
 ;; Package: php-mode
 ;; -----------------------------------------------------------------------------
 
-(use-package php-mode
-  :ensure t)
+;; (use-package php-mode
+;;   :ensure t)
 
 
 ;; -----------------------------------------------------------------------------
 ;; Package: php-auto-yasnippets
 ;; -----------------------------------------------------------------------------
 
-(use-package php-auto-yasnippets
-  :ensure t)
+;; (use-package php-auto-yasnippets
+;;   :ensure t)
 
 
 ;; -----------------------------------------------------------------------------

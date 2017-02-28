@@ -71,3 +71,6 @@ MainThread - DEBUG - DEACTIVATING
 MainThread - DEBUG - Speech Recogniser initialised
 MainThread - DEBUG - UI INIT
 MainThread - DEBUG - DEACTIVATING
+MainThread - DEBUG - Speech Recogniser initialised
+MainThread - DEBUG - UI INIT
+MainThread - DEBUG - DEACTIVATING
