@@ -21,9 +21,6 @@
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
 
-;; load my files .el
-(add-to-list 'load-path "~/.emacs.d/load.el")
-
 
 ;; -----------------------------------------------------------------------------
 ;; Customize: Variables
@@ -45,6 +42,10 @@
  '(custom-safe-themes
    (quote
     ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" default)))
+ '(ede-project-directories
+   (quote
+    ("/home/joaomanoel/Dropbox/aluno_ifg/2016-2/Estrutura de Dados I/codigo_c/lista-01/include" "/home/joaomanoel/Dropbox/aluno_ifg/2016-2/Estrutura de Dados I/codigo_c/lista-01")))
+ '(flymake-google-cpplint-command "/usr/local/bin/cpplint")
  '(indent-tabs-mode nil)
  '(package-selected-packages
    (quote
@@ -276,6 +277,9 @@
 ;; -----------------------------------------------------------------------------
 
 (use-package google-c-style
+  :config (progn
+            (add-hook 'c-mode-common-hook 'google-set-c-style)
+            (add-hook 'c-mode-common-hook 'google-make-newline-indent))
   :ensure t)
 
 
@@ -292,6 +296,9 @@
 ;; -----------------------------------------------------------------------------
 
 (use-package auto-complete
+  :config (progn
+            (require 'auto-complete-config)
+            (ac-config-default))
   :ensure t)
 
 
@@ -316,6 +323,20 @@
 ;; -----------------------------------------------------------------------------
 
 (use-package auto-complete-c-headers
+  :init (progn
+          (defun my:ac-c-header-init ()
+            (require 'auto-complete-c-headers)
+            (add-to-list 'ac-sources 'ac-source-c-headers)
+            (add-to-list 'achead:include-directories '"/usr/include")
+            (add-to-list 'achead:include-directories '"/usr/local/include")
+            (add-to-list 'achead:include-directories '"/usr/include/c++/4.9")
+            (add-to-list 'achead:include-directories '"/usr/include/x86_64-linux-gnu/c++/4.9")
+            (add-to-list 'achead:include-directories '"/usr/include/c++/4.9/backward")
+            (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.9/include")
+            (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed")
+            (add-to-list 'achead:include-directories '"/usr/include/x86_64-linux-gnu"))
+          (add-hook 'c++-mode-hook 'my:ac-c-header-init)
+          (add-hook 'c-mode-hook   'my:ac-c-header-init))
   :ensure t)
 
 
@@ -375,3 +396,107 @@
 (use-package org-plus-contrib
   :ensure t
   :pin org)
+
+
+;; -----------------------------------------------------------------------------
+;; Package: plsql
+;; -----------------------------------------------------------------------------
+
+(use-package plsql
+  :init (progn
+          (setq auto-mode-alist
+                (append
+                 '(("\\.\\(p\\(?:k[bg]\\|ls\\)\\|sql\\)\\'" . plsql-mode))
+                 auto-mode-alist))
+          (speedbar-add-supported-extension "pls")
+          (speedbar-add-supported-extension "pkg")
+          (speedbar-add-supported-extension "pkb")
+          (speedbar-add-supported-extension "sql"))
+  :ensure t)
+
+
+;; -----------------------------------------------------------------------------
+;; Package: iedit
+;; -----------------------------------------------------------------------------
+
+(use-package iedit
+  :ensure t)
+
+
+;; -----------------------------------------------------------------------------
+;; Package: flymake-google-cpplint
+;; -----------------------------------------------------------------------------
+
+(use-package flymake-google-cpplint
+  :init (progn
+          (defun my:flymake-google-init ()
+            (require 'flymake-google-cpplint)
+            (custom-set-variables
+             '(flymake-google-cpplint-command "/usr/local/bin/cpplint"))
+            (flymake-google-cpplint-load))
+          (add-hook 'c-mode-hook   'my:flymake-google-init)
+          (add-hook 'c++-mode-hook 'my:flymake-google-init))
+  :ensure t)
+
+
+;; -----------------------------------------------------------------------------
+;; Package: flymake-cursor
+;; -----------------------------------------------------------------------------
+
+(use-package flymake-cursor
+  :ensure t)
+
+
+;; -----------------------------------------------------------------------------
+;; Package: cedet
+;; -----------------------------------------------------------------------------
+
+(use-package cedet
+  :init (progn
+          (semantic-mode 1)
+          (defun my:add-semantic-to-autocomplete()
+            (add-to-list 'ac-sources 'ac-source-semantic))
+          (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
+          (global-semanticdb-minor-mode 1)
+          (global-semantic-idle-scheduler-mode 1)
+          (semantic-mode 1)
+          (global-ede-mode 1))
+  :ensure t)
+
+
+;; -----------------------------------------------------------------------------
+;; Package: irony
+;; -----------------------------------------------------------------------------
+
+(use-package irony
+  :init (progn
+          (setenv "LD_LIBRARY_PATH" "/usr/lib/llvm-3.5/lib/"))
+  :config (progn
+            ;; (irony-enable 'ac)
+            ;; (defun my:irony-enable()
+            ;;   (when (member major-mode irony-known-modes)
+            ;;     (irony-mode 1)))
+            ;; (add-hook 'c++-mode-hook  'my:irony-enable)
+            ;; (add-hook 'c-mode-hook    'my:irony-enable)
+            ;; (add-hook 'objc-mode-hook 'my:irony-enable)
+            (add-hook 'c++-mode-hook  'irony-mode)
+            (add-hook 'c-mode-hook    'irony-mode)
+            (add-hook 'objc-mode-hook 'irony-mode)
+            ;; replace the `completion-at-point' and `complete-symbol' bindings in
+            ;; irony-mode's buffers by irony-mode's function
+            (defun my:irony-mode-hook()
+              (define-key irony-mode-map [remap completion-at-point]
+                'irony-completion-at-point-async)
+              (define-key irony-mode-map [remap complete-symbol]
+                'irony-completion-at-point-async))
+            (add-hook 'irony-mode-hook 'my:irony-mode-hook)
+            (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
+  :ensure t)
+
+
+;; -----------------------------------------------------------------------------
+;; load my files .el
+;; -----------------------------------------------------------------------------
+
+(add-to-list 'load-path "~/.emacs.d/load_el")
+(require 'myprojects)

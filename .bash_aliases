@@ -1,5 +1,7 @@
 alias s='sudo'
 alias se='sudoedit'
+alias editmirror='se /etc/pacman.d/mirrorlist'
+alias python='/usr/bin/python2'
 alias ll='ls -lhF --group-directories-first'
 alias l.='ls -lhaF --group-directories-first'
 alias l='ls -CF --group-directories-first'
