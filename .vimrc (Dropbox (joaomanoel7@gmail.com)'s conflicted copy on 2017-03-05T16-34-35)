@@ -488,11 +488,10 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 inoremap <C-@> <C-x><C-o>
-"inoremap <TAB> <C-x><C-u>
-let g:UltiSnipsListSnippets="<C-l>"
-let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsListSnippets="<c-.>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
