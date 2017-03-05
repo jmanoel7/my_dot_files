@@ -821,11 +821,11 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 " path to directory where library can be found
 "let g:clang_library_path='/usr/lib'
 " or path directly to the library file
-let g:clang_library_path='/usr/lib/libclang.so'
+let g:clang_library_path='/usr/lib/llvm-3.5/lib/libclang.so.1'
 " path do clang.exe
-let g:clang_exec = '"/usr/bin/clang'
+let g:clang_exec = '/usr/bin/clang'
 " options for clang
-let g:clang_user_options = '2> NULL || exit 0"'
+let g:clang_user_options = '2> /dev/null || exit 0'
 
 
 " ==============================================================================
@@ -838,7 +838,7 @@ let g:project_enable_welcome = 1
 let g:project_use_nerdtree = 1
 
 set rtp+=~/.vim/bundle/vim-project/
-call project#rc("~/Dropbox/Public/Meus_Projetos/")
+call project#rc("~/Dropbox/Public/Projetos/")
 
 Project "my_dot_files"
 Project "my_shell_scripts"
@@ -859,13 +859,6 @@ let g:session_autoload='no'
 let g:session_autosave='no'
 
 
-" ==============================================================================
-" Vim-JDE -> Just a Development Environment for VIM. (VJDE)
-" cd ~/.vim/bundle
-" git clone https://github.com/jmanoel7/Vim-JDE.git
-" chmod a+x ~/.vim/bundle/Vim-JDE/plugin/vjde/readtags
-" ==============================================================================
-
 " use <c-space> as the Code completion key!
 " change it by
 "let g:vjde_completion_key='<c-space>'
@@ -873,6 +866,14 @@ let g:session_autosave='no'
 
 " ==============================================================================
 " Removed Plugins
+" ==============================================================================
+
+
+" ==============================================================================
+" Vim-JDE -> Just a Development Environment for VIM. (VJDE)
+" cd ~/.vim/bundle
+" GIT clone https://github.com/jmanoel7/Vim-JDE.git
+" chmod a+x ~/.vim/bundle/Vim-JDE/plugin/vjde/readtags
 " ==============================================================================
 
 
