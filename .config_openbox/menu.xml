@@ -5,6 +5,37 @@
         xsi:schemaLocation="http://openbox.org/
                 file:///usr/share/openbox/menu.xsd">
 
+    <menu id="exit-menu" label="Exit">
+        <item label="Log out">
+            <action name="Execute">
+                <command>
+                    bl-exit --logout
+                </command>
+            </action>
+        </item>
+        <item label="Suspend">
+            <action name="Execute">
+                <command>
+                    bl-exit --suspend
+                </command>
+            </action>
+        </item>
+        <item label="Reboot">
+            <action name="Execute">
+                <command>
+                    bl-exit --reboot
+                </command>
+            </action>
+        </item>
+        <item label="Power off">
+            <action name="Execute">
+                <command>
+                    bl-exit --poweroff
+                </command>
+            </action>
+        </item>
+    </menu>
+
     <menu id="root-menu" label="Openbox 3">
         <item label="Run Program">
             <action name="Execute">
@@ -17,35 +48,35 @@
         <item label="Terminal">
             <action name="Execute">
                 <command>
-                    x-terminal-emulator
+                    terminator
                 </command>
             </action>
         </item>
         <item label="Web Browser">
             <action name="Execute">
                 <command>
-                    x-www-browser
+                    chromium
                 </command>
             </action>
         </item>
         <item label="File Manager">
             <action name="Execute">
                 <command>
-                    bl-file-manager
+                    Thunar
                 </command>
             </action>
         </item>
         <item label="Text Editor">
             <action name="Execute">
                 <command>
-                    bl-text-editor
+                    bl-gvim
                 </command>
             </action>
         </item>
         <item label="Media Player">
             <action name="Execute">
                 <command>
-                    bl-media-player
+                    vlc
                 </command>
             </action>
         </item>
@@ -68,6 +99,13 @@
             <item label="Task Manager (htop)">
                 <action name="Execute">
                     <command>x-terminal-emulator -T 'htop task manager' -e htop</command>
+                </action>
+            </item>
+            <item label="BLOB Themes Manager">
+                <action name="Execute">
+                    <command>
+                        bl-obthemes
+                    </command>
                 </action>
             </item>
         </menu>
@@ -109,7 +147,6 @@
             <menu execute="bl-dropbox-pipemenu" id="dropbox" label="Dropbox"/>
         </menu>
         <menu id="office" label="Office">
-            <menu id="openoffice" label="OpenOffice" execute="bl-openoffice-pipemenu" />
             <menu id="libreoffice" label="LibreOffice" execute="bl-libreoffice-pipemenu" />
             <item label="Google Docs">
                 <action name="Execute">
@@ -184,7 +221,9 @@
                 </item>
                 <item label="How to Edit Menu">
                     <action name="Execute">
-                        <execute>zenity --text-info --title=&quot;How to Edit the Menu&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-menu.txt&quot; --width=900 --height=700</execute>
+                        <command>
+                            yad --button="OK":0 --center --window-icon=distributor-logo-bunsenlabs --text-info --title=&quot;How to Edit the Menu&quot; --filename=&quot;/usr/share/bunsen/docs/helpfile-menu.txt&quot; --width=900 --height=700 --fontname=Monospace
+                        </command>
                     </action>
                 </item>
                 <separator/>
@@ -323,7 +362,8 @@
             <separator/>
             <item label="About Bunsen Alternatives">
                 <action name="Execute">
-                    <execute>zenity --text-info --title=&quot;About Bunsen Alternatives&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-bl-alternatives.txt&quot; --width=900 --height=700</execute>
+                    <execute>yad --button="OK":0 --center --window-icon=distributor-logo-bunsenlabs --text-info --title=&quot;About Bunsen Alternatives&quot; --filename=&quot;/usr/share/bunsen/docs/helpfile-bl-alternatives.txt&quot; --width=900 --height=700 --fontname=Monospace
+                    </execute>
                 </action>
             </item>
         </menu>
@@ -345,5 +385,11 @@
                 </command>
             </action>
         </item>
+<!-- comment out or remove the preceding "Exit" item,
+and uncomment the following "exit-menu"
+for one-click exit options. -->
+<!--
+        <menu id="exit-menu"></menu>
+-->
     </menu>
 </openbox_menu>

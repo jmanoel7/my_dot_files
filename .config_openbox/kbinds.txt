@@ -36,6 +36,7 @@ x W-m             	bl-media-player
 x W-h             	x-terminal-emulator -T 'htop task manager' -e htop
 x W-v             	pavucontrol
 x W-x             	bl-exit
+x W-Escape        	xkill
 o W-Tab           	client-list-combined-menu
 o W-space         	root-menu
 o A-C-q           	root-menu
@@ -45,3 +46,5 @@ o W-Down          	GrowToEdgeSouth
 o W-Up            	GrowToEdgeNorth
 o W-A-Left        	UnmaximizeFull
 o W-A-Right       	UnmaximizeFull
+o A-r             	Resize
+o A-m             	Move
