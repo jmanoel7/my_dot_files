@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Python
-Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=nodpmmidbgeganfponihbgmfcoiibffi
+Exec=/usr/lib/chromium/chromium --profile-directory=Default --app-id=nodpmmidbgeganfponihbgmfcoiibffi
 Icon=chrome-nodpmmidbgeganfponihbgmfcoiibffi-Default
 StartupWMClass=crx_nodpmmidbgeganfponihbgmfcoiibffi

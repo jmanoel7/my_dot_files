@@ -1,0 +1,3 @@
+[submodule "Adwaita-dark"]
+	path = .themes/Adwaita-dark
+	url = https://github.com/axxapy/Adwaita-dark-gtk2.git

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+GenericName=IDE
+Comment=Eclipse IDE
+Exec=/home/joaomanoel/.local/bin/eclipse -vm /usr/local/java/default/bin/java %u
+Icon=/home/joaomanoel/.icons/eclipse.xpm
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Categories=Application;Development;Java;IDE
+Keywords=Text;Editor;IDE;

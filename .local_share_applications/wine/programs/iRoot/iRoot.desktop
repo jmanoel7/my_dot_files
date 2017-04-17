@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=iRoot
-Exec=env WINEPREFIX="/home/jmanoel7/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/jmanoel7/.wine/dosdevices/c:/users/Public/Start\\ Menu/Programs/iRoot/iRoot.lnk
-Type=Application
-StartupNotify=true
-Path=/home/jmanoel7/.wine/dosdevices/c:/Program Files/iRoot
-Icon=24BA_Root.0
