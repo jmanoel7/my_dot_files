@@ -225,6 +225,32 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Better navigating through omnicomplete option list
+" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
+"set completeopt=longest,menuone
+"function! OmniPopup(action)
+"    if pumvisible()
+"        if a:action == 'j'
+"            return "\<C-N>"
+"        elseif a:action == 'k'
+"            return "\<C-P>"
+"        endif
+"    endif
+"    return a:action
+"endfunction
+"inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+"inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" Set CTRL+SPACE to Omni Code Completion
+"if !has("gui_running")
+"    inoremap <C-@> <C-x><C-o>
+"else
+"    inoremap <C-Space> <C-x><C-o>
+"endif
+
+" Set CTRL+i to User Defined Completion
+"inoremap <C-i> <C-x><C-u>
+
 " Setup Pathogen to manage your plugins
 " mkdir -p ~/.vim/autoload ~/.vim/bundle
 " curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
@@ -273,34 +299,6 @@ set wildignore+=*.class
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
-
-
-" ============================================================================= 
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-" ============================================================================= 
-
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
-if !has("gui_running")
-    inoremap <C-@> <C-x><C-o>
-else
-    inoremap <C-Space> <C-x><C-o>
-endif
-inoremap <C-i> <C-x><C-u>
 
 
 " ============================================================================= 
@@ -502,7 +500,7 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 "inoremap <c-x><c-k> <c-x><c-k>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsListSnippets="<C-s>"
+let g:UltiSnipsListSnippets="<C-x><C-i>"
 let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
@@ -900,23 +898,21 @@ imap <C-F6> <Plug>(JavaComplete-Imports-AddMissing)
 nmap <C-F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 imap <C-F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
-" F11/C-F11 compile/run default file.
+" F10/C-F10 compile/run default file.
 " F12/C-F12 compile/run alternate file.
-
-map <F11> :set makeprg=javac\ %<CR>:make<CR>
-map <C-F11> :!echo %\|awk -F. '{print $1}'\|xargs java<CR>
+map <F10> :set makeprg=javac\ %<CR>:make<CR>
+map <C-F10> :!echo %\|awk -F. '{print $1}'\|xargs java<CR>
 map <F12> :set makeprg=javac\ #<CR>:make<CR>
 map <C-F12> :!echo #\|awk -F. '{print $1}'\|xargs java<CR>
-
-map! <F11> <Esc>:set makeprg=javac\ %<CR>:make<CR>
-map! <C-F11> <Esc>:!echo %\|awk -F. '{print $1}'\|xargs java<CR>
+map! <F10> <Esc>:set makeprg=javac\ %<CR>:make<CR>
+map! <C-F10> <Esc>:!echo %\|awk -F. '{print $1}'\|xargs java<CR>
 map! <F12> <Esc>set makeprg=javac\ #<CR>:make<CR>
 map! <C-F12> <Esc>!echo #\|awk -F. '{print $1}'\|xargs java<CR>
 
 " Tip: load a file into the default buffer, and its driver
-" into the alternate buffer, then use F11/F12 to build/run.
+" into the alternate buffer, then use F10/F12 to build/run.
 " Note: # (alternate filename) isn't set until you :next to it!
-" Tip2: You can make then run without hitting ENTER to continue. F11-F12
+" Tip2: You can make then run without hitting ENTER to continue. F10-F12
 
 " With these you can cl/cn/cp (quickfix commands) to browse the errors
 " after you compile it with :make

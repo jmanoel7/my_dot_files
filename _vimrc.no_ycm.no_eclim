@@ -83,7 +83,7 @@ vnoremap <Leader><C-e> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --de
 vnoremap <Leader><C-d> :!gpg2 --batch --no-tty --yes --default-key 607A5E65 --default-recipient-self --armor --decrypt 2>/dev/null<CR>
 
 " Secret Enviremont
-nnoremap <Leader><C-m> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
+nnoremap <Leader><C-s> :set viminfo=<CR>:set noswapfile noundofile nobackup<CR>:set bin<CR>:let ch_save = &ch\|set ch=2<CR>
 
 " Files .cpt
 augroup CPT
@@ -103,12 +103,21 @@ augroup END
 " set up zope page templates as the zpt filetype
 autocmd BufNewFile,BufRead *.pt,*.cpt,*.zpt set filetype=zpt syntax=xml
 
-" paste, copy and cut
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-c> "+y
+vnoremap <C-Insert> "+y
+
+" CTRL-V and SHIFT-Insert are Paste
 inoremap <C-v> <ESC>:set paste<CR>"+gp<ESC>:set nopaste<CR>i<RIGHT>
-nnoremap <C-v> i<ESC>:set paste<CR>"+gp<ESC>:set nopaste<CR>i<RIGHT>
-vnoremap <leader><C-v> "+gP
-vnoremap <leader><C-y> "+y
-vnoremap <leader><C-x> "+x
+nnoremap <C-v> :set paste<CR>"+gp<ESC>:set nopaste<CR>
+vnoremap <C-v> "+gP
+inoremap <S-Insert> <ESC>:set paste<CR>"+gp<ESC>:set nopaste<CR>i<RIGHT>
+nnoremap <S-Insert> :set paste<CR>"+gp<ESC>:set nopaste<CR>
+vnoremap <S-Insert> "+gP
+
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-x> "+x
+vnoremap <S-Del> "+x
 
 " Remove whitespaces from end of line
 nnoremap <leader><F4> 1GVG:s/\s*$//<CR>:<ESC>
@@ -217,6 +226,32 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Better navigating through omnicomplete option list
+" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
+"set completeopt=longest,menuone
+"function! OmniPopup(action)
+"    if pumvisible()
+"        if a:action == 'j'
+"            return "\<C-N>"
+"        elseif a:action == 'k'
+"            return "\<C-P>"
+"        endif
+"    endif
+"    return a:action
+"endfunction
+"inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+"inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" Set CTRL+SPACE to Omni Code Completion
+"if !has("gui_running")
+"    inoremap <C-@> <C-x><C-o>
+"else
+"    inoremap <C-Space> <C-x><C-o>
+"endif
+
+" Set CTRL+i to User Defined Completion
+"inoremap <C-i> <C-x><C-u>
+
 " Setup Pathogen to manage your plugins
 " mkdir -p ~/vimfiles/autoload ~/vimfiles/bundle
 " curl -so ~/vimfiles/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
@@ -265,27 +300,6 @@ set wildignore+=*.class
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
-
-
-" ============================================================================= 
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-" ============================================================================= 
-
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 
 " ============================================================================= 
@@ -487,10 +501,10 @@ let g:syntastic_text_language_check_args = '--language=pt-BR'
 "inoremap <c-x><c-k> <c-x><c-k>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsListSnippets="<leader><c-0>"
-let g:UltiSnipsExpandTrigger="<leader><c-9>"
-let g:UltiSnipsJumpForwardTrigger="<c-.>"
-let g:UltiSnipsJumpBackwardTrigger="<c-,>"
+let g:UltiSnipsListSnippets="<C-x><C-i>"
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<C-n>"
+let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
@@ -529,7 +543,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = ""
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
 let g:jedi#completions_enabled = 1
 
 
@@ -823,9 +837,9 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 " or path directly to the library file
 let g:clang_library_path='C:\LLVM\bin\libclang.dll'
 " path do clang.exe
-let g:clang_exec = '"C:\LLVM\bin\clang.exe'
+let g:clang_exec = 'C:\LLVM\bin\clang.exe'
 " options for clang
-let g:clang_user_options = '2> NULL || exit 0"'
+let g:clang_user_options = '2> NULL || exit 0'
 
 
 " ==============================================================================
@@ -834,18 +848,17 @@ let g:clang_user_options = '2> NULL || exit 0"'
 " git clone https://github.com/amiorin/vim-project.git
 " ==============================================================================
 
-let g:project_enable_welcome = 1
+let g:project_enable_welcome = 0
 let g:project_use_nerdtree = 1
 
 set rtp+=~/vimfiles/bundle/vim-project/
-call project#rc("X:\")
+call project#rc("X:")
 
 Project "sistec_ead"
 Project "sistec_q"
 Project "sistec-download"
 Project "visao"
 Project "visao-dev"
-
 
 
 " ==============================================================================
@@ -860,14 +873,64 @@ let g:session_autosave='no'
 
 
 " ==============================================================================
-" Vim-JDE -> Just a Development Environment for VIM. (VJDE)
-" cd ~/vimfiles/bundle
-" git clone https://github.com/jmanoel7/Vim-JDE.git
+" Updated javacomplete plugin for vim.
+" cd ~/.vim/bundle
+" git clone https://github.com/artur-shaik/vim-javacomplete2.git
 " ==============================================================================
 
-" use <c-space> as the Code completion key!
-" change it by
-"let g:vjde_completion_key='<c-space>'
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+" To enable smart (trying to guess import option) inserting class imports
+" with CTRL + F4, add:
+nmap <C-F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <C-F4> <Plug>(JavaComplete-Imports-AddSmart)
+
+" To enable usual (will ask for import option) inserting class imports
+" with CTRL + F5, add:
+nmap <C-F5> <Plug>(JavaComplete-Imports-Add)
+imap <C-F5> <Plug>(JavaComplete-Imports-Add)
+
+" To add all missing imports with CTRL + F6:
+nmap <C-F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <C-F6> <Plug>(JavaComplete-Imports-AddMissing)
+
+" To remove all missing imports with CTRL + F7:
+nmap <C-F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <C-F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
+" F10/C-F10 compile/run default file.
+" F12/C-F12 compile/run alternate file.
+map <F10> :set makeprg=javac\ %<CR>:make<CR>
+map <C-F10> :!echo %\|awk -F. '{print $1}'\|xargs java<CR>
+map <F12> :set makeprg=javac\ #<CR>:make<CR>
+map <C-F12> :!echo #\|awk -F. '{print $1}'\|xargs java<CR>
+map! <F10> <Esc>:set makeprg=javac\ %<CR>:make<CR>
+map! <C-F10> <Esc>:!echo %\|awk -F. '{print $1}'\|xargs java<CR>
+map! <F12> <Esc>set makeprg=javac\ #<CR>:make<CR>
+map! <C-F12> <Esc>!echo #\|awk -F. '{print $1}'\|xargs java<CR>
+
+" Tip: load a file into the default buffer, and its driver
+" into the alternate buffer, then use F10/F12 to build/run.
+" Note: # (alternate filename) isn't set until you :next to it!
+" Tip2: You can make then run without hitting ENTER to continue. F10-F12
+
+" With these you can cl/cn/cp (quickfix commands) to browse the errors
+" after you compile it with :make
+
+set makeprg=javac\ %
+set errorformat=%A:%f:%l:\ %m,%-Z%p^,%-C%.%#
+
+" Javac defaults to printing output on stderr and no options can convert,
+" so we have to set 'shellpipe'
+set shellpipe=2>
+" 2> works on Win NT and UNIX
+
+" If two files are loaded, switch to the alternate file, then back.
+" That sets # (the alternate file).
+if argc() == 2
+  n
+  e #
+endif
 
 
 " ==============================================================================

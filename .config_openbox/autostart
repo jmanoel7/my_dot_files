@@ -34,6 +34,9 @@ xset b off
 ## Add keyboard mapping.
 #xmodmap -e "keysym Insert = Multi_key"
 
+## load ~/.Xresources
+xrdb -load ~/.Xresources
+
 ## SETTINGS END
 
 ## GNOME PolicyKit authentication

@@ -69,7 +69,7 @@
         <item label="Text Editor">
             <action name="Execute">
                 <command>
-                    bl-gvim
+                    geany
                 </command>
             </action>
         </item>
