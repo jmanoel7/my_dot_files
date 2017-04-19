@@ -534,7 +534,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = ""
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
 let g:jedi#completions_enabled = 1
 
 
@@ -907,7 +907,6 @@ map! <C-F12> <Esc>!echo #\|awk -F. '{print $1}'\|xargs java<CR>
 
 " With these you can cl/cn/cp (quickfix commands) to browse the errors
 " after you compile it with :make
-
 set makeprg=javac\ %
 set errorformat=%A:%f:%l:\ %m,%-Z%p^,%-C%.%#
 
@@ -922,6 +921,13 @@ if argc() == 2
   n
   e #
 endif
+
+
+" ==============================================================================
+" gVim menu for txt2tags
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-scripts/txt2tags-menu.git
+" ==============================================================================
 
 
 " ==============================================================================

@@ -1,0 +1,38 @@
+[global_config]
+  enabled_plugins = InactivityWatch, CustomCommandsMenu, TestPlugin, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, MavenPluginURLHandler, LaunchpadBugURLHandler
+  title_transmit_bg_color = "#000000"
+  inactive_color_offset = 1.0
+  title_inactive_bg_color = "#000000"
+[keybindings]
+  hide_window = <Shift><Control>a
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    exit_action = hold
+    background_image = None
+    background_darkness = 0.88
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    cursor_color = "#0000ff"
+    scroll_on_output = False
+    icon_bell = False
+    show_titlebar = False
+    color_scheme = custom
+    font = Source Code Pro Medium 12
+    word_chars = "-A-Za-z0-9,./?%&#:_~"
+    cursor_blink = False
+    scrollback_infinite = True
+    audible_bell = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 815, 505
+[plugins]

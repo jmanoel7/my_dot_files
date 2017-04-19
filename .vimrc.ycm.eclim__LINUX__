@@ -542,9 +542,9 @@ let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = ""
 let g:jedi#rename_command = "<leader>r"
-let g:jedi#popup_on_dot = 1
+let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
-let g:jedi#completions_enabled = 1
+let g:jedi#completions_enabled = 0
 
 
 " ============================================================================= 
@@ -849,6 +849,13 @@ let g:session_autosave='no'
 " ==============================================================================
 
 let g:EclimCompletionMethod = 'omnifunc'
+
+
+" ==============================================================================
+" gVim menu for txt2tags
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-scripts/txt2tags-menu.git
+" ==============================================================================
 
 
 " ==============================================================================
