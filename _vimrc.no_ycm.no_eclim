@@ -646,7 +646,7 @@ nnoremap <Leader><F12> :Open<CR>
 " git clone https://github.com/xolox/vim-notes.git
 " ==============================================================================
 
-let g:notes_directories = ['~/Dropbox/servidor_ifg/notas']
+let g:notes_directories = ['~/Notas']
 autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
 
 
@@ -761,7 +761,7 @@ let g:virtualenv_directory = '~/_local/venvs'
 " git clone https://github.com/cwood/vim-django.git
 " ==============================================================================
 
-let g:django_projects = '~/Dropbox/servidor_ifg/projetos' "Sets all projects under project
+let g:django_projects = '~/Projetos' "Sets all projects under project
 let g:django_activate_virtualenv = 1 "Try to activate the associated virtualenv
 let g:django_activate_nerdtree = 1 "Try to open nerdtree at the project root.
 let g:last_relative_dir = '' "Initial Directory for Django App
