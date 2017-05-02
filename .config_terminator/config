@@ -15,7 +15,7 @@
     scrollback_lines = 5000
     background_type = transparent
     use_system_font = False
-    cursor_color = "#0000ff"
+    cursor_color = "#b60000"
     scroll_on_output = False
     icon_bell = False
     show_titlebar = False

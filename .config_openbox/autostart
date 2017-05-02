@@ -37,12 +37,16 @@ xset b off
 ## load ~/.Xresources
 xrdb -load ~/.Xresources
 
-## SETTINGS END
-
 ## GNOME PolicyKit authentication
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
+## Background
+#xsetroot -bg '#1E2533' -fg '#2E3644' -mod 4 4
 nitrogen --restore &
+
+
+## SETTINGS END
+
 
 ## EDITED BY BL-WELCOME
 ## Compton

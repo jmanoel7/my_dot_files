@@ -1,5 +1,4 @@
-# This file is written by LXAppearance. Do not edit.
 [Icon Theme]
 Name=Default
 Comment=Default Cursor Theme
-Inherits=Chameleon-Pearl-Regular-0.5
+Inherits=Breeze-Red

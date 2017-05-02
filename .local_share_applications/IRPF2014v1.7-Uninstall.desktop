@@ -1,0 +1,10 @@
+#! /usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=Desinstalar o IRPF 2014 1.7
+Comment=Desinstalador do IRPF 2014 1.7
+Icon=/home/joaomanoel/ProgramasRFB/IRPF2014/RFB.png
+Exec=java -jar /home/joaomanoel/ProgramasRFB/IRPF2014/Uninstaller/uninstaller.jar
+Terminal=false

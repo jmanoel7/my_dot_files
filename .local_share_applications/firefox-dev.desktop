@@ -3,8 +3,8 @@ Version=1.0
 Name=Firefox Developer
 GenericName=Web Browser
 Comment=Access the Internet
-Exec=/home/joaomanoel/.local/bin/firefox-dev %u
-Icon=/home/joaomanoel/.icons/firefox-dev.png
+Exec=/usr/local/firefox-dev/firefox %u
+Icon=/usr/local/firefox-dev/browser/icons/mozicon128.png
 Terminal=false
 Type=Application
 MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
@@ -15,8 +15,8 @@ Actions=new-window;new-private-window;
 
 [Desktop Action new-window]
 Name=New Window
-Exec=/home/joaomanoel/.local/bin/firefox-dev --new-window %u
+Exec=/usr/local/firefox-dev/firefox --new-window %u
 
 [Desktop Action new-private-window]
 Name=New Private Window
-Exec=/home/joaomanoel/.local/bin/firefox-dev --private-window %u
+Exec=/usr/local/firefox-dev/firefox --private-window %u

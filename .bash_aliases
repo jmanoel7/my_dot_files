@@ -1,14 +1,18 @@
 alias s='sudo'
 alias se='sudoedit'
 alias editmirror='se /etc/pacman.d/mirrorlist'
-alias python='/usr/bin/python2'
 alias ll='ls -lhF --group-directories-first'
 alias l.='ls -lhaF --group-directories-first'
 alias l='ls -CF --group-directories-first'
 alias la='ls -aCF --group-directories-first'
-alias vi="vim.gtk"
+if [ -x "$(which vim)" ]; then
+    alias vi="$(which vim)"
+elif [ -x "$(which nvi)" ]; then
+    alias vi="$(which nvi)"
+fi
+alias me="mcedit"
 alias shred="shred -zf"
-alias python="python2"
+#alias python="python2"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
 alias 7zip='7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on'

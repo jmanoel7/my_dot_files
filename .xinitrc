@@ -1,7 +1,18 @@
 #!/bin/bash
 
-if [ -f ~/.xsessionrc ]; then
-    . ~/.xsessionrc
+umask 022
+export QT_STYLE_OVERRIDE=GTK+
+
+if [ -f ~/.bash_env ]; then
+    . ~/.bash_env
+fi
+
+if [ -f ~/.Xresources ]; then
+    xrdb -merge ~/.Xresources
+fi
+
+if [ -f ~/.Xkbmap ]; then
+    setxkbmap "$(cat ~/.Xkbmap)"
 fi
 
 DEFAULT_SESSION="gnome-shell"
@@ -21,15 +32,15 @@ case "$DEFAULT_SESSION" in
         (sleep 1; volumeicon) &
         (sleep 1; clipit) &
         (sleep 4; conkywonky.sh) &
-        (sleep 4; dropbox start -i) &
-        (sleep 4; pamac-tray) &
+        (sleep 4; dropbox.py start -i) &
+        #(sleep 4; pamac-tray) &
         #(sleep 4; hp-systray -x) &
         #(sleep 4; /opt/teamviewer/tv_bin/script/teamviewer) &
         (sleep 5; i3-sensible-terminal) &
         #(sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
         exec \
             /usr/bin/ssh-agent \
-            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session /usr/bin/i3
         ;;
     "i3-with-shmlog")
@@ -43,15 +54,15 @@ case "$DEFAULT_SESSION" in
         (sleep 1; volumeicon) &
         (sleep 1; clipit) &
         (sleep 4; conkywonky.sh) &
-        (sleep 4; dropbox start -i) &
-        (sleep 4; pamac-tray) &
+        (sleep 4; dropbox.py start -i) &
+        #(sleep 4; pamac-tray) &
         #(sleep 4; hp-systray -x) &
         #(sleep 4; /opt/teamviewer/tv_bin/script/teamviewer) &
         (sleep 5; i3-sensible-terminal) &
         #(sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
         exec \
             /usr/bin/ssh-agent \
-            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session /usr/bin/i3-with-shmlog
         ;;
     "fluxbox")
@@ -65,50 +76,28 @@ case "$DEFAULT_SESSION" in
         (sleep 1; volumeicon) &
         (sleep 1; clipit) &
         (sleep 4; conkywonky.sh) &
-        (sleep 4; dropbox start -i) &
-        (sleep 4; pamac-tray) &
+        (sleep 4; dropbox.py start -i) &
+        #(sleep 4; pamac-tray) &
         #(sleep 4; hp-systray -x) &
         #(sleep 4; /opt/teamviewer/tv_bin/script/teamviewer) &
-        (sleep 5; terminator.wrapper) &
+        (sleep 5; urxvt) &
+        (sleep 5; plank) &
         #(sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
         exec \
             /usr/bin/ssh-agent \
-            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session /usr/bin/startfluxbox
-        ;;
-    "openbox")
-        #(sleep 1; gnome-keyring-daemon --components=ssh,secrets,pkcs11) &
-        (sleep 1; thunar --daemon) &
-        (sleep 1; nm-applet) &
-        #(sleep 1; volti) &
-        (sleep 1; volumeicon) &
-        (sleep 1; clipit) &
-        #(sleep 2; fbsetbg -l) &
-        (sleep 2; fbsetroot -mod 4 4 -fg '#646464' -bg '#505050') &
-        (sleep 3; compton --config ~/.config/compton.conf -b) &
-        (sleep 4; conkywonky.sh) &
-        (sleep 5; tint2 -c ~/.config/tint2/tint2rc) &
-        (sleep 5; dropbox start -i) &
-        #(sleep 5; pamac-tray) &
-        #(sleep 5; hp-systray -x) &
-        #(sleep 5; /opt/teamviewer/tv_bin/script/teamviewer) &
-        (sleep 5; urxvt) &
-        (sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
-        exec \
-            /usr/bin/ssh-agent \
-            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
-            /usr/bin/dbus-launch --exit-with-session /usr/bin/openbox
         ;;
     "ubuntu")
         exec \
             /usr/bin/ssh-agent \
-            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session /usr/bin/gnome-session --session=ubuntu
         ;;
     *)
         exec \
             /usr/bin/ssh-agent \
-            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/jmanoel7/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session $DEFAULT_SESSION
         ;;
 esac

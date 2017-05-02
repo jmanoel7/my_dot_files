@@ -1,11 +1,10 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
 Version=1.0
 Type=Application
 Name=Mineshafter
 Comment=Play Mineshafter
-Exec=/home/joaomanoel/.local/bin/mineshafter.sh
-Icon=/home/joaomanoel/.icons/mineshafter.png
+Exec=/home/joaomanoel/bin/mineshafter.sh
+Icon=/home/joaomanoel/.icons/custom/mineshafter.png
 Terminal=false
 StartupNotify=true
 Categories=Games;

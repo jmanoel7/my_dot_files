@@ -101,28 +101,28 @@ fi
 
 
 ################################################################################
-## functions for edit python django projects
+## functions for edit python django projects with vim/gvim
 ################################################################################
 
-djvim() {
-    if [ -d "$HOME/Meus_Projetos/$1" ]; then
-        cd "$HOME/Meus_Projetos/$1"
-        rm -f ./tags
-        ctags-exuberant --languages=HTML,JavaScript,Python **
-        workon $1
-        vim "+cd $HOME/Meus_Projetos/$1" "+DjangoProjectActivate $1" 2> $HOME/log/vim.err
-    fi
-}
+#djvim() {
+#    if [ -d "$HOME/Projetos/Python/Django/$1" ]; then
+#        cd "$HOME/Projetos/Python/Django/$1"
+#        rm -f ./tags
+#        ctags-exuberant --languages=HTML,JavaScript,Python **
+#        workon $1
+#        vim "+cd $HOME/Projetos/Python/Django/$1" "+DjangoProjectActivate $1" 2> $HOME/log/vim.err
+#    fi
+#}
 
-djgvim() {
-    if [ -d "$HOME/Meus_Projetos/$1" ]; then
-        cd "$HOME/Meus_Projetos/$1"
-        rm -f ./tags
-        ctags-exuberant --languages=HTML,JavaScript,Python **
-        workon $1
-        gvim "+cd $HOME/Meus_Projetos/$1" "+DjangoProjectActivate $1" 2> $HOME/log/gvim.err
-    fi
-}
+#djgvim() {
+#    if [ -d "$HOME/Projetos/Python/Django/$1" ]; then
+#        cd "$HOME/Projetos/Python/Django/$1"
+#        rm -f ./tags
+#        ctags-exuberant --languages=HTML,JavaScript,Python **
+#        workon $1
+#        gvim "+cd $HOME/Projetos/Python/Django/$1" "+DjangoProjectActivate $1" 2> $HOME/log/gvim.err
+#    fi
+#}
 
 
 ################################################################################

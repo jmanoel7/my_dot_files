@@ -83,21 +83,21 @@ Xft.lcdfilter: lcddefault
 ! --------------------------------------------------------------------------------
 ! mouse theme
 ! --------------------------------------------------------------------------------
-Xcursor.theme: Chameleon-Pearl-Regular-0.5
+Xcursor.theme: Breeze-Red
 !Xcursor.theme: Adwaita
 !Xcursor.theme: Win8
-Xcursor.size: 24
+Xcursor.size: 16
 
 
 ! --------------------------------------------------------------------------------
 ! URxvt Config
 ! --------------------------------------------------------------------------------
-URxvt.font: 9x15
-URxvt.perl-lib: /home/jmanoel7/.urxvt/perl
+!URxvt.font: 9x15
+URxvt.perl-lib: /home/joaomanoel/.urxvt/perl
 URxvt.perl-ext-common: default,url-select,fullscreen,tabbedex,clipboard,vtwheel
 URxvt.cursorUnderline: true
 URxvt.cursorBlink: true
-URxvt*geometry: 120x24
+URxvt*geometry: 100x20
 URxvt.depth: 32
 URxvt.background: [90]#111111
 !URxvt*background:                     black
@@ -114,26 +114,30 @@ URxvt.background: [90]#111111
 !URxvt*.shading: 110
 !
 URxvt*saveLines:                      1000000
-URxvt*mouseWheelScrollPage:           false
-URxvt.secondaryScreen: true
-URxvt.secondaryScroll: true
-URxvt.secondaryWheel: true
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
+!URxvt*mouseWheelScrollPage:           false
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
 URxvt.scrollBar_floating: false
+! scroll one line up with SHIFT+UP and one line down with SHIFT+DOWN
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 URxvt.scrollstyle: plain
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: false
+URxvt*scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
-!URxvt*faceName: DejavuSansMono:style=Book:size=10
-!URxvt.font: xft:DejavuSansMono:style=Book:size=10
+URxvt*faceName: SourceCodePro:style=Semibold:size=11
+URxvt.font: xft:SourceCodePro:style=Semibold:size=11
 !URxvt.iconFile: /usr/share/icons/gnome-colors-common/scalable/apps/terminal.svg
 !URxvt.iconFile: /usr/share/icons/Numix-Reborn-Circle/scalable/apps/terminal-tango.svg
-URxvt*iconFile: /usr/share/icons/Numix-Square/48x48/apps/terminal-tango.svg
+!URxvt*iconFile: /usr/share/icons/Numix-Square/48x48/apps/terminal-tango.svg
+URxvt*iconFile: /home/joaomanoel/.icons/SoftNumixLight/apps/software/utilities-terminal.svg
 URxvt*loginShell: true
 !URxvt.letterSpace: -5
 URxvt.keysym.F11: perl:fullscreen:switch

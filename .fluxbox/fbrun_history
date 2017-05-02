@@ -1,5 +1,6 @@
-pamac
-pamac-tray
-terminator.wrapper
+dropurxvt
+Thunar
+volumeicon
+terminator
+Thunar
 urxvt
-firefox -P

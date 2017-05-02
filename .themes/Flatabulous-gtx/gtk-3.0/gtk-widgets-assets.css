@@ -1,0 +1,291 @@
+/***************
+ * Resize grip *
+ ***************/
+
+.grip {
+    background-color: transparent;
+    /*background-image: url("assets/resize-grip.svg");*/
+}
+
+/*************************
+ * Check and Radio items *
+ *************************/
+
+/* draw regular check and radio items using our SVG assets */
+.check,
+.check row:selected,
+.check row:selected:focus {
+    -gtk-icon-source: url("assets/checkbox-unchecked.svg");
+}
+
+.check:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focus:insensitive {
+    -gtk-icon-source: url("assets/checkbox-unchecked-insensitive.svg");
+}
+
+.check:active, .check:checked,
+.check row:selected:active, .check row:selected:checked,
+.check row:selected:focus:active, .check row:selected:focus:checked {
+    -gtk-icon-source: url("assets/checkbox-checked.svg");
+}
+
+.check:active:insensitive, .check:checked:insensitive,
+.check row:selected:active:insensitive, .check row:selected:checked:insensitive,
+.check row:selected:focus:active:insensitive, .check row:selected:focus:checked:insensitive {
+    -gtk-icon-source: url("assets/checkbox-checked-insensitive.svg");
+}
+
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focus:inconsistent {
+    -gtk-icon-source: url("assets/checkbox-mixed.svg");
+}
+
+.check:inconsistent:insensitive,
+.check row:selected:inconsistent:insensitive,
+.check row:selected:focus:inconsistent:insensitive {
+    -gtk-icon-source: url("assets/checkbox-mixed-insensitive.svg");
+}
+
+.radio,
+.radio row:selected,
+.radio row:selected:focus {
+    -gtk-icon-source: url("assets/radio-unselected.svg");
+}
+
+.radio:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focus:insensitive {
+    -gtk-icon-source: url("assets/radio-unselected-insensitive.svg");
+}
+
+.radio:active, .radio:checked,
+.radio row:selected:active, .radio row:selected:checked,
+.radio row:selected:focus:active, .radio row:selected:focus:checked {
+    -gtk-icon-source: url("assets/radio-selected.svg");
+}
+
+.radio:active:insensitive, .radio:checked:insensitive,
+.radio row:selected:active:insensitive, .radio row:selected:checked:insensitive,
+.radio row:selected:focus:active:insensitive, .radio row:selected:focus:checked:insensitive {
+    -gtk-icon-source: url("assets/radio-selected-insensitive.svg");
+}
+
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focus:inconsistent {
+    -gtk-icon-source: url("assets/radio-mixed.svg");
+}
+
+.radio:inconsistent:insensitive,
+.radio row:selected:inconsistent:insensitive,
+.radio row:selected:focus:inconsistent:insensitive {
+    -gtk-icon-source: url("assets/radio-mixed-insensitive.svg");
+}
+
+.primary-toolbar .menu .check,
+.menubar.toolbar .menu .check,
+.header-bar .menu .check,
+.menu .check {
+    -gtk-icon-source: url("assets/check-menuitem-unselected.png");
+}
+
+.primary-toolbar .menu .radio,
+.menubar.toolbar .menu .radio,
+.header-bar .menu .radio,
+.menu .radio {
+    -gtk-icon-source: url("assets/check-menuitem-unselected.png");
+}
+
+.primary-toolbar .menu .check:checked,
+.menubar.toolbar .menu .check:checked,
+.header-bar .menu .check:checked,
+.toolbar .menu .check:checked:hover,
+.menu .check:checked,
+.menu .check:checked:hover {
+    -gtk-icon-source: url("assets/check-menuitem.png");
+}
+
+.primary-toolbar .menu .check:checked:insensitive,
+.menubar.toolbar .menu .check:checked:insensitive,
+.header-bar .menu .check:checked:insensitive,
+.toolbar .menu .check:checked:hover:insensitive,
+.menu .check:checked:insensitive,
+.menu .check:checked:hover:insensitive {
+    -gtk-icon-source: url("assets/check-menuitem-insensitive.png");
+}
+
+.primary-toolbar .menu .radio:checked,
+.menubar.toolbar .menu .radio:checked,
+.header-bar .menu .radio:checked,
+.toolbar .menu .radio:checked:hover,
+.menu .radio:checked,
+.menu .radio:checked:hover {
+    -gtk-icon-source: url("assets/radio-menuitem.png");
+}
+
+.primary-toolbar .menu .radio:checked:insensitive,
+.menubar.toolbar .menu .radio:checked:insensitive,
+.header-bar .menu .radio:checked:insensitive,
+.toolbar .menu .radio:checked:hover:insensitive,
+.menu .radio:checked:insensitive,
+.menu .radio:checked:hover:insensitive {
+    -gtk-icon-source: url("assets/radio-menuitem-insensitive.png");
+}
+
+.toolbar .menu .check {
+    -gtk-icon-source: url("assets/check-menuitem-unselected.png");
+}
+
+.toolbar .menu .radio {
+    -gtk-icon-source: url("assets/check-menuitem-unselected.png");
+}
+
+.toolbar .menu .check:checked {
+    -gtk-icon-source: url("assets/check-menuitem-dark.png");
+}
+
+.toolbar .menu .check:checked:insensitive {
+    -gtk-icon-source: url("assets/check-menuitem-insensitive-dark.png");
+}
+
+.toolbar .menu .radio:checked {
+    -gtk-icon-source: url("assets/radio-menuitem-dark.png");
+}
+
+.toolbar .menu .radio:checked:insensitive {
+    -gtk-icon-source: url("assets/radio-menuitem-insensitive-dark.png");
+}
+
+/*********************
+ * GtkScale's slider *
+ *********************/
+.scale.slider,
+.scale.slider.horizontal {
+    background-image: url("assets/slider-horizontal.png");
+}
+
+.scale.slider:backdrop,
+.scale.slider.horizontal:backdrop {
+    /*background-image: url("assets/slider-horizontal-disabled.png");*/
+}
+
+.scale.slider:hover,
+.scale.slider.horizontal:hover {
+    background-image: url("assets/slider-horizontal-hover.png");
+}
+
+.scale.slider:focused,
+.scale.slider.horizontal:focused {
+    background-image: url("assets/slider-horizontal-focused.png");
+}
+
+.scale.slider:hover:focused,
+.scale.slider.horizontal:hover:focused {
+    background-image: url("assets/slider-horizontal-focused-hover.png");
+}
+
+.scale.slider:insensitive,
+.scale.slider.horizontal:insensitive {
+    background-image: url("assets/slider-horizontal-disabled.png");
+}
+
+.scale.slider:insensitive:backdrop,
+.scale.slider.horizontal:insensitive:backdrop {
+    /*background-image: url("assets/slider-horizontal-backdrop-disabled.png");*/
+}
+
+.scale.slider.vertical {
+    background-image: url("assets/slider-vertical.png");
+}
+
+.scale.slider.vertical:backdrop {
+    /*background-image: url("assets/slider-vertical-backdrop.png");*/
+}
+
+.scale.slider.vertical:hover {
+    background-image: url("assets/slider-vertical-hover.png");
+}
+
+.scale.slider.vertical:focused {
+    background-image: url("assets/slider-vertical-focused.png");
+}
+
+.scale.slider.vertical:hover:focused {
+    background-image: url("assets/slider-vertical-focused-hover.png");
+}
+
+.scale.slider.vertical:insensitive {
+    background-image: url("assets/slider-vertical-disabled.png");
+}
+
+.scale.slider.vertical:insensitive:backdrop {
+    /*background-image: url("assets/slider-vertical-backdrop-disabled.png");*/
+}
+
+/*.scale.scale-has-marks-above.slider.horizontal {
+    background-image: url("assets/slider-up.png");
+}
+
+.scale.scale-has-marks-above.slider.horizontal:insensitive {
+    background-image: url("assets/slider-up-disabled.png");
+}
+
+.scale.scale-has-marks-above.slider.horizontal:backdrop {
+    background-image: url("assets/slider-up-backdrop.png");
+}
+
+.scale.scale-has-marks-above.slider.horizontal:backdrop:insensitive {
+    background-image: url("assets/slider-up-backdrop-disabled.png");
+}
+
+.scale.scale-has-marks-above.slider.vertical {
+    background-image: url("assets/slider-left.png");
+}
+
+.scale.scale-has-marks-above.slider.vertical:insensitive {
+    background-image: url("assets/slider-left-disabled.png");
+}
+
+.scale.scale-has-marks-above.slider.vertical:backdrop {
+    background-image: url("assets/slider-left-backdrop.png");
+}
+
+.scale.scale-has-marks-above.slider.vertical:backdrop:insensitive {
+    background-image: url("assets/slider-left-backdrop-disabled.png");
+}
+
+.scale.scale-has-marks-below.slider.horizontal {
+    background-image: url("assets/slider-down.png");
+}
+
+.scale.scale-has-marks-below.slider.horizontal:insensitive {
+    background-image: url("assets/slider-down-disabled.png");
+}
+
+.scale.scale-has-marks-below.slider.horizontal:backdrop {
+    background-image: url("assets/slider-down-backdrop.png");
+}
+
+.scale.scale-has-marks-below.slider.horizontal:backdrop:insensitive {
+    background-image: url("assets/slider-down-backdrop-disabled.png");
+}
+
+.scale.scale-has-marks-below.slider.vertical {
+    background-image: url("assets/slider-right.png");
+}
+
+.scale.scale-has-marks-below.slider.vertical:insensitive {
+    background-image: url("assets/slider-right-disabled.png");
+}
+
+.scale.scale-has-marks-below.slider.vertical:backdrop {
+    background-image: url("assets/slider-right-backdrop.png");
+}
+
+.scale.scale-has-marks-below.slider.vertical:backdrop:insensitive {
+    background-image: url("assets/slider-right-backdrop-disabled.png");
+}*/
+

@@ -933,6 +933,13 @@ endif
 
 
 " ==============================================================================
+" The Maven plugin for VIM
+" cd ~/.vim/bundle
+" git clone https://github.com/mikelue/vim-maven-plugin.git
+" ==============================================================================
+
+
+" ==============================================================================
 " gVim menu for txt2tags
 " cd ~/.vim/bundle
 " git clone https://github.com/vim-scripts/txt2tags-menu.git

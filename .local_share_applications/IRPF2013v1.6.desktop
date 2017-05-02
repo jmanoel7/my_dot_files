@@ -1,0 +1,10 @@
+#! /usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=IRPF 2013 1.6
+Comment=Declaração do IRPF 2013 1.6
+Icon=/home/joaomanoel/ProgramasRFB/IRPF2013/RFB.png
+Exec=java -jar /home/joaomanoel/ProgramasRFB/IRPF2013/irpf.jar
+Terminal=false

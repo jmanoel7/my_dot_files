@@ -10,4 +10,4 @@ Terminal=false
 Categories=Application;Utility;
 X-KDE-StartupNotify=false
 StartupNotify=false
-X-GNOME-Autostart-enabled=false
+NotShowIn=GNOME;KDE;OPENBOX;
