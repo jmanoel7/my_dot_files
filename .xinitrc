@@ -69,7 +69,7 @@ case "$DEFAULT_SESSION" in
         (sleep 1; gnome-keyring-daemon --components=ssh,secrets,pkcs11) &
         #(sleep 1; fbsetbg -l) &
         (sleep 1; fbsetroot -mod 4 4 -fg '#646464' -bg '#505050') &
-        (sleep 1; compton --config ~/.config/compton.conf -b) &
+        (sleep 1; compton -b) &
         (sleep 1; thunar --daemon) &
         (sleep 1; nm-applet) &
         #(sleep 1; volti) &
@@ -85,14 +85,19 @@ case "$DEFAULT_SESSION" in
         #(sleep 5; killall -9 gnome-keyring-daemon >/dev/null 2>&1) &
         exec \
             /usr/bin/ssh-agent \
-            /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
+            /usr/bin/gpg-agent --sh --daemon \
             /usr/bin/dbus-launch --exit-with-session /usr/bin/startfluxbox
+            #/usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
         ;;
     "ubuntu")
         exec \
             /usr/bin/ssh-agent \
             /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/joaomanoel/.gnupg/gpg-agent-info-noteship \
             /usr/bin/dbus-launch --exit-with-session /usr/bin/gnome-session --session=ubuntu
+        ;;
+    "xfce4")
+        exec \
+            /usr/bin/dbus-launch --exit-with-session /usr/bin/startxfce4
         ;;
     *)
         exec \

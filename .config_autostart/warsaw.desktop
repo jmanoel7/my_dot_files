@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Warsaw
+Type=Application
+Exec=/usr/local/bin/warsaw/core
+NoDisplay=false
+NotShowIn=GNOME;MATE;
+X-GNOME-Autostart-enabled=false
+#X-GNOME-AutoRestart=true
+#X-GNOME-Autostart-Phase=Initialization

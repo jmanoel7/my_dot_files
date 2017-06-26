@@ -83,9 +83,7 @@ Xft.lcdfilter: lcddefault
 ! --------------------------------------------------------------------------------
 ! mouse theme
 ! --------------------------------------------------------------------------------
-Xcursor.theme: Breeze-Red
-!Xcursor.theme: Adwaita
-!Xcursor.theme: Win8
+Xcursor.theme: Hacked-Sky
 Xcursor.size: 16
 
 
@@ -137,7 +135,7 @@ URxvt.font: xft:SourceCodePro:style=Semibold:size=11
 !URxvt.iconFile: /usr/share/icons/gnome-colors-common/scalable/apps/terminal.svg
 !URxvt.iconFile: /usr/share/icons/Numix-Reborn-Circle/scalable/apps/terminal-tango.svg
 !URxvt*iconFile: /usr/share/icons/Numix-Square/48x48/apps/terminal-tango.svg
-URxvt*iconFile: /home/joaomanoel/.icons/SoftNumixLight/apps/software/utilities-terminal.svg
+URxvt*iconFile: /usr/share/icons/Moka/48x48/apps/utilities-terminal.png
 URxvt*loginShell: true
 !URxvt.letterSpace: -5
 URxvt.keysym.F11: perl:fullscreen:switch
