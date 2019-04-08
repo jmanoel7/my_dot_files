@@ -8,7 +8,7 @@ filetype off                   " required!
    set runtimepath+=~/.vim/bundle/neobundle.vim/
  endif
 
- call neobundle#rc(expand('~/.vim/bundle/'))
+ call neobundle#begin(expand('~/.vim/bundle/'))
 " }}}
 " Basic options ----------------------------------------------------------- {{{
 
@@ -157,6 +157,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc', {'build' : {'unix' : 'make -f make_unix.mal',},}
+NeoBundle 'davidhalter/jedi-vim'
+call neobundle#end()
 " }}}
 " NERD Tree {{{
 
